@@ -1,0 +1,1475 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ReactiveUI.Core</name>
+    </assembly>
+    <members>
+        <member name="T:ReactiveUI.ChangeSetExtensions">
+            <summary>
+            Extensions that turn observable collections into a stream of <see cref="T:ReactiveUI.IReactiveChangeSet`1"/> batches, replacing
+            the DynamicData change-set surface used inside ReactiveUI with a tailored, allocation-light layer.
+            </summary>
+        </member>
+        <member name="M:ReactiveUI.ChangeSetExtensions.ToReactiveChangeSet``1(System.Collections.ObjectModel.ObservableCollection{``0})">
+            <inheritdoc cref="M:ReactiveUI.ChangeSetExtensions.&lt;G&gt;$0832E250D9FA01DAD1E4F9BD1FC45BF2`1.ToReactiveChangeSet"/>
+        </member>
+        <member name="M:ReactiveUI.ChangeSetExtensions.ToReactiveChangeSet``2(``0)">
+            <inheritdoc cref="M:ReactiveUI.ChangeSetExtensions.&lt;G&gt;$1647D98642481C5A3089FB6DC6E5F536`2.ToReactiveChangeSet"/>
+        </member>
+        <member name="T:ReactiveUI.ChangeSetExtensions.ChangeSetObservable`2">
+            <summary>
+            Observes a notifying collection and translates each <see cref="T:System.Collections.Specialized.NotifyCollectionChangedEventArgs"/> into a
+            flattened per-item change set, maintaining a shadow copy to service the initial batch and reset translation.
+            </summary>
+            <typeparam name="TCollection">The collection type.</typeparam>
+            <typeparam name="T">The collection item type.</typeparam>
+            <param name="collection">The collection to observe.</param>
+        </member>
+        <member name="M:ReactiveUI.ChangeSetExtensions.ChangeSetObservable`2.#ctor(`0)">
+            <summary>
+            Observes a notifying collection and translates each <see cref="T:System.Collections.Specialized.NotifyCollectionChangedEventArgs"/> into a
+            flattened per-item change set, maintaining a shadow copy to service the initial batch and reset translation.
+            </summary>
+            <typeparam name="TCollection">The collection type.</typeparam>
+            <typeparam name="T">The collection item type.</typeparam>
+            <param name="collection">The collection to observe.</param>
+        </member>
+        <member name="M:ReactiveUI.ChangeSetExtensions.ChangeSetObservable`2.Subscribe(System.IObserver{ReactiveUI.IReactiveChangeSet{`1}})">
+            <inheritdoc/>
+        </member>
+        <member name="T:ReactiveUI.ChangeSetExtensions.ChangeSetObservable`2.Subscription">
+            <summary>Hooks the collection, emits the initial batch, and translates subsequent changes.</summary>
+            <param name="collection">The collection to observe.</param>
+            <param name="observer">The observer receiving change sets.</param>
+        </member>
+        <member name="M:ReactiveUI.ChangeSetExtensions.ChangeSetObservable`2.Subscription.#ctor(`0,System.IObserver{ReactiveUI.IReactiveChangeSet{`1}})">
+            <summary>Hooks the collection, emits the initial batch, and translates subsequent changes.</summary>
+            <param name="collection">The collection to observe.</param>
+            <param name="observer">The observer receiving change sets.</param>
+        </member>
+        <member name="F:ReactiveUI.ChangeSetExtensions.ChangeSetObservable`2.Subscription.DefaultChangeCapacity">
+            <summary>Floor capacity for a per-event change list so the first <c>Add</c> doesn't immediately
+            reallocate the backing array when the change count is unknown or trivial.</summary>
+        </member>
+        <member name="F:ReactiveUI.ChangeSetExtensions.ChangeSetObservable`2.Subscription.ResetChangeCapacityMultiplier">
+            <summary>Multiplier applied to the shadow count to size a reset's change list, which emits a
+            remove for every prior item and an add for every surviving one.</summary>
+        </member>
+        <member name="F:ReactiveUI.ChangeSetExtensions.ChangeSetObservable`2.Subscription._shadow">
+            <summary>Shadow copy of the collection, kept in sync to service resets and indices.</summary>
+        </member>
+        <member name="M:ReactiveUI.ChangeSetExtensions.ChangeSetObservable`2.Subscription.Start">
+            <summary>Emits the initial batch for the current items and begins observing changes.</summary>
+        </member>
+        <member name="M:ReactiveUI.ChangeSetExtensions.ChangeSetObservable`2.Subscription.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:ReactiveUI.ChangeSetExtensions.ChangeSetObservable`2.Subscription.OnCollectionChanged(System.Object,System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>Translates a collection-changed event into a change set and forwards it.</summary>
+            <param name="sender">The collection.</param>
+            <param name="e">The collection-changed event arguments.</param>
+        </member>
+        <member name="M:ReactiveUI.ChangeSetExtensions.ChangeSetObservable`2.Subscription.GetChangeCapacity(System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>Computes a starting capacity for the per-event change list from the known item count.</summary>
+            <param name="e">The collection-changed event arguments.</param>
+            <returns>A capacity of at least <see cref="F:ReactiveUI.ChangeSetExtensions.ChangeSetObservable`2.Subscription.DefaultChangeCapacity"/>.</returns>
+            <remarks>A reset emits a remove for every prior item then an add for every surviving one, so its
+            worst case is twice the current shadow count.</remarks>
+        </member>
+        <member name="M:ReactiveUI.ChangeSetExtensions.ChangeSetObservable`2.Subscription.ApplyAdd(System.Collections.Specialized.NotifyCollectionChangedEventArgs,System.Collections.Generic.List{ReactiveUI.ReactiveChange{`1}})">
+            <summary>Records added items into the shadow and the change list.</summary>
+            <param name="e">The collection-changed event arguments.</param>
+            <param name="changes">The change list being built.</param>
+        </member>
+        <member name="M:ReactiveUI.ChangeSetExtensions.ChangeSetObservable`2.Subscription.ApplyRemove(System.Collections.Specialized.NotifyCollectionChangedEventArgs,System.Collections.Generic.List{ReactiveUI.ReactiveChange{`1}})">
+            <summary>Records removed items out of the shadow and into the change list.</summary>
+            <param name="e">The collection-changed event arguments.</param>
+            <param name="changes">The change list being built.</param>
+        </member>
+        <member name="M:ReactiveUI.ChangeSetExtensions.ChangeSetObservable`2.Subscription.ApplyReplace(System.Collections.Specialized.NotifyCollectionChangedEventArgs,System.Collections.Generic.List{ReactiveUI.ReactiveChange{`1}})">
+            <summary>Records replaced items in the shadow and the change list.</summary>
+            <param name="e">The collection-changed event arguments.</param>
+            <param name="changes">The change list being built.</param>
+        </member>
+        <member name="M:ReactiveUI.ChangeSetExtensions.ChangeSetObservable`2.Subscription.ApplyMove(System.Collections.Specialized.NotifyCollectionChangedEventArgs,System.Collections.Generic.List{ReactiveUI.ReactiveChange{`1}})">
+            <summary>Records a moved item in the shadow and the change list.</summary>
+            <param name="e">The collection-changed event arguments.</param>
+            <param name="changes">The change list being built.</param>
+        </member>
+        <member name="M:ReactiveUI.ChangeSetExtensions.ChangeSetObservable`2.Subscription.ApplyReset(System.Collections.Generic.List{ReactiveUI.ReactiveChange{`1}})">
+            <summary>Re-syncs the shadow against the collection's current contents on a reset.</summary>
+            <param name="changes">The change list being built.</param>
+            <remarks>A reset means "re-read the collection from scratch": some sources (e.g. DynamicData's
+            <c>ObservableCollectionExtended</c> resuming suspended notifications) raise a reset while the items
+            remain present. Emit a remove for every prior item, then an add for every item still present, so
+            surviving items are re-subscribed rather than dropped.</remarks>
+        </member>
+        <member name="M:ReactiveUI.ChangeSetExtensions.ChangeSetObservable`2.Subscription.RemoveFromShadow(System.Int32,`1)">
+            <summary>Removes an item from the shadow by index when valid, otherwise by value.</summary>
+            <param name="index">The index to remove at, or -1 to remove by value.</param>
+            <param name="item">The item to remove by value when the index is unusable.</param>
+        </member>
+        <member name="T:ReactiveUI.ChangeSetExtensions.&lt;G&gt;$0832E250D9FA01DAD1E4F9BD1FC45BF2`1.&lt;M&gt;$94243BC1E1035F80563665D0807E6B4F">
+            <summary>Provides change-set observation extension members for <see cref="T:System.Collections.ObjectModel.ObservableCollection`1"/>.</summary>
+            <typeparam name="T">The collection item type.</typeparam>
+            <param name="collection">The collection to observe.</param>
+        </member>
+        <member name="M:ReactiveUI.ChangeSetExtensions.&lt;G&gt;$0832E250D9FA01DAD1E4F9BD1FC45BF2`1.ToReactiveChangeSet">
+            <summary>
+            Observes an <see cref="T:System.Collections.ObjectModel.ObservableCollection`1"/> as a change-set stream, emitting an initial batch for the
+            current items and then one batch per collection change.
+            </summary>
+            <returns>A change-set stream.</returns>
+        </member>
+        <member name="T:ReactiveUI.ChangeSetExtensions.&lt;G&gt;$1647D98642481C5A3089FB6DC6E5F536`2.&lt;M&gt;$AB9B0A152266757F5B84A20C59F534CA">
+            <summary>Provides change-set observation extension members for collections that raise <see cref="T:System.Collections.Specialized.INotifyCollectionChanged"/>.</summary>
+            <typeparam name="TCollection">The collection type.</typeparam>
+            <typeparam name="T">The collection item type.</typeparam>
+            <param name="collection">The collection to observe.</param>
+        </member>
+        <member name="M:ReactiveUI.ChangeSetExtensions.&lt;G&gt;$1647D98642481C5A3089FB6DC6E5F536`2.ToReactiveChangeSet">
+            <summary>
+            Observes a collection that raises <see cref="T:System.Collections.Specialized.INotifyCollectionChanged"/> as a change-set stream, emitting an
+            initial batch for the current items and then one batch per collection change.
+            </summary>
+            <returns>A change-set stream.</returns>
+        </member>
+        <member name="T:ReactiveUI.CollectionChanged">
+            <summary>
+            A single <see cref="E:System.Collections.Specialized.INotifyCollectionChanged.CollectionChanged"/> notification, carrying the sender and the event
+            arguments. Replaces the <c>EventPattern&lt;NotifyCollectionChangedEventArgs&gt;</c> element emitted by
+            DynamicData's <c>ObserveCollectionChanges</c>.
+            </summary>
+        </member>
+        <member name="M:ReactiveUI.CollectionChanged.#ctor(System.Object,System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.CollectionChanged"/> struct.</summary>
+            <param name="sender">The collection that raised the event.</param>
+            <param name="eventArgs">The collection-changed event arguments.</param>
+        </member>
+        <member name="P:ReactiveUI.CollectionChanged.Sender">
+            <summary>Gets the collection that raised the event.</summary>
+        </member>
+        <member name="P:ReactiveUI.CollectionChanged.EventArgs">
+            <summary>Gets the collection-changed event arguments.</summary>
+        </member>
+        <member name="M:ReactiveUI.CollectionChanged.op_Equality(ReactiveUI.CollectionChanged@,ReactiveUI.CollectionChanged@)">
+            <summary>Determines whether two notifications are equal.</summary>
+            <param name="left">The first notification.</param>
+            <param name="right">The second notification.</param>
+            <returns><see langword="true"/> if equal.</returns>
+        </member>
+        <member name="M:ReactiveUI.CollectionChanged.op_Inequality(ReactiveUI.CollectionChanged@,ReactiveUI.CollectionChanged@)">
+            <summary>Determines whether two notifications are unequal.</summary>
+            <param name="left">The first notification.</param>
+            <param name="right">The second notification.</param>
+            <returns><see langword="true"/> if unequal.</returns>
+        </member>
+        <member name="M:ReactiveUI.CollectionChanged.Equals(ReactiveUI.CollectionChanged)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ReactiveUI.CollectionChanged.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ReactiveUI.CollectionChanged.GetHashCode">
+            <inheritdoc/>
+        </member>
+        <member name="T:ReactiveUI.CollectionChangedExtensions">
+            <summary>
+            Extensions that expose <see cref="E:System.Collections.Specialized.INotifyCollectionChanged.CollectionChanged"/> as an observable, replacing
+            DynamicData's <c>ObserveCollectionChanges</c> with a single tailored event-bridge layer.
+            </summary>
+        </member>
+        <member name="M:ReactiveUI.CollectionChangedExtensions.ObserveCollectionChanges(System.Collections.Specialized.INotifyCollectionChanged)">
+            <inheritdoc cref="M:ReactiveUI.CollectionChangedExtensions.&lt;G&gt;$EF49FD9A2FCC10C7F35BA5AA44C30470.ObserveCollectionChanges"/>
+        </member>
+        <member name="T:ReactiveUI.CollectionChangedExtensions.CollectionChangedObservable">
+            <summary>Forwards each collection-changed event to subscribers for the lifetime of the subscription.</summary>
+            <param name="source">The collection to observe.</param>
+        </member>
+        <member name="M:ReactiveUI.CollectionChangedExtensions.CollectionChangedObservable.#ctor(System.Collections.Specialized.INotifyCollectionChanged)">
+            <summary>Forwards each collection-changed event to subscribers for the lifetime of the subscription.</summary>
+            <param name="source">The collection to observe.</param>
+        </member>
+        <member name="M:ReactiveUI.CollectionChangedExtensions.CollectionChangedObservable.Subscribe(System.IObserver{ReactiveUI.CollectionChanged})">
+            <inheritdoc/>
+        </member>
+        <member name="T:ReactiveUI.CollectionChangedExtensions.CollectionChangedObservable.Subscription">
+            <summary>Attaches the collection-changed handler and detaches it on dispose.</summary>
+        </member>
+        <member name="F:ReactiveUI.CollectionChangedExtensions.CollectionChangedObservable.Subscription._source">
+            <summary>The observed collection.</summary>
+        </member>
+        <member name="F:ReactiveUI.CollectionChangedExtensions.CollectionChangedObservable.Subscription._observer">
+            <summary>The observer receiving notifications.</summary>
+        </member>
+        <member name="M:ReactiveUI.CollectionChangedExtensions.CollectionChangedObservable.Subscription.#ctor(System.Collections.Specialized.INotifyCollectionChanged,System.IObserver{ReactiveUI.CollectionChanged})">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.CollectionChangedExtensions.CollectionChangedObservable.Subscription"/> class and hooks the event.</summary>
+            <param name="source">The collection to observe.</param>
+            <param name="observer">The observer receiving notifications.</param>
+        </member>
+        <member name="M:ReactiveUI.CollectionChangedExtensions.CollectionChangedObservable.Subscription.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:ReactiveUI.CollectionChangedExtensions.CollectionChangedObservable.Subscription.OnCollectionChanged(System.Object,System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>Forwards a collection-changed event to the observer.</summary>
+            <param name="sender">The collection that raised the event.</param>
+            <param name="e">The collection-changed event arguments.</param>
+        </member>
+        <member name="T:ReactiveUI.CollectionChangedExtensions.&lt;G&gt;$EF49FD9A2FCC10C7F35BA5AA44C30470.&lt;M&gt;$8A9348B62FC7E710E8EE8EEE64ECCF2D">
+            <summary>Provides collection-change observation extension members for <see cref="T:System.Collections.Specialized.INotifyCollectionChanged"/>.</summary>
+            <param name="source">The collection to observe.</param>
+        </member>
+        <member name="M:ReactiveUI.CollectionChangedExtensions.&lt;G&gt;$EF49FD9A2FCC10C7F35BA5AA44C30470.ObserveCollectionChanges">
+            <summary>Observes a collection's <see cref="E:System.Collections.Specialized.INotifyCollectionChanged.CollectionChanged"/> event as a stream of <see cref="T:ReactiveUI.CollectionChanged"/> notifications.</summary>
+            <returns>A stream of collection-changed notifications.</returns>
+        </member>
+        <member name="T:ReactiveUI.IReactiveChangeSet">
+            <summary>A non-generic view of a batch of collection changes, exposing the add/remove counts used to detect count changes.</summary>
+        </member>
+        <member name="P:ReactiveUI.IReactiveChangeSet.Adds">
+            <summary>Gets the number of <see cref="F:ReactiveUI.ReactiveChangeReason.Add"/> changes in the set.</summary>
+        </member>
+        <member name="P:ReactiveUI.IReactiveChangeSet.Removes">
+            <summary>Gets the number of <see cref="F:ReactiveUI.ReactiveChangeReason.Remove"/> changes in the set.</summary>
+        </member>
+        <member name="T:ReactiveUI.IReactiveChangeSet`1">
+            <summary>A batch of collection changes produced by the <see cref="T:ReactiveUI.ChangeSetExtensions"/> change-set observers.</summary>
+            <typeparam name="T">The collection item type.</typeparam>
+        </member>
+        <member name="T:ReactiveUI.ReactiveChange`1">
+            <summary>
+            Describes a single change to a collection: the reason, the affected item, and (where relevant) the previous item
+            and indices.
+            </summary>
+            <typeparam name="T">The collection item type.</typeparam>
+        </member>
+        <member name="M:ReactiveUI.ReactiveChange`1.#ctor(ReactiveUI.ReactiveChangeReason,`0,`0,System.Int32,System.Int32)">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.ReactiveChange`1"/> struct.</summary>
+            <param name="reason">The reason for the change.</param>
+            <param name="current">The current (added/replacing/moved/refreshed) item.</param>
+            <param name="previous">The previous item for a <see cref="F:ReactiveUI.ReactiveChangeReason.Replace"/>; otherwise default.</param>
+            <param name="currentIndex">The item's current index, or -1 when unknown.</param>
+            <param name="previousIndex">The item's previous index for a <see cref="F:ReactiveUI.ReactiveChangeReason.Move"/>, or -1.</param>
+        </member>
+        <member name="P:ReactiveUI.ReactiveChange`1.Reason">
+            <summary>Gets the reason for the change.</summary>
+        </member>
+        <member name="P:ReactiveUI.ReactiveChange`1.Current">
+            <summary>Gets the current item (added, replacing, moved, or refreshed).</summary>
+        </member>
+        <member name="P:ReactiveUI.ReactiveChange`1.Previous">
+            <summary>Gets the previous item for a <see cref="F:ReactiveUI.ReactiveChangeReason.Replace"/>; otherwise default.</summary>
+        </member>
+        <member name="P:ReactiveUI.ReactiveChange`1.CurrentIndex">
+            <summary>Gets the item's current index, or -1 when unknown.</summary>
+        </member>
+        <member name="P:ReactiveUI.ReactiveChange`1.PreviousIndex">
+            <summary>Gets the item's previous index for a <see cref="F:ReactiveUI.ReactiveChangeReason.Move"/>, or -1.</summary>
+        </member>
+        <member name="M:ReactiveUI.ReactiveChange`1.op_Equality(ReactiveUI.ReactiveChange{`0}@,ReactiveUI.ReactiveChange{`0}@)">
+            <summary>Determines whether two changes are equal.</summary>
+            <param name="left">The first change.</param>
+            <param name="right">The second change.</param>
+            <returns><see langword="true"/> if equal.</returns>
+        </member>
+        <member name="M:ReactiveUI.ReactiveChange`1.op_Inequality(ReactiveUI.ReactiveChange{`0}@,ReactiveUI.ReactiveChange{`0}@)">
+            <summary>Determines whether two changes are unequal.</summary>
+            <param name="left">The first change.</param>
+            <param name="right">The second change.</param>
+            <returns><see langword="true"/> if unequal.</returns>
+        </member>
+        <member name="M:ReactiveUI.ReactiveChange`1.Equals(ReactiveUI.ReactiveChange{`0})">
+            <inheritdoc/>
+        </member>
+        <member name="M:ReactiveUI.ReactiveChange`1.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ReactiveUI.ReactiveChange`1.GetHashCode">
+            <inheritdoc/>
+        </member>
+        <member name="T:ReactiveUI.ReactiveChangeReason">
+            <summary>
+            The reason a single <see cref="T:ReactiveUI.ReactiveChange`1"/> occurred. Range and reset operations are flattened to one
+            change per affected item, so this is a per-item reason rather than a batch reason.
+            </summary>
+        </member>
+        <member name="F:ReactiveUI.ReactiveChangeReason.Add">
+            <summary>An item was added to the collection.</summary>
+        </member>
+        <member name="F:ReactiveUI.ReactiveChangeReason.Remove">
+            <summary>An item was removed from the collection (a reset is reported as one remove per prior item).</summary>
+        </member>
+        <member name="F:ReactiveUI.ReactiveChangeReason.Replace">
+            <summary>An item replaced an existing item at the same index.</summary>
+        </member>
+        <member name="F:ReactiveUI.ReactiveChangeReason.Move">
+            <summary>An item moved from one index to another (count is unchanged).</summary>
+        </member>
+        <member name="F:ReactiveUI.ReactiveChangeReason.Refresh">
+            <summary>An item signalled that it should be re-evaluated without being added or removed.</summary>
+        </member>
+        <member name="T:ReactiveUI.ReactiveChangeSet`1">
+            <summary>
+            A batch of collection changes backed by a list of <see cref="T:ReactiveUI.ReactiveChange`1"/>, exposing the add/remove counts
+            used to detect count changes. The name is deliberately distinct from the DynamicData and System.Reactive change-set
+            types so the two can be referenced side by side without collision.
+            </summary>
+            <typeparam name="T">The collection item type.</typeparam>
+        </member>
+        <member name="F:ReactiveUI.ReactiveChangeSet`1._changes">
+            <summary>The changes in this batch.</summary>
+        </member>
+        <member name="M:ReactiveUI.ReactiveChangeSet`1.#ctor(System.Collections.Generic.List{ReactiveUI.ReactiveChange{`0}})">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.ReactiveChangeSet`1"/> class.</summary>
+            <param name="changes">The changes in this batch.</param>
+        </member>
+        <member name="P:ReactiveUI.ReactiveChangeSet`1.Count">
+            <inheritdoc/>
+        </member>
+        <member name="P:ReactiveUI.ReactiveChangeSet`1.Adds">
+            <inheritdoc/>
+        </member>
+        <member name="P:ReactiveUI.ReactiveChangeSet`1.Removes">
+            <inheritdoc/>
+        </member>
+        <member name="P:ReactiveUI.ReactiveChangeSet`1.Item(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ReactiveUI.ReactiveChangeSet`1.GetEnumerator">
+            <summary>Returns an enumerator over the changes.</summary>
+            <returns>An enumerator over the changes.</returns>
+        </member>
+        <member name="M:ReactiveUI.ReactiveChangeSet`1.System#Collections#Generic#IEnumerable{ReactiveUI#ReactiveChange{T}}#GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="M:ReactiveUI.ReactiveChangeSet`1.System#Collections#IEnumerable#GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="T:ReactiveUI.ChainedComparer`1">
+            <summary>
+            Provides a composite comparer that applies a parent comparer followed by an additional comparison delegate when
+            comparing objects of type T.
+            </summary>
+            <typeparam name="T">The type of objects to compare.</typeparam>
+            <param name="parent">An optional parent comparer to apply first when comparing two objects. If null, only the specified comparison
+            delegate is used.</param>
+            <param name="comparison">A delegate that defines the comparison to apply if the parent comparer considers the objects equal. Cannot be null.</param>
+            <remarks>Use this class to chain multiple comparison strategies, such as for multi-level sorting. The parent
+            comparer is evaluated first; if it determines the objects are equal, the provided comparison delegate is used to
+            break ties.</remarks>
+        </member>
+        <member name="M:ReactiveUI.ChainedComparer`1.#ctor(System.Collections.Generic.IComparer{`0},System.Comparison{`0})">
+            <summary>
+            Provides a composite comparer that applies a parent comparer followed by an additional comparison delegate when
+            comparing objects of type T.
+            </summary>
+            <typeparam name="T">The type of objects to compare.</typeparam>
+            <param name="parent">An optional parent comparer to apply first when comparing two objects. If null, only the specified comparison
+            delegate is used.</param>
+            <param name="comparison">A delegate that defines the comparison to apply if the parent comparer considers the objects equal. Cannot be null.</param>
+            <remarks>Use this class to chain multiple comparison strategies, such as for multi-level sorting. The parent
+            comparer is evaluated first; if it determines the objects are equal, the provided comparison delegate is used to
+            break ties.</remarks>
+        </member>
+        <member name="M:ReactiveUI.ChainedComparer`1.Compare(`0,`0)">
+            <inheritdoc />
+        </member>
+        <member name="T:ReactiveUI.ComparerChainingExtensions">
+            <summary>Convenience class to help chain selectors onto existing parent comparers.</summary>
+        </member>
+        <member name="M:ReactiveUI.ComparerChainingExtensions.ThenBy``2(System.Collections.Generic.IComparer{``0},System.Func{``0,``1})">
+            <inheritdoc cref="M:ReactiveUI.ComparerChainingExtensions.&lt;G&gt;$E47663177119E2D440F8D615B80D7D3D`1.ThenBy``1(System.Func{`0,``0})"/>
+        </member>
+        <member name="M:ReactiveUI.ComparerChainingExtensions.ThenBy``2(System.Collections.Generic.IComparer{``0},System.Func{``0,``1},System.Collections.Generic.IComparer{``1})">
+            <inheritdoc cref="M:ReactiveUI.ComparerChainingExtensions.&lt;G&gt;$E47663177119E2D440F8D615B80D7D3D`1.ThenBy``1(System.Func{`0,``0},System.Collections.Generic.IComparer{``0})"/>
+        </member>
+        <member name="M:ReactiveUI.ComparerChainingExtensions.ThenByDescending``2(System.Collections.Generic.IComparer{``0},System.Func{``0,``1})">
+            <inheritdoc cref="M:ReactiveUI.ComparerChainingExtensions.&lt;G&gt;$E47663177119E2D440F8D615B80D7D3D`1.ThenByDescending``1(System.Func{`0,``0})"/>
+        </member>
+        <member name="M:ReactiveUI.ComparerChainingExtensions.ThenByDescending``2(System.Collections.Generic.IComparer{``0},System.Func{``0,``1},System.Collections.Generic.IComparer{``1})">
+            <inheritdoc cref="M:ReactiveUI.ComparerChainingExtensions.&lt;G&gt;$E47663177119E2D440F8D615B80D7D3D`1.ThenByDescending``1(System.Func{`0,``0},System.Collections.Generic.IComparer{``0})"/>
+        </member>
+        <member name="T:ReactiveUI.ComparerChainingExtensions.&lt;G&gt;$E47663177119E2D440F8D615B80D7D3D`1.&lt;M&gt;$FE1655FB499AD0DBFA9C6E9CDF817839">
+            <summary>Provides comparer-chaining extension members for <see cref="T:System.Collections.Generic.IComparer`1"/>.</summary>
+            <typeparam name="T">The comparison type.</typeparam>
+            <param name="parent">
+            The parent comparer to use first.
+            </param>
+        </member>
+        <member name="M:ReactiveUI.ComparerChainingExtensions.&lt;G&gt;$E47663177119E2D440F8D615B80D7D3D`1.ThenBy``1(System.Func{`0,``0})">
+            <summary>
+            Creates a derived comparer based on the given parent comparer. The returned comparer will sort elements
+            using the parent comparer first. If the parent considers the values equal elements will be sorted
+            in ascending order based on the values returned by the provided selector. The selector values will be
+            compared using the default comparer for the return type of the selector.
+            </summary>
+            <typeparam name="TValue">The value type.</typeparam>
+            <param name="selector">
+            A function supplying the values for the comparer.
+            </param>
+            <returns>A comparer.</returns>
+        </member>
+        <member name="M:ReactiveUI.ComparerChainingExtensions.&lt;G&gt;$E47663177119E2D440F8D615B80D7D3D`1.ThenBy``1(System.Func{`0,``0},System.Collections.Generic.IComparer{``0})">
+            <summary>
+            Creates a derived comparer based on the given parent comparer. The returned comparer will sort elements
+            using the parent comparer first. If the parent considers the values equal elements will be sorted
+            in ascending order based on the values returned by the provided selector. The selector values will be
+            compared using the provided comparer or the default comparer for the return type of the selector if no
+            comparer is specified.
+            </summary>
+            <typeparam name="TValue">The value type.</typeparam>
+            <param name="selector">
+            A function supplying the values for the comparer.
+            </param>
+            <param name="comparer">
+            The comparer to use when comparing the values returned by the selector.
+            </param>
+            <returns>A comparer.</returns>
+        </member>
+        <member name="M:ReactiveUI.ComparerChainingExtensions.&lt;G&gt;$E47663177119E2D440F8D615B80D7D3D`1.ThenByDescending``1(System.Func{`0,``0})">
+            <summary>
+            Creates a derived comparer based on the given parent comparer. The returned comparer will sort elements
+            using the parent comparer first. If the parent considers the values equal elements will be sorted
+            in descending order based on the values returned by the provided selector. The selector values will be
+            compared using the default comparer for the return type of the selector.
+            </summary>
+            <typeparam name="TValue">The value type.</typeparam>
+            <param name="selector">
+            A function supplying the values for the comparer.
+            </param>
+            <returns>A comparer.</returns>
+        </member>
+        <member name="M:ReactiveUI.ComparerChainingExtensions.&lt;G&gt;$E47663177119E2D440F8D615B80D7D3D`1.ThenByDescending``1(System.Func{`0,``0},System.Collections.Generic.IComparer{``0})">
+            <summary>
+            Creates a derived comparer based on the given parent comparer. The returned comparer will sort elements
+            using the parent comparer first. If the parent considers the values equal elements will be sorted
+            in descending order based on the values returned by the provided selector. The selector values will be
+            compared using the provided comparer or the default comparer for the return type of the selector if no
+            comparer is specified.
+            </summary>
+            <typeparam name="TValue">The value type.</typeparam>
+            <param name="selector">
+            A function supplying the values for the comparer.
+            </param>
+            <param name="comparer">
+            The comparer to use when comparing the values returned by the selector.
+            </param>
+            <returns>A comparer.</returns>
+        </member>
+        <member name="T:ReactiveUI.IComparerBuilder`1">
+            <summary>Convenience interface for providing a starting point for chaining comparers.</summary>
+            <typeparam name="T">The comparison type.</typeparam>
+        </member>
+        <member name="M:ReactiveUI.IComparerBuilder`1.OrderBy``1(System.Func{`0,``0})">
+            <summary>
+            Creates a derived comparer based on the given parent comparer. The returned comparer will sort elements
+            using the parent comparer first. If the parent considers the values equal elements will be sorted
+            in ascending order based on the values returned by the provided selector. The selector values will be
+            compared using the default comparer for the return type of the selector.
+            </summary>
+            <typeparam name="TValue">The value type.</typeparam>
+            <param name="selector">
+            A function supplying the values for the comparer.
+            </param>
+            <returns>A comparer.</returns>
+        </member>
+        <member name="M:ReactiveUI.IComparerBuilder`1.OrderBy``1(System.Func{`0,``0},System.Collections.Generic.IComparer{``0})">
+            <summary>
+            Creates a derived comparer based on the given parent comparer. The returned comparer will sort elements
+            using the parent comparer first. If the parent considers the values equal elements will be sorted
+            in ascending order based on the values returned by the provided selector. The selector values will be
+            compared using the provided comparer or the default comparer for the return type of the selector if no
+            comparer is specified.
+            </summary>
+            <typeparam name="TValue">The value type.</typeparam>
+            <param name="selector">
+            A function supplying the values for the comparer.
+            </param>
+            <param name="comparer">
+            The comparer to use when comparing the values returned by the selector.
+            The default comparer for that type will be used if this parameter is null.
+            </param>
+            <returns>A comparer.</returns>
+        </member>
+        <member name="M:ReactiveUI.IComparerBuilder`1.OrderByDescending``1(System.Func{`0,``0})">
+            <summary>
+            Creates a derived comparer based on the given parent comparer. The returned comparer will sort elements
+            using the parent comparer first. If the parent considers the values equal elements will be sorted
+            in descending order based on the values returned by the provided selector. The selector values will be
+            compared using the default comparer for the return type of the selector.
+            </summary>
+            <typeparam name="TValue">The value type.</typeparam>
+            <param name="selector">
+            A function supplying the values for the comparer.
+            </param>
+            <returns>A comparer.</returns>
+        </member>
+        <member name="M:ReactiveUI.IComparerBuilder`1.OrderByDescending``1(System.Func{`0,``0},System.Collections.Generic.IComparer{``0})">
+            <summary>
+            Creates a derived comparer based on the given parent comparer. The returned comparer will sort elements
+            using the parent comparer first. If the parent considers the values equal elements will be sorted
+            in descending order based on the values returned by the provided selector. The selector values will be
+            compared using the provided comparer or the default comparer for the return type of the selector if no
+            comparer is specified.
+            </summary>
+            <typeparam name="TValue">The value type.</typeparam>
+            <param name="selector">
+            A function supplying the values for the comparer.
+            </param>
+            /// <param name="comparer">
+            The comparer to use when comparing the values returned by the selector.
+            The default comparer for that type will be used if this parameter is null.
+            </param>
+            <returns>A comparer.</returns>
+        </member>
+        <member name="T:ReactiveUI.OrderedComparer">
+            <summary>Convenience class providing a starting point for chaining comparers for anonymous types.</summary>
+            <remarks>
+            If the type you're creating a comparer for is known this class is nothing more than an alias for the generic
+            OrderedComparer. This class can be used to create comparers for anonymous types.
+            </remarks>
+        </member>
+        <member name="M:ReactiveUI.OrderedComparer.For``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Creates a type inferred comparer builder for the element type of the enumerable. Useful for creating
+            comparers for anonymous types. Note that the builder is not a comparer in itself, you need to use the
+            OrderBy or OrderByDescending methods on the builder to get an actual comparer.
+            </summary>
+            <typeparam name="T">The type.</typeparam>
+            <param name="enumerable">The enumerable.</param>
+            <returns>A comparer builder.</returns>
+        </member>
+        <member name="M:ReactiveUI.OrderedComparer.For``1">
+            <summary>
+            Creates a comparer builder for the specified type. Note that the builder is not a comparer in itself,
+            you need to use the OrderBy or OrderByDescending methods on the builder to get an actual comparer.
+            If the type is known at compile time this method is nothing more than an alias for the generic
+            OrderedComparer class.
+            </summary>
+            <typeparam name="T">The comparison type.</typeparam>
+            <returns>A comparer builder.</returns>
+        </member>
+        <member name="T:ReactiveUI.OrderedComparer.OrderedComparerTypeWrapper`1">
+            <summary>
+            Provides a type-safe wrapper for building ordered comparers for elements of type <typeparamref name="T"/>.
+            Implements the <see cref="T:ReactiveUI.IComparerBuilder`1"/> interface to enable fluent construction of comparison logic.
+            </summary>
+            <typeparam name="T">The type of elements to compare.</typeparam>
+            <remarks>This class is intended for internal use to facilitate the creation of ordered comparers using
+            the <see cref="T:ReactiveUI.IComparerBuilder`1"/> interface. It exposes static methods for ordering elements by specified
+            keys, supporting both ascending and descending order, with optional custom comparers.</remarks>
+        </member>
+        <member name="F:ReactiveUI.OrderedComparer.OrderedComparerTypeWrapper`1.Instance">
+            <summary>The singleton instance of this wrapper used to provide the IComparerBuilder for type T.</summary>
+        </member>
+        <member name="M:ReactiveUI.OrderedComparer.OrderedComparerTypeWrapper`1.OrderBy``1(System.Func{`0,``0})">
+            <summary>
+            Creates a comparer that orders elements based on a key extracted from each element using the specified
+            selector function.
+            </summary>
+            <typeparam name="TValue">The type of the key returned by the selector function.</typeparam>
+            <param name="selector">A function that extracts the key from an element to use for ordering. Cannot be null.</param>
+            <returns>An IComparer{T} that compares elements according to the values returned by the selector function.</returns>
+            <remarks>Use this method to define custom ordering for elements by specifying a key selector.
+            The resulting comparer can be used with sorting methods or data structures that accept an
+            IComparer{T}.</remarks>
+        </member>
+        <member name="M:ReactiveUI.OrderedComparer.OrderedComparerTypeWrapper`1.OrderBy``1(System.Func{`0,``0},System.Collections.Generic.IComparer{``0})">
+            <summary>Creates a comparer that orders elements by a specified key using the provided key selector and comparer.</summary>
+            <typeparam name="TValue">The type of the key returned by the selector function.</typeparam>
+            <param name="selector">A function that extracts the key from an element to use for ordering. Cannot be null.</param>
+            <param name="comparer">An object that compares keys for ordering. If null, the default comparer for the key type is used.</param>
+            <returns>An IComparer{T} that compares elements based on the specified key and comparer.</returns>
+            <remarks>Use this method to perform custom ordering of elements based on a key. This is
+            typically used in conjunction with sorting operations or when building composite comparers.</remarks>
+        </member>
+        <member name="M:ReactiveUI.OrderedComparer.OrderedComparerTypeWrapper`1.OrderByDescending``1(System.Func{`0,``0})">
+            <summary>Creates a comparer that orders elements in descending order according to a specified key selector.</summary>
+            <typeparam name="TValue">The type of the key returned by the selector function.</typeparam>
+            <param name="selector">A function to extract the key from an element for comparison. Cannot be null.</param>
+            <returns>An IComparer{T} that compares elements based on the descending order of the selected key.</returns>
+            <remarks>Use this method to sort elements in descending order by a specific property or value.
+            The comparer can be used with sorting methods that accept an IComparer{T}.</remarks>
+        </member>
+        <member name="M:ReactiveUI.OrderedComparer.OrderedComparerTypeWrapper`1.OrderByDescending``1(System.Func{`0,``0},System.Collections.Generic.IComparer{``0})">
+            <summary>Creates a comparer that orders elements in descending order according to a specified key selector and comparer.</summary>
+            <typeparam name="TValue">The type of the key returned by the selector function.</typeparam>
+            <param name="selector">A function that extracts the key from an element to determine its order. Cannot be null.</param>
+            <param name="comparer">An optional comparer to use for comparing keys. If null, the default comparer for the key type is used.</param>
+            <returns>An IComparer{T} that compares elements in descending order based on the specified key and comparer.</returns>
+        </member>
+        <member name="T:ReactiveUI.OrderedComparer`1">
+            <summary>Convenience class providing a starting point for chaining comparers.</summary>
+            <typeparam name="T">The comparison type.</typeparam>
+        </member>
+        <member name="M:ReactiveUI.OrderedComparer`1.OrderBy``1(System.Func{`0,``0})">
+            <summary>
+            Creates a comparer that will sort elements in ascending order based on the values returned by the provided
+            selector. The values will be compared using the default comparer for the return type of the selector.
+            </summary>
+            <typeparam name="TValue">The value type.</typeparam>
+            <param name="selector">
+            A function supplying the values for the comparer.
+            </param>
+            <returns>A comparer.</returns>
+        </member>
+        <member name="M:ReactiveUI.OrderedComparer`1.OrderBy``1(System.Func{`0,``0},System.Collections.Generic.IComparer{``0})">
+            <summary>
+            Creates a comparer that will sort elements in ascending order based on the values returned by the provided
+            selector. The selector values will be compared using the provided comparer or the default comparer for the
+            return type of the selector if no comparer is specified.
+            </summary>
+            <typeparam name="TValue">The value type.</typeparam>
+            <param name="selector">
+            A function supplying the values for the comparer.
+            </param>
+            <param name="comparer">
+            The comparer to use when comparing the values returned by the selector.
+            The default comparer for that type will be used if this parameter is null.
+            </param>
+            <returns>A comparer.</returns>
+        </member>
+        <member name="M:ReactiveUI.OrderedComparer`1.OrderByDescending``1(System.Func{`0,``0})">
+            <summary>
+            Creates a comparer that will sort elements in descending order based on the values returned by the provided
+            selector. The values will be compared using the default comparer for the return type of the selector.
+            </summary>
+            <typeparam name="TValue">The value type.</typeparam>
+            <param name="selector">
+            A function supplying the values for the comparer.
+            </param>
+            <returns>A comparer.</returns>
+        </member>
+        <member name="M:ReactiveUI.OrderedComparer`1.OrderByDescending``1(System.Func{`0,``0},System.Collections.Generic.IComparer{``0})">
+            <summary>
+            Creates a comparer that will sort elements in descending order based on the values returned by the provided
+            selector. The selector values will be compared using the provided comparer or the default comparer for the
+            return type of the selector if no comparer is specified.
+            </summary>
+            <typeparam name="TValue">The value type.</typeparam>
+            <param name="selector">
+            A function supplying the values for the comparer.
+            </param>
+            <param name="comparer">
+            The comparer to use when comparing the values returned by the selector.
+            The default comparer for that type will be used if this parameter is null.
+            </param>
+            <returns>A comparer.</returns>
+        </member>
+        <member name="T:ReactiveUI.ICanForceManualActivation">
+            <summary>Instead of using System events will allow for external classes to manually Activate the View object.</summary>
+        </member>
+        <member name="M:ReactiveUI.ICanForceManualActivation.Activate(System.Boolean)">
+            <summary>Activates the view object.</summary>
+            <param name="isActivating">If we are activating or not.</param>
+        </member>
+        <member name="T:ReactiveUI.IHandleObservableErrors">
+            <summary>
+            <para>
+            This interface is implemented by RxUI objects which are given
+            IObservables as input - when the input IObservables OnError, instead of
+            disabling the RxUI object, we catch the IObservable and pipe it into
+            this property.
+            </para>
+            <para>
+            Normally this IObservable is implemented with a ScheduledSubject whose
+            default Observer is RxSchedulers.DefaultExceptionHandler - this means, that if
+            you aren't listening to ThrownExceptions and one appears, the exception
+            will appear on the UI thread and crash the application.
+            </para>
+            </summary>
+        </member>
+        <member name="P:ReactiveUI.IHandleObservableErrors.ThrownExceptions">
+            <summary>Gets a observable which will fire whenever an exception would normally terminate ReactiveUI internal state.</summary>
+        </member>
+        <member name="T:ReactiveUI.IPlatformOperations">
+            <summary>Additional details implemented by the different ReactiveUI platform projects.</summary>
+        </member>
+        <member name="M:ReactiveUI.IPlatformOperations.GetOrientation">
+            <summary>Gets a descriptor that describes (if applicable) the orientation of the screen.</summary>
+            <returns>The device orientation descriptor.</returns>
+        </member>
+        <member name="T:ReactiveUI.IReactiveNotifyPropertyChanged`1">
+            <summary>
+            IReactiveNotifyPropertyChanged represents an extended version of
+            INotifyPropertyChanged that also exposes typed Observables.
+            </summary>
+            <typeparam name="TSender">The sender type.</typeparam>
+        </member>
+        <member name="P:ReactiveUI.IReactiveNotifyPropertyChanged`1.Changing">
+            <summary>
+            Gets an observable that fires *before* a property is about to
+            be changed. Note that this should not fire duplicate change notifications if a
+            property is set to the same value multiple times.
+            </summary>
+        </member>
+        <member name="P:ReactiveUI.IReactiveNotifyPropertyChanged`1.Changed">
+            <summary>
+            Gets an Observable that fires *after* a property has changed.
+            Note that this should not fire duplicate change notifications if a
+            property is set to the same value multiple times.
+            </summary>
+        </member>
+        <member name="M:ReactiveUI.IReactiveNotifyPropertyChanged`1.SuppressChangeNotifications">
+            <summary>
+            When this method is called, an object will not fire change
+            notifications (neither traditional nor Observable notifications)
+            until the return value is disposed.
+            </summary>
+            <returns>An object that, when disposed, reenables change
+            notifications.</returns>
+        </member>
+        <member name="T:ReactiveUI.IReactivePropertyChangedEventArgs`1">
+            <summary>
+            IReactivePropertyChangedEventArgs is a generic interface that
+            is used to wrap the NotifyPropertyChangedEventArgs and gives
+            information about changed properties. It includes also
+            the sender of the notification.
+            Note that it is used for both Changing (i.e.'before change')
+            and Changed Observables.
+            </summary>
+            <typeparam name="TSender">The sender type.</typeparam>
+        </member>
+        <member name="P:ReactiveUI.IReactivePropertyChangedEventArgs`1.PropertyName">
+            <summary>Gets the name of the property that has changed on Sender.</summary>
+        </member>
+        <member name="P:ReactiveUI.IReactivePropertyChangedEventArgs`1.Sender">
+            <summary>Gets the object that has raised the change.</summary>
+        </member>
+        <member name="T:ReactiveUI.IRegistrar">
+            <summary>
+            Interface for registering services in a dependency injection container in an AOT-friendly manner.
+            This interface provides generic registration methods that preserve type information at compile time,
+            avoiding the need for runtime Type reflection and DynamicallyAccessedMembers attributes.
+            </summary>
+        </member>
+        <member name="M:ReactiveUI.IRegistrar.RegisterConstant``1(System.Func{``0})">
+            <summary>
+            Registers a constant value for a service type. The factory function is called once
+            and the result is registered as a singleton.
+            </summary>
+            <typeparam name="TService">The service type to register.</typeparam>
+            <param name="factory">A factory function that creates the service instance.</param>
+        </member>
+        <member name="M:ReactiveUI.IRegistrar.RegisterConstant``1(System.Func{``0},System.String)">
+            <summary>
+            Registers a constant value for a service type. The factory function is called once
+            and the result is registered as a singleton.
+            </summary>
+            <typeparam name="TService">The service type to register.</typeparam>
+            <param name="factory">A factory function that creates the service instance.</param>
+            <param name="contract">An optional contract name for multiple registrations of the same type.</param>
+        </member>
+        <member name="M:ReactiveUI.IRegistrar.RegisterLazySingleton``1(System.Func{``0})">
+            <summary>
+            Registers a lazy singleton for a service type. The factory function is called
+            the first time the service is resolved, and the same instance is returned for all subsequent resolutions.
+            </summary>
+            <typeparam name="TService">The service type to register.</typeparam>
+            <param name="factory">A factory function that creates the service instance.</param>
+        </member>
+        <member name="M:ReactiveUI.IRegistrar.RegisterLazySingleton``1(System.Func{``0},System.String)">
+            <summary>
+            Registers a lazy singleton for a service type. The factory function is called
+            the first time the service is resolved, and the same instance is returned for all subsequent resolutions.
+            </summary>
+            <typeparam name="TService">The service type to register.</typeparam>
+            <param name="factory">A factory function that creates the service instance.</param>
+            <param name="contract">An optional contract name for multiple registrations of the same type.</param>
+        </member>
+        <member name="M:ReactiveUI.IRegistrar.Register``1(System.Func{``0})">
+            <summary>
+            Registers a factory for a service type. The factory function is called each time
+            the service is resolved, creating a new instance.
+            </summary>
+            <typeparam name="TService">The service type to register.</typeparam>
+            <param name="factory">A factory function that creates the service instance.</param>
+        </member>
+        <member name="M:ReactiveUI.IRegistrar.Register``1(System.Func{``0},System.String)">
+            <summary>
+            Registers a factory for a service type. The factory function is called each time
+            the service is resolved, creating a new instance.
+            </summary>
+            <typeparam name="TService">The service type to register.</typeparam>
+            <param name="factory">A factory function that creates the service instance.</param>
+            <param name="contract">An optional contract name for multiple registrations of the same type.</param>
+        </member>
+        <member name="T:ReactiveUI.IWantsToRegisterStuff">
+            <summary>Represents a class that can register services with ReactiveUI's dependency resolver.</summary>
+            <remarks>
+            <para>
+            This interface is used with the ReactiveUI builder pattern to provide custom registrations.
+            The registration methods use generic types to avoid runtime reflection, making them compatible
+            with AOT compilation and trimming.
+            </para>
+            <para>
+            Usage with builder:
+            <code>
+            public class MyCustomRegistrations : IWantsToRegisterStuff
+            {
+                public void Register(IRegistrar registrar)
+                {
+                    registrar.RegisterConstant&lt;IMyService&gt;(() => new MyService());
+                    registrar.RegisterLazySingleton&lt;IMyViewModel&gt;(() => new MyViewModel());
+                }
+            }
+            // In your app initialization:
+            RxAppBuilder.CreateReactiveUIBuilder()
+                .WithCoreServices()
+                .WithPlatformServices()
+                .WithRegistration(new MyCustomRegistrations())
+                .BuildApp();
+            </code>
+            </para>
+            </remarks>
+        </member>
+        <member name="M:ReactiveUI.IWantsToRegisterStuff.Register(ReactiveUI.IRegistrar)">
+            <summary>
+            Register platform dependencies using the provided registrar.
+            This method uses generic registration to avoid runtime Type reflection,
+            making it compatible with AOT compilation and trimming.
+            </summary>
+            <param name="registrar">The AOT-friendly registrar to use for registering services.</param>
+        </member>
+        <member name="T:ReactiveUI.ReactivePropertyChangedEventArgs`1">
+            <summary>Event arguments for when a property has changed. Expands on the PropertyChangedEventArgs to add the Sender.</summary>
+            <typeparam name="TSender">The sender type.</typeparam>
+            <param name="sender">The sender.</param>
+            <param name="propertyName">Name of the property.</param>
+            <remarks>
+            Initializes a new instance of the <see cref="T:ReactiveUI.ReactivePropertyChangedEventArgs`1"/> class.
+            </remarks>
+        </member>
+        <member name="M:ReactiveUI.ReactivePropertyChangedEventArgs`1.#ctor(`0,System.String)">
+            <summary>Event arguments for when a property has changed. Expands on the PropertyChangedEventArgs to add the Sender.</summary>
+            <typeparam name="TSender">The sender type.</typeparam>
+            <param name="sender">The sender.</param>
+            <param name="propertyName">Name of the property.</param>
+            <remarks>
+            Initializes a new instance of the <see cref="T:ReactiveUI.ReactivePropertyChangedEventArgs`1"/> class.
+            </remarks>
+        </member>
+        <member name="P:ReactiveUI.ReactivePropertyChangedEventArgs`1.Sender">
+            <summary>Gets the sender which triggered the property changed event.</summary>
+            <inheritdoc/>
+        </member>
+        <member name="T:ReactiveUI.ReactivePropertyChangingEventArgs`1">
+            <summary>Event arguments for when a property is changing.</summary>
+            <typeparam name="TSender">The sender type.</typeparam>
+            <param name="sender">The sender.</param>
+            <param name="propertyName">Name of the property.</param>
+            <remarks>
+            Initializes a new instance of the <see cref="T:ReactiveUI.ReactivePropertyChangingEventArgs`1"/> class.
+            </remarks>
+        </member>
+        <member name="M:ReactiveUI.ReactivePropertyChangingEventArgs`1.#ctor(`0,System.String)">
+            <summary>Event arguments for when a property is changing.</summary>
+            <typeparam name="TSender">The sender type.</typeparam>
+            <param name="sender">The sender.</param>
+            <param name="propertyName">Name of the property.</param>
+            <remarks>
+            Initializes a new instance of the <see cref="T:ReactiveUI.ReactivePropertyChangingEventArgs`1"/> class.
+            </remarks>
+        </member>
+        <member name="P:ReactiveUI.ReactivePropertyChangingEventArgs`1.Sender">
+            <summary>Gets the sender which triggered the Reactive property changed event.</summary>
+            <inheritdoc/>
+        </member>
+        <member name="T:ReactiveUI.Internal.StartWithObservable`1">
+            <summary>
+            Emits a seed value on subscribe and then forwards the source — a fused replacement for <c>StartWith(value)</c>
+            with no intermediate operator subscription.
+            </summary>
+            <typeparam name="T">The element type.</typeparam>
+            <param name="source">The source observable.</param>
+            <param name="value">The seed value emitted before the source.</param>
+        </member>
+        <member name="M:ReactiveUI.Internal.StartWithObservable`1.#ctor(System.IObservable{`0},`0)">
+            <summary>
+            Emits a seed value on subscribe and then forwards the source — a fused replacement for <c>StartWith(value)</c>
+            with no intermediate operator subscription.
+            </summary>
+            <typeparam name="T">The element type.</typeparam>
+            <param name="source">The source observable.</param>
+            <param name="value">The seed value emitted before the source.</param>
+        </member>
+        <member name="M:ReactiveUI.Internal.StartWithObservable`1.Subscribe(System.IObserver{`0})">
+            <inheritdoc/>
+        </member>
+        <member name="T:ReactiveUI.Internal.TaskObservable`1">
+            <summary>
+            Bridges a <see cref="T:System.Threading.Tasks.Task`1"/> to an observable: emits the task's result and completes,
+            or forwards its fault / cancellation as an error. Replaces <c>task.ToObservable()</c> for internal use.
+            </summary>
+            <typeparam name="T">The task's result type.</typeparam>
+            <param name="task">The task to observe.</param>
+        </member>
+        <member name="M:ReactiveUI.Internal.TaskObservable`1.#ctor(System.Threading.Tasks.Task{`0})">
+            <summary>
+            Bridges a <see cref="T:System.Threading.Tasks.Task`1"/> to an observable: emits the task's result and completes,
+            or forwards its fault / cancellation as an error. Replaces <c>task.ToObservable()</c> for internal use.
+            </summary>
+            <typeparam name="T">The task's result type.</typeparam>
+            <param name="task">The task to observe.</param>
+        </member>
+        <member name="M:ReactiveUI.Internal.TaskObservable`1.Subscribe(System.IObserver{`0})">
+            <inheritdoc/>
+        </member>
+        <member name="T:ReactiveUI.Internal.DelegateObserver`1">
+            <summary>Delegate-backed observer used internally where a one-shot anonymous subscriber is convenient.</summary>
+            <typeparam name="T">The element type.</typeparam>
+            <param name="onNext">Per-value callback.</param>
+            <param name="onError">Error callback.</param>
+            <param name="onCompleted">Completion callback.</param>
+        </member>
+        <member name="M:ReactiveUI.Internal.DelegateObserver`1.#ctor(System.Action{`0},System.Action{System.Exception},System.Action)">
+            <summary>Delegate-backed observer used internally where a one-shot anonymous subscriber is convenient.</summary>
+            <typeparam name="T">The element type.</typeparam>
+            <param name="onNext">Per-value callback.</param>
+            <param name="onError">Error callback.</param>
+            <param name="onCompleted">Completion callback.</param>
+        </member>
+        <member name="M:ReactiveUI.Internal.DelegateObserver`1.OnNext(`0)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ReactiveUI.Internal.DelegateObserver`1.OnError(System.Exception)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ReactiveUI.Internal.DelegateObserver`1.OnCompleted">
+            <inheritdoc/>
+        </member>
+        <member name="T:ReactiveUI.Internal.TaskObserverBridge">
+            <summary>
+            Bridges a <see cref="T:System.Threading.Tasks.Task"/> to an observer: the task's outcome completes the sequence, and a fault or a
+            cancellation is forwarded as an error. Keeps the continuation wiring (synchronous, on the default scheduler)
+            and the fault-unwrapping policy in one place for the task-backed observables.
+            </summary>
+        </member>
+        <member name="M:ReactiveUI.Internal.TaskObserverBridge.Subscribe``1(System.Threading.Tasks.Task{``0},System.IObserver{``0})">
+            <summary>Forwards the result of <paramref name="task"/> to <paramref name="observer"/>.</summary>
+            <typeparam name="T">The task's result type.</typeparam>
+            <param name="task">The task to observe.</param>
+            <param name="observer">The observer receiving the task's outcome.</param>
+            <returns>A disposable that does nothing: the continuation is already scheduled and cannot be unhooked.</returns>
+        </member>
+        <member name="M:ReactiveUI.Internal.TaskObserverBridge.Subscribe``1(System.Threading.Tasks.Task,System.IObserver{``0},``0)">
+            <summary>Forwards the completion of a result-less <paramref name="task"/> as a single <paramref name="completionValue"/>.</summary>
+            <typeparam name="T">The observed element type.</typeparam>
+            <param name="task">The task to observe.</param>
+            <param name="observer">The observer receiving the task's outcome.</param>
+            <param name="completionValue">The value emitted when the task completes successfully.</param>
+            <returns>A disposable that does nothing: the continuation is already scheduled and cannot be unhooked.</returns>
+        </member>
+        <member name="M:ReactiveUI.Internal.TaskObserverBridge.ForwardFailure``1(System.Threading.Tasks.Task,System.IObserver{``0})">
+            <summary>Reports a faulted or cancelled task to <paramref name="observer"/> as an error.</summary>
+            <typeparam name="T">The observed element type.</typeparam>
+            <param name="completed">The failed task; faulted or cancelled.</param>
+            <param name="observer">The observer receiving the error.</param>
+        </member>
+        <member name="T:ReactiveUI.ChangeSetMixins">
+            <summary>Mixin associated with the ReactiveUI <see cref="T:ReactiveUI.IReactiveChangeSet"/> change-set type.</summary>
+        </member>
+        <member name="M:ReactiveUI.ChangeSetMixins.WhenCountChanged``1(System.IObservable{ReactiveUI.IReactiveChangeSet{``0}})">
+            <inheritdoc cref="M:ReactiveUI.ChangeSetMixins.&lt;G&gt;$846CB969F599833A0BC320FE9E3BFABC`1.WhenCountChanged"/>
+        </member>
+        <member name="M:ReactiveUI.ChangeSetMixins.CountHasChanged(ReactiveUI.IReactiveChangeSet)">
+            <inheritdoc cref="M:ReactiveUI.ChangeSetMixins.&lt;G&gt;$CB8490E27848887362BBEF9CCCEA4917.CountHasChanged"/>
+        </member>
+        <member name="T:ReactiveUI.ChangeSetMixins.CountChangedObservable`1">
+            <summary>Forwards only the change sets that alter the collection count.</summary>
+            <typeparam name="T">The change set item type.</typeparam>
+            <param name="source">The source change-set stream.</param>
+        </member>
+        <member name="M:ReactiveUI.ChangeSetMixins.CountChangedObservable`1.#ctor(System.IObservable{ReactiveUI.IReactiveChangeSet{`0}})">
+            <summary>Forwards only the change sets that alter the collection count.</summary>
+            <typeparam name="T">The change set item type.</typeparam>
+            <param name="source">The source change-set stream.</param>
+        </member>
+        <member name="M:ReactiveUI.ChangeSetMixins.CountChangedObservable`1.Subscribe(System.IObserver{ReactiveUI.IReactiveChangeSet{`0}})">
+            <inheritdoc/>
+        </member>
+        <member name="T:ReactiveUI.ChangeSetMixins.CountChangedObservable`1.Sink">
+            <summary>Gates the source change sets on a count change.</summary>
+            <param name="downstream">The observer receiving count-changing sets.</param>
+        </member>
+        <member name="M:ReactiveUI.ChangeSetMixins.CountChangedObservable`1.Sink.#ctor(System.IObserver{ReactiveUI.IReactiveChangeSet{`0}})">
+            <summary>Gates the source change sets on a count change.</summary>
+            <param name="downstream">The observer receiving count-changing sets.</param>
+        </member>
+        <member name="M:ReactiveUI.ChangeSetMixins.CountChangedObservable`1.Sink.OnNext(ReactiveUI.IReactiveChangeSet{`0})">
+            <inheritdoc/>
+        </member>
+        <member name="M:ReactiveUI.ChangeSetMixins.CountChangedObservable`1.Sink.OnError(System.Exception)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ReactiveUI.ChangeSetMixins.CountChangedObservable`1.Sink.OnCompleted">
+            <inheritdoc/>
+        </member>
+        <member name="T:ReactiveUI.ChangeSetMixins.&lt;G&gt;$846CB969F599833A0BC320FE9E3BFABC`1.&lt;M&gt;$9831874C57C6F3B6CC68CFF9288E2536">
+            <summary>Provides count-change filtering extension members for <see cref="T:System.IObservable`1"/> streams of <see cref="T:ReactiveUI.IReactiveChangeSet`1"/>.</summary>
+            <typeparam name="T">The change set item type.</typeparam>
+            <param name="changeSet">The change-set stream to evaluate.</param>
+        </member>
+        <member name="M:ReactiveUI.ChangeSetMixins.&lt;G&gt;$846CB969F599833A0BC320FE9E3BFABC`1.WhenCountChanged">
+            <summary>Filters a change-set stream to only those sets that change the collection count.</summary>
+            <returns>An observable of change sets that only have count changes.</returns>
+        </member>
+        <member name="T:ReactiveUI.ChangeSetMixins.&lt;G&gt;$CB8490E27848887362BBEF9CCCEA4917.&lt;M&gt;$E9FA74E6CF2926DF4D25566B99D1B282">
+            <summary>Provides count-change extension members for <see cref="T:ReactiveUI.IReactiveChangeSet"/>.</summary>
+            <param name="changeSet">The change set to evaluate.</param>
+        </member>
+        <member name="M:ReactiveUI.ChangeSetMixins.&lt;G&gt;$CB8490E27848887362BBEF9CCCEA4917.CountHasChanged">
+            <summary>Is the change set associated with a count change.</summary>
+            <returns>If the change set is caused by the count being changed.</returns>
+        </member>
+        <member name="T:ReactiveUI.PreserveAttribute">
+            <summary>Indicates that the attributed code element should be preserved during linking or code optimization processes.</summary>
+            <remarks>Apply this attribute to prevent code elements from being removed or altered by tools that perform
+            code trimming, such as linkers or obfuscators. This is typically used to ensure that reflection or dynamic access to
+            the member remains functional after build-time optimizations.</remarks>
+        </member>
+        <member name="P:ReactiveUI.PreserveAttribute.AllMembers">
+            <summary>Gets or sets a value indicating whether all members are included in the operation.</summary>
+        </member>
+        <member name="T:ReactiveUI.IReactiveCommand">
+            <summary>
+            Encapsulates a user action behind a reactive interface.
+            This is for interop inside for the command binding.
+            Not meant for external use due to the fact it doesn't implement ICommand
+            to force the user to favor the Reactive style command execution.
+            </summary>
+        </member>
+        <member name="P:ReactiveUI.IReactiveCommand.IsExecuting">
+            <summary>Gets an observable whose value indicates whether the command is currently executing.</summary>
+            <value>
+            The is executing.
+            </value>
+            <remarks>
+            This observable can be particularly useful for updating UI, such as showing an activity indicator whilst a command
+            is executing.
+            </remarks>
+        </member>
+        <member name="P:ReactiveUI.IReactiveCommand.CanExecute">
+            <summary>Gets an observable whose value indicates whether the command can currently execute.</summary>
+            <value>
+            The can execute.
+            </value>
+            <remarks>
+            The value provided by this observable is governed both by any <c>canExecute</c> observable provided during
+            command creation, as well as the current execution status of the command. A command that is currently executing
+            will always yield <c>false</c> from this observable, even if the <c>canExecute</c> pipeline is currently <c>true</c>.
+            </remarks>
+        </member>
+        <member name="T:ReactiveUI.IReactiveCommand`2">
+            <summary>
+            Encapsulates a user action behind a reactive interface.
+            This is for interop inside for the command binding.
+            Not meant for external use due to the fact it doesn't implement ICommand
+            to force the user to favor the Reactive style command execution.
+            </summary>
+            <typeparam name="TParam">
+            The type of parameter values passed in during command execution.
+            </typeparam>
+            <typeparam name="TResult">
+            The type of the values that are the result of command execution.
+            </typeparam>
+            <remarks>
+            <para>
+            This interface extends <see cref="T:ReactiveUI.IReactiveCommand"/> and adds generic type parameters for the parameter values passed
+            into command execution, and the return values of command execution.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:ReactiveUI.IReactiveCommand`2.Execute(`0)">
+            <summary>Gets an observable that, when subscribed, executes this command.</summary>
+            <param name="parameter">The parameter to pass into command execution.</param>
+            <returns>
+            An observable that will tick the single result value if and when it becomes available.
+            </returns>
+            <remarks>
+            <para>
+            Invoking this method will return a cold (lazy) observable that, when subscribed, will execute the logic
+            encapsulated by the command. It is worth restating that the returned observable is lazy. Nothing will
+            happen if you call <c>Execute</c> and neglect to subscribe (directly or indirectly) to the returned observable.
+            </para>
+            <para>
+            If no parameter value is provided, a default value of type <typeparamref name="TParam" /> will be passed into
+            the execution logic.
+            </para>
+            <para>
+            Any number of subscribers can subscribe to a given execution observable and the execution logic will only
+            run once. That is, the result is broadcast to those subscribers.
+            </para>
+            <para>
+            In those cases where execution fails, there will be no result value. Instead, the failure will tick through the
+            <see cref="P:ReactiveUI.IHandleObservableErrors.ThrownExceptions" /> observable.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:ReactiveUI.IReactiveCommand`2.Execute">
+            <summary>Gets an observable that, when subscribed, executes this command.</summary>
+            <returns>
+            An observable that will tick the single result value if and when it becomes available.
+            </returns>
+            <remarks>
+            <para>
+            Invoking this method will return a cold (lazy) observable that, when subscribed, will execute the logic
+            encapsulated by the command. It is worth restating that the returned observable is lazy. Nothing will
+            happen if you call <c>Execute</c> and neglect to subscribe (directly or indirectly) to the returned observable.
+            </para>
+            <para>
+            If no parameter value is provided, a default value of type <typeparamref name="TParam" /> will be passed into
+            the execution logic.
+            </para>
+            <para>
+            Any number of subscribers can subscribe to a given execution observable and the execution logic will only
+            run once. That is, the result is broadcast to those subscribers.
+            </para>
+            <para>
+            In those cases where execution fails, there will be no result value. Instead, the failure will tick through the
+            <see cref="P:ReactiveUI.IHandleObservableErrors.ThrownExceptions" /> observable.
+            </para>
+            </remarks>
+        </member>
+        <member name="T:ReactiveUI.IExtensionState`1">
+            <summary>Contains the state information about the current status of a Reactive Object.</summary>
+            <typeparam name="TSender">The type of the sender of the property changes.</typeparam>
+        </member>
+        <member name="P:ReactiveUI.IExtensionState`1.Changing">
+            <summary>Gets an observable for when a property is changing.</summary>
+        </member>
+        <member name="P:ReactiveUI.IExtensionState`1.Changed">
+            <summary>Gets an observable for when the property has changed.</summary>
+        </member>
+        <member name="P:ReactiveUI.IExtensionState`1.ThrownExceptions">
+            <summary>Gets a observable for when an exception is thrown.</summary>
+        </member>
+        <member name="M:ReactiveUI.IExtensionState`1.SubscribeChanging">
+            <summary>
+            Subscribe raise property changing events to a property changing
+            observable. Must be called before raising property changing events.
+            </summary>
+        </member>
+        <member name="M:ReactiveUI.IExtensionState`1.RaiseChanging(System.String)">
+            <summary>Raises a property changing event.</summary>
+            <param name="propertyName">The name of the property that is changing.</param>
+        </member>
+        <member name="M:ReactiveUI.IExtensionState`1.SubscribeChanged">
+            <summary>
+            Subscribe raise property changed events to a property changed
+            observable. Must be called before raising property changed events.
+            </summary>
+        </member>
+        <member name="M:ReactiveUI.IExtensionState`1.RaiseChanged(System.String)">
+            <summary>Raises a property changed event.</summary>
+            <param name="propertyName">The name of the property that has changed.</param>
+        </member>
+        <member name="M:ReactiveUI.IExtensionState`1.NotificationsEnabled">
+            <summary>Indicates if we are currently sending change notifications.</summary>
+            <returns>If change notifications are being sent.</returns>
+        </member>
+        <member name="M:ReactiveUI.IExtensionState`1.Suppress">
+            <summary>Suppress change notifications until the return value is disposed.</summary>
+            <returns>A IDisposable which when disposed will re-enable change notifications.</returns>
+        </member>
+        <member name="M:ReactiveUI.IExtensionState`1.AreChangeNotificationsDelayed">
+            <summary>Are change notifications currently delayed. Used for Observables change notifications only.</summary>
+            <returns>If the change notifications are delayed.</returns>
+        </member>
+        <member name="M:ReactiveUI.IExtensionState`1.Delay">
+            <summary>Delay change notifications until the return value is disposed.</summary>
+            <returns>A IDisposable which when disposed will re-enable change notifications.</returns>
+        </member>
+        <member name="T:ReactiveUI.IReactiveObject">
+            <summary>
+            A reactive object is a interface for ViewModels which will expose
+            logging, and notify when properties are either changing or changed.
+            The primary use of this interface is to allow external classes such as
+            the ObservableAsPropertyHelper to trigger these events inside the ViewModel.
+            </summary>
+        </member>
+        <member name="M:ReactiveUI.IReactiveObject.RaisePropertyChanging(System.ComponentModel.PropertyChangingEventArgs)">
+            <summary>Raise a property is changing event.</summary>
+            <param name="args">The arguments with details about the property that is changing.</param>
+        </member>
+        <member name="M:ReactiveUI.IReactiveObject.RaisePropertyChanged(System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>Raise a property has changed event.</summary>
+            <param name="args">The arguments with details about the property that has changed.</param>
+        </member>
+        <member name="T:ReactiveUI.IReactiveProperty`1">
+            <summary>Represents a reactive property that supports value observation, change notification, validation, and cancellation.</summary>
+            <typeparam name="T">The type of the value stored by the reactive property.</typeparam>
+            <remarks>Implementations of this interface provide a property that notifies observers of value changes,
+            supports error notification for data validation, and allows cancellation of ongoing operations. This interface is
+            commonly used in reactive programming scenarios to enable data binding and validation in UI frameworks.</remarks>
+        </member>
+        <member name="P:ReactiveUI.IReactiveProperty`1.Value">
+            <summary>Gets or sets the value contained in the current instance.</summary>
+        </member>
+        <member name="P:ReactiveUI.IReactiveProperty`1.ObserveErrorChanged">
+            <summary>Gets an observable sequence that signals when the collection of errors changes.</summary>
+            <remarks>Subscribers receive a notification each time the set of errors is updated. The sequence emits
+            the current collection of errors, which may be null or empty if there are no errors present.</remarks>
+        </member>
+        <member name="P:ReactiveUI.IReactiveProperty`1.ObserveHasErrors">
+            <summary>Gets an observable sequence that signals whether the object currently has validation errors.</summary>
+            <remarks>The observable emits a new value whenever the error state changes. Subscribers can use this
+            to react to validation state updates in real time.</remarks>
+        </member>
+        <member name="M:ReactiveUI.IReactiveProperty`1.Refresh">
+            <summary>Reloads the current state or data from the underlying source.</summary>
+        </member>
+        <member name="T:ReactiveUI.SingletonDataErrorsChangedEventArgs">
+            <summary>Provides a singleton instance of the <see cref="T:System.ComponentModel.DataErrorsChangedEventArgs"/> class for use with data error notifications.</summary>
+            <remarks>This class is intended to reduce allocations by reusing a single <see
+            cref="T:System.ComponentModel.DataErrorsChangedEventArgs"/> instance when the property name is not relevant or can be standardized. It is
+            typically used in scenarios where frequent error change notifications are required and the property name is not
+            significant.</remarks>
+        </member>
+        <member name="F:ReactiveUI.SingletonDataErrorsChangedEventArgs.Value">
+            <summary>Represents a static instance of the <see cref="T:System.ComponentModel.DataErrorsChangedEventArgs"/> class for the 'Value' property.</summary>
+            <remarks>This instance can be used when raising the <see cref="E:System.ComponentModel.INotifyDataErrorInfo.ErrorsChanged"/>
+            event for changes related to the 'Value' property, avoiding the need to create a new <see
+            cref="T:System.ComponentModel.DataErrorsChangedEventArgs"/> each time.</remarks>
+        </member>
+        <member name="T:ReactiveUI.SingletonPropertyChangedEventArgs">
+            <summary>Provides cached instances of commonly used <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> objects for singleton property change notifications.</summary>
+            <remarks>This class is intended to reduce allocations by reusing <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/>
+            instances for frequently raised property changes. It is typically used in scenarios where property change
+            notifications are raised repeatedly for the same property names, such as in data binding or validation
+            frameworks.</remarks>
+        </member>
+        <member name="F:ReactiveUI.SingletonPropertyChangedEventArgs.Value">
+            <summary>Provides a cached instance of PropertyChangedEventArgs for the Value property.</summary>
+            <remarks>Using a cached instance can improve performance by reducing allocations when raising the
+            PropertyChanged event for the Value property. This field is intended for use when notifying listeners that the
+            Value property has changed.</remarks>
+        </member>
+        <member name="F:ReactiveUI.SingletonPropertyChangedEventArgs.HasErrors">
+            <summary>Provides a static instance of <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> for the <see cref="P:System.ComponentModel.INotifyDataErrorInfo.HasErrors"/> property.</summary>
+            <remarks>This instance can be used to raise the <see cref="E:System.ComponentModel.INotifyPropertyChanged.PropertyChanged"/>
+            event when the <see cref="P:System.ComponentModel.INotifyDataErrorInfo.HasErrors"/> property value changes, avoiding the need to create
+            a new <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> object each time.</remarks>
+        </member>
+        <member name="F:ReactiveUI.SingletonPropertyChangedEventArgs.ErrorMessage">
+            <summary>Provides a PropertyChangedEventArgs instance for the ErrorMessage property.</summary>
+        </member>
+        <member name="T:ReactiveUI.DependencyResolverRegistrar">
+            <summary>
+            Provides an implementation of the IRegistrar interface that registers services with an underlying
+            IMutableDependencyResolver.
+            </summary>
+            <param name="resolver">The dependency resolver used to register service instances and factories. Cannot be null.</param>
+            <remarks>This class acts as an adapter, allowing services to be registered with the specified dependency
+            resolver using various registration methods. All registrations are forwarded to the underlying
+            IMutableDependencyResolver instance.</remarks>
+        </member>
+        <member name="M:ReactiveUI.DependencyResolverRegistrar.#ctor(Splat.IMutableDependencyResolver)">
+            <summary>
+            Provides an implementation of the IRegistrar interface that registers services with an underlying
+            IMutableDependencyResolver.
+            </summary>
+            <param name="resolver">The dependency resolver used to register service instances and factories. Cannot be null.</param>
+            <remarks>This class acts as an adapter, allowing services to be registered with the specified dependency
+            resolver using various registration methods. All registrations are forwarded to the underlying
+            IMutableDependencyResolver instance.</remarks>
+        </member>
+        <member name="F:ReactiveUI.DependencyResolverRegistrar._resolver">
+            <summary>The underlying dependency resolver used for all service registrations.</summary>
+        </member>
+        <member name="M:ReactiveUI.DependencyResolverRegistrar.RegisterConstant``1(System.Func{``0})">
+            <inheritdoc/>
+        </member>
+        <member name="M:ReactiveUI.DependencyResolverRegistrar.RegisterConstant``1(System.Func{``0},System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ReactiveUI.DependencyResolverRegistrar.RegisterLazySingleton``1(System.Func{``0})">
+            <inheritdoc/>
+        </member>
+        <member name="M:ReactiveUI.DependencyResolverRegistrar.RegisterLazySingleton``1(System.Func{``0},System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ReactiveUI.DependencyResolverRegistrar.Register``1(System.Func{``0})">
+            <inheritdoc/>
+        </member>
+        <member name="M:ReactiveUI.DependencyResolverRegistrar.Register``1(System.Func{``0},System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ReactiveUI.NotAWeakReference">
+            <summary>Represents a reference to an object that is always considered alive and is not subject to garbage collection tracking.</summary>
+            <param name="target">The object to reference. Cannot be null.</param>
+            <remarks>Unlike a standard weak reference, this class always reports the target as alive and does not allow
+            the referenced object to be collected by the garbage collector. Use this class when a strong reference is required
+            but an API expects a weak reference-like interface.</remarks>
+        </member>
+        <member name="M:ReactiveUI.NotAWeakReference.#ctor(System.Object)">
+            <summary>Represents a reference to an object that is always considered alive and is not subject to garbage collection tracking.</summary>
+            <param name="target">The object to reference. Cannot be null.</param>
+            <remarks>Unlike a standard weak reference, this class always reports the target as alive and does not allow
+            the referenced object to be collected by the garbage collector. Use this class when a strong reference is required
+            but an API expects a weak reference-like interface.</remarks>
+        </member>
+        <member name="P:ReactiveUI.NotAWeakReference.Target">
+            <summary>Gets the underlying object associated with this instance.</summary>
+        </member>
+        <member name="P:ReactiveUI.NotAWeakReference.IsAlive">
+            <summary>
+            Gets a value indicating whether the current instance is considered alive. Always <see langword="true"/>: this
+            type holds a strong reference to <see cref="P:ReactiveUI.NotAWeakReference.Target"/>, so the target can never be collected while it is held.
+            </summary>
+        </member>
+        <member name="T:ReactiveUI.UnhandledErrorException">
+            <summary>Represents an exception that is thrown when an unhandled error occurs during application execution.</summary>
+            <remarks>Use this exception to signal unexpected or unhandled errors that do not fit more specific exception
+            types. This exception is typically used to wrap errors that cannot be categorized or recovered from within the
+            application logic.</remarks>
+        </member>
+        <member name="M:ReactiveUI.UnhandledErrorException.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.UnhandledErrorException"/> class.</summary>
+        </member>
+        <member name="M:ReactiveUI.UnhandledErrorException.#ctor(System.String)">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.UnhandledErrorException"/> class.</summary>
+            <param name="message">
+            The exception message.
+            </param>
+        </member>
+        <member name="M:ReactiveUI.UnhandledErrorException.#ctor(System.String,System.Exception)">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.UnhandledErrorException"/> class.</summary>
+            <param name="message">
+            The exception message.
+            </param>
+            <param name="innerException">
+            The exception that caused this exception.
+            </param>
+        </member>
+        <member name="T:ReactiveUI.Helpers.ArgumentValidation">
+            <summary>
+            Provides argument-validation helpers. On .NET 8.0 and later the null/empty/whitespace guards forward to the
+            runtime's <see cref="T:System.ArgumentNullException"/>/<see cref="T:System.ArgumentException"/> throw-helpers (so callers pick up
+            the framework's optimized implementations); on older targets they fall back to an inline polyfill. Members
+            without a framework equivalent (such as <see cref="M:ReactiveUI.Helpers.ArgumentValidation.ThrowIfNotOfType``1(System.Object,System.String)"/>) are always implemented here.
+            </summary>
+        </member>
+        <member name="M:ReactiveUI.Helpers.ArgumentValidation.ThrowIfNull(System.Object,System.String)">
+            <summary>Throws an <see cref="T:System.ArgumentNullException"/> if <paramref name="argument"/> is null.</summary>
+            <param name="argument">The reference type argument to validate as non-null.</param>
+            <param name="paramName">The name of the parameter with which <paramref name="argument"/> corresponds.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="argument"/> is null.</exception>
+        </member>
+        <member name="M:ReactiveUI.Helpers.ArgumentValidation.ThrowIfNullWithMessage(System.Object,System.String,System.String)">
+            <summary>Throws an <see cref="T:System.ArgumentNullException"/> if <paramref name="argument"/> is null.</summary>
+            <param name="argument">The reference type argument to validate as non-null.</param>
+            <param name="message">The exception message.</param>
+            <param name="paramName">The name of the parameter with which <paramref name="argument"/> corresponds.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="argument"/> is null.</exception>
+        </member>
+        <member name="M:ReactiveUI.Helpers.ArgumentValidation.ThrowIfNullOrEmpty(System.String,System.String)">
+            <summary>Throws an exception if <paramref name="argument"/> is null or empty.</summary>
+            <param name="argument">The string argument to validate as non-null and non-empty.</param>
+            <param name="paramName">The name of the parameter with which <paramref name="argument"/> corresponds.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="argument"/> is null.</exception>
+            <exception cref="T:System.ArgumentException"><paramref name="argument"/> is empty.</exception>
+        </member>
+        <member name="M:ReactiveUI.Helpers.ArgumentValidation.ThrowIfNullOrWhiteSpace(System.String,System.String)">
+            <summary>Throws an exception if <paramref name="argument"/> is null, empty, or consists only of white-space characters.</summary>
+            <param name="argument">The string argument to validate.</param>
+            <param name="paramName">The name of the parameter with which <paramref name="argument"/> corresponds.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="argument"/> is null.</exception>
+            <exception cref="T:System.ArgumentException"><paramref name="argument"/> is empty or consists only of white-space characters.</exception>
+        </member>
+        <member name="M:ReactiveUI.Helpers.ArgumentValidation.ThrowIfNegative(System.Int32,System.String)">
+            <summary>Throws an <see cref="T:System.ArgumentOutOfRangeException"/> if <paramref name="value"/> is negative.</summary>
+            <param name="value">The argument to validate as non-negative.</param>
+            <param name="paramName">The name of the parameter with which <paramref name="value"/> corresponds.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="value"/> is negative.</exception>
+        </member>
+        <member name="M:ReactiveUI.Helpers.ArgumentValidation.ThrowIf(System.Boolean,System.String,System.String)">
+            <summary>Throws an <see cref="T:System.ArgumentException"/> if <paramref name="condition"/> is true.</summary>
+            <param name="condition">The condition to evaluate.</param>
+            <param name="message">The exception message.</param>
+            <param name="paramName">The name of the parameter with which <paramref name="condition"/> corresponds.</param>
+            <exception cref="T:System.ArgumentException"><paramref name="condition"/> is true.</exception>
+        </member>
+        <member name="M:ReactiveUI.Helpers.ArgumentValidation.ThrowIfZero(System.Int32,System.String)">
+            <summary>Throws an <see cref="T:System.ArgumentOutOfRangeException"/> if <paramref name="value"/> is zero.</summary>
+            <param name="value">The argument to validate.</param>
+            <param name="paramName">The name of the parameter with which <paramref name="value"/> corresponds.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="value"/> is zero.</exception>
+        </member>
+        <member name="M:ReactiveUI.Helpers.ArgumentValidation.ThrowIfNegativeOrZero(System.Int32,System.String)">
+            <summary>Throws an <see cref="T:System.ArgumentOutOfRangeException"/> if <paramref name="value"/> is negative or zero.</summary>
+            <param name="value">The argument to validate.</param>
+            <param name="paramName">The name of the parameter with which <paramref name="value"/> corresponds.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="value"/> is negative or zero.</exception>
+        </member>
+        <member name="M:ReactiveUI.Helpers.ArgumentValidation.ThrowIfEqual``1(``0,``0,System.String)">
+            <summary>Throws an <see cref="T:System.ArgumentOutOfRangeException"/> if <paramref name="value"/> is equal to <paramref name="other"/>.</summary>
+            <typeparam name="T">The type of the arguments to compare.</typeparam>
+            <param name="value">The argument to validate.</param>
+            <param name="other">The value to compare with.</param>
+            <param name="paramName">The name of the parameter with which <paramref name="value"/> corresponds.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="value"/> is equal to <paramref name="other"/>.</exception>
+        </member>
+        <member name="M:ReactiveUI.Helpers.ArgumentValidation.ThrowIfNotEqual``1(``0,``0,System.String)">
+            <summary>Throws an <see cref="T:System.ArgumentOutOfRangeException"/> if <paramref name="value"/> is not equal to <paramref name="other"/>.</summary>
+            <typeparam name="T">The type of the arguments to compare.</typeparam>
+            <param name="value">The argument to validate.</param>
+            <param name="other">The value to compare with.</param>
+            <param name="paramName">The name of the parameter with which <paramref name="value"/> corresponds.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="value"/> is not equal to <paramref name="other"/>.</exception>
+        </member>
+        <member name="M:ReactiveUI.Helpers.ArgumentValidation.ThrowIfGreaterThan``1(``0,``0,System.String)">
+            <summary>Throws an <see cref="T:System.ArgumentOutOfRangeException"/> if <paramref name="value"/> is greater than <paramref name="other"/>.</summary>
+            <typeparam name="T">The type of the arguments to compare.</typeparam>
+            <param name="value">The argument to validate.</param>
+            <param name="other">The value to compare with.</param>
+            <param name="paramName">The name of the parameter with which <paramref name="value"/> corresponds.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="value"/> is greater than <paramref name="other"/>.</exception>
+        </member>
+        <member name="M:ReactiveUI.Helpers.ArgumentValidation.ThrowIfGreaterThanOrEqual``1(``0,``0,System.String)">
+            <summary>Throws an <see cref="T:System.ArgumentOutOfRangeException"/> if <paramref name="value"/> is greater than or equal to <paramref name="other"/>.</summary>
+            <typeparam name="T">The type of the arguments to compare.</typeparam>
+            <param name="value">The argument to validate.</param>
+            <param name="other">The value to compare with.</param>
+            <param name="paramName">The name of the parameter with which <paramref name="value"/> corresponds.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="value"/> is greater than or equal to <paramref name="other"/>.</exception>
+        </member>
+        <member name="M:ReactiveUI.Helpers.ArgumentValidation.ThrowIfLessThan``1(``0,``0,System.String)">
+            <summary>Throws an <see cref="T:System.ArgumentOutOfRangeException"/> if <paramref name="value"/> is less than <paramref name="other"/>.</summary>
+            <typeparam name="T">The type of the arguments to compare.</typeparam>
+            <param name="value">The argument to validate.</param>
+            <param name="other">The value to compare with.</param>
+            <param name="paramName">The name of the parameter with which <paramref name="value"/> corresponds.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="value"/> is less than <paramref name="other"/>.</exception>
+        </member>
+        <member name="M:ReactiveUI.Helpers.ArgumentValidation.ThrowIfLessThanOrEqual``1(``0,``0,System.String)">
+            <summary>Throws an <see cref="T:System.ArgumentOutOfRangeException"/> if <paramref name="value"/> is less than or equal to <paramref name="other"/>.</summary>
+            <typeparam name="T">The type of the arguments to compare.</typeparam>
+            <param name="value">The argument to validate.</param>
+            <param name="other">The value to compare with.</param>
+            <param name="paramName">The name of the parameter with which <paramref name="value"/> corresponds.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="value"/> is less than or equal to <paramref name="other"/>.</exception>
+        </member>
+        <member name="M:ReactiveUI.Helpers.ArgumentValidation.ThrowIfLessThanOrEqual(System.Int32,System.Int32,System.String)">
+            <summary>Throws an <see cref="T:System.ArgumentOutOfRangeException"/> if <paramref name="value"/> is less than or equal to <paramref name="other"/>.</summary>
+            <param name="value">The argument to validate.</param>
+            <param name="other">The value to compare with.</param>
+            <param name="paramName">The name of the parameter with which <paramref name="value"/> corresponds.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="value"/> is less than or equal to <paramref name="other"/>.</exception>
+        </member>
+        <member name="M:ReactiveUI.Helpers.ArgumentValidation.ThrowIfNotOfType``1(System.Object,System.String)">
+            <summary>Throws an <see cref="T:System.ArgumentException"/> if <paramref name="argument"/> is not of type <typeparamref name="T"/>.</summary>
+            <typeparam name="T">The expected type.</typeparam>
+            <param name="argument">The argument to validate.</param>
+            <param name="paramName">The name of the parameter with which <paramref name="argument"/> corresponds.</param>
+            <exception cref="T:System.ArgumentException"><paramref name="argument"/> is not of type <typeparamref name="T"/>.</exception>
+        </member>
+        <member name="M:ReactiveUI.Helpers.ArgumentValidation.ThrowIfDefault``1(``0,System.String)">
+            <summary>Throws an <see cref="T:System.ArgumentNullException"/> if <paramref name="argument"/> is default.</summary>
+            <typeparam name="T">The struct type.</typeparam>
+            <param name="argument">The argument to validate.</param>
+            <param name="paramName">The name of the parameter with which <paramref name="argument"/> corresponds.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="argument"/> is the default value of <typeparamref name="T"/>.</exception>
+        </member>
+    </members>
+</doc>

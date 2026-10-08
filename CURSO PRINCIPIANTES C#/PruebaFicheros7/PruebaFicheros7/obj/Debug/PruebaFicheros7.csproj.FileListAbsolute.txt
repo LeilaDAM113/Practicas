@@ -1,0 +1,10 @@
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\PruebaFicheros7\PruebaFicheros7\bin\Debug\PruebaFicheros7.exe.config
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\PruebaFicheros7\PruebaFicheros7\bin\Debug\PruebaFicheros7.exe
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\PruebaFicheros7\PruebaFicheros7\bin\Debug\PruebaFicheros7.pdb
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\PruebaFicheros7\PruebaFicheros7\bin\Debug\Newtonsoft.Json.dll
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\PruebaFicheros7\PruebaFicheros7\bin\Debug\Newtonsoft.Json.xml
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\PruebaFicheros7\PruebaFicheros7\obj\Debug\PruebaFicheros7.csproj.AssemblyReference.cache
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\PruebaFicheros7\PruebaFicheros7\obj\Debug\PruebaFicheros7.csproj.CoreCompileInputs.cache
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\PruebaFicheros7\PruebaFicheros7\obj\Debug\PruebaFi.BD63B89D.Up2Date
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\PruebaFicheros7\PruebaFicheros7\obj\Debug\PruebaFicheros7.exe
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\PruebaFicheros7\PruebaFicheros7\obj\Debug\PruebaFicheros7.pdb

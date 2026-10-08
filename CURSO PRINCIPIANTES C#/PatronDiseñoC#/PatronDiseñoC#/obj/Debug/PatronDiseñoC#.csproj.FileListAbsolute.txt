@@ -1,0 +1,7 @@
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\PatronDiseñoC#\PatronDiseñoC#\bin\Debug\PatronDiseñoC#.exe.config
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\PatronDiseñoC#\PatronDiseñoC#\bin\Debug\PatronDiseñoC#.exe
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\PatronDiseñoC#\PatronDiseñoC#\bin\Debug\PatronDiseñoC#.pdb
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\PatronDiseñoC#\PatronDiseñoC#\obj\Debug\PatronDiseñoC#.csproj.AssemblyReference.cache
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\PatronDiseñoC#\PatronDiseñoC#\obj\Debug\PatronDiseñoC#.csproj.CoreCompileInputs.cache
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\PatronDiseñoC#\PatronDiseñoC#\obj\Debug\PatronDiseñoC#.exe
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\PatronDiseñoC#\PatronDiseñoC#\obj\Debug\PatronDiseñoC#.pdb

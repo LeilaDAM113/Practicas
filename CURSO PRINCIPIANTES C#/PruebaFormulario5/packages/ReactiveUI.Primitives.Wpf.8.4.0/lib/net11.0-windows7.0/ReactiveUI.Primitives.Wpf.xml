@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ReactiveUI.Primitives.Wpf</name>
+    </assembly>
+    <members>
+        <member name="T:ReactiveUI.Primitives.Concurrency.DispatcherSequencer">
+            <summary>WPF dispatcher sequencer that coalesces scheduled work onto a dispatcher drain.</summary>
+            <remarks>Callbacks run at Priority in posted dispatcher batches without inline reentrancy; cancellation suppresses unstarted work.</remarks>
+            <seealso cref="T:ReactiveUI.Primitives.Concurrency.ISequencer" />
+        </member>
+        <member name="F:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.ByDispatcher">
+            <summary>The sequencer created for each dispatcher other than <see cref="P:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.Main"/>'s, kept while its dispatcher lives.</summary>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Concurrency.DispatcherSequencer._main">
+            <summary>The shared main-thread sequencer, set once the application's dispatcher is available.</summary>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Concurrency.DispatcherSequencer._current">
+            <summary>The sequencer for the calling thread's dispatcher, cached per thread.</summary>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Concurrency.DispatcherSequencer._state">
+            <summary>Coalescing dispatch engine.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.#ctor(System.Windows.Threading.Dispatcher)">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.Primitives.Concurrency.DispatcherSequencer"/> class.</summary>
+            <param name="dispatcher">The dispatcher whose thread runs the scheduled work.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="dispatcher"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.#ctor(System.Windows.Threading.Dispatcher,System.Windows.Threading.DispatcherPriority)">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.Primitives.Concurrency.DispatcherSequencer"/> class.</summary>
+            <param name="dispatcher">The dispatcher whose thread runs the scheduled work.</param>
+            <param name="priority">Dispatcher priority used for posted drains.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="dispatcher"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.#ctor(System.Windows.Threading.Dispatcher,System.Windows.Threading.DispatcherPriority,System.Func{System.Action,System.Boolean},System.Action{ReactiveUI.Primitives.Concurrency.IWorkItem,System.Int64})">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.Primitives.Concurrency.DispatcherSequencer"/> class.</summary>
+            <param name="dispatcher">The dispatcher associated with this sequencer.</param>
+            <param name="priority">The dispatcher priority.</param>
+            <param name="post">Posts ready work, or null to use the dispatcher.</param>
+            <param name="scheduleDelayed">Schedules delayed work, or null to use a dispatcher timer.</param>
+            <exception cref="T:System.ArgumentNullException">The dispatcher is null.</exception>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.Main">
+            <summary>Gets the shared sequencer for the WPF main (UI) thread.</summary>
+            <exception cref="T:System.InvalidOperationException">No application exists yet and the calling thread has no dispatcher.</exception>
+            <remarks>
+            Bound once to the running <see cref="T:System.Windows.Application"/>'s dispatcher, from any thread. Until an
+            application exists nothing is cached, and the calling thread's existing dispatcher is used instead.
+            </remarks>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.Current">
+            <summary>Gets the sequencer for the calling thread's dispatcher.</summary>
+            <exception cref="T:System.InvalidOperationException">The calling thread has no dispatcher.</exception>
+            <remarks>
+            Cached per thread, for applications that run UI on more than one thread. Never creates a dispatcher: a thread
+            that has none cannot run the scheduled work.
+            </remarks>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.Dispatcher">
+            <summary>Gets the dispatcher whose thread runs the scheduled work.</summary>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.Priority">
+            <summary>Gets the dispatcher priority used for posted drains.</summary>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.Now">
+            <inheritdoc/>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.Timestamp">
+            <inheritdoc/>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.DebuggerDisplay">
+            <summary>Gets the debugger display text.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.For(System.Windows.Threading.Dispatcher)">
+            <summary>Returns the sequencer for <paramref name="dispatcher"/>, created once per dispatcher.</summary>
+            <param name="dispatcher">The dispatcher whose thread runs the scheduled work.</param>
+            <returns>
+            <see cref="P:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.Main"/> once it is bound to <paramref name="dispatcher"/>; otherwise one sequencer per dispatcher at
+            <see cref="F:System.Windows.Threading.DispatcherPriority.Normal"/>, kept while the dispatcher lives.
+            </returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="dispatcher"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.CheckAccess">
+            <summary>Returns whether the calling thread owns <see cref="P:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.Dispatcher"/>.</summary>
+            <returns><see langword="true"/> when the calling thread may run work for this sequencer inline.</returns>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.Schedule(ReactiveUI.Primitives.Concurrency.IWorkItem)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.Schedule(ReactiveUI.Primitives.Concurrency.IWorkItem,System.Int64)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.For(System.Windows.Threading.Dispatcher,ReactiveUI.Primitives.Concurrency.DispatcherSequencer)">
+            <summary>Returns <paramref name="main"/> when it runs on <paramref name="dispatcher"/>, and otherwise the cached sequencer for it.</summary>
+            <param name="dispatcher">The dispatcher whose thread runs the scheduled work.</param>
+            <param name="main">The shared main-thread sequencer, or <see langword="null"/> while it is unbound.</param>
+            <returns>The sequencer for <paramref name="dispatcher"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="dispatcher"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.BindMain(ReactiveUI.Primitives.Concurrency.DispatcherSequencer@,System.Windows.Threading.Dispatcher)">
+            <summary>Caches the shared main-thread sequencer for the application's dispatcher, keeping the first one bound.</summary>
+            <param name="slot">The field that holds the shared sequencer.</param>
+            <param name="applicationDispatcher">The application's dispatcher, or <see langword="null"/> when no application exists.</param>
+            <returns>The shared sequencer, or <see langword="null"/> when <paramref name="applicationDispatcher"/> is <see langword="null"/>.</returns>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.ResolveCurrentDispatcher">
+            <summary>Returns the calling thread's existing dispatcher without creating one.</summary>
+            <returns>The calling thread's dispatcher.</returns>
+            <exception cref="T:System.InvalidOperationException">The calling thread has no dispatcher.</exception>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.Post(System.Action)">
+            <summary>Marshals the cached drain callback onto the dispatcher.</summary>
+            <param name="drain">The drain callback.</param>
+            <returns><see langword="true"/>, since the dispatcher always accepts the work.</returns>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.ScheduleDelayed(ReactiveUI.Primitives.Concurrency.IWorkItem,System.Int64)">
+            <summary>Runs delayed work on a dispatcher timer so it executes directly on the dispatcher thread.</summary>
+            <param name="item">Work item to execute at the due time.</param>
+            <param name="dueTimestamp">Absolute monotonic timestamp at which to execute the item.</param>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.RunDrain">
+            <summary>Runs one queued batch on the coalescing engine.</summary>
+        </member>
+    </members>
+</doc>

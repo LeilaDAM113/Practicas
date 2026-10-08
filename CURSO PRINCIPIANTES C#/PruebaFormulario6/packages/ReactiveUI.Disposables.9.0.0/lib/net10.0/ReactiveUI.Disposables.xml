@@ -1,0 +1,794 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ReactiveUI.Disposables</name>
+    </assembly>
+    <members>
+        <member name="T:ReactiveUI.Primitives.Disposables.ActionDisposable">
+            <summary>An <see cref="T:System.IDisposable"/> that runs the supplied <see cref="T:System.Action"/> on the first <see cref="M:ReactiveUI.Primitives.Disposables.ActionDisposable.Dispose"/> call and does nothing on later calls.</summary>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Disposables.ActionDisposable._action">
+            <summary>The action to invoke once on dispose.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.ActionDisposable.#ctor(System.Action)">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.Primitives.Disposables.ActionDisposable"/> class.</summary>
+            <param name="action">The action to invoke once on dispose.</param>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Disposables.ActionDisposable.IsDisposed">
+            <summary>Gets a value indicating whether this instance has been disposed.</summary>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Disposables.ActionDisposable.DebuggerDisplay">
+            <summary>Gets the debugger display text.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.ActionDisposable.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="T:ReactiveUI.Primitives.Disposables.AssignmentSlot">
+            <summary>Primitives alias for a single-assignment disposable slot.</summary>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Disposables.AssignmentSlot._state">
+            <summary>The slot state.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.AssignmentSlot.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.Primitives.Disposables.AssignmentSlot"/> class.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.AssignmentSlot.#ctor(System.Action)">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.Primitives.Disposables.AssignmentSlot"/> class.</summary>
+            <param name="action">Action to invoke before the assigned disposable is disposed.</param>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.AssignmentSlot.#ctor(System.IDisposable)">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.Primitives.Disposables.AssignmentSlot"/> class.</summary>
+            <param name="disposable">Initial assignment.</param>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.AssignmentSlot.#ctor(System.IDisposable,System.Action)">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.Primitives.Disposables.AssignmentSlot"/> class.</summary>
+            <param name="disposable">Initial assignment.</param>
+            <param name="action">Action to invoke before the assigned disposable is disposed.</param>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Disposables.AssignmentSlot.IsDisposed">
+            <summary>Gets a value indicating whether this instance is disposed.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.AssignmentSlot.Create(System.IDisposable)">
+            <summary>Assigns the disposable held by this slot.</summary>
+            <param name="disposable">The disposable.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="disposable"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.InvalidOperationException">The slot holds an earlier assignment.</exception>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.AssignmentSlot.Dispose">
+            <summary>Runs the constructor-supplied action, then disposes the assigned value and blocks further assignments; repeated calls have no further effect.</summary>
+        </member>
+        <member name="T:ReactiveUI.Primitives.Disposables.AssignmentState">
+            <summary>The state of a disposable slot that accepts one assignment, embedded as a mutable field by the slot that owns it.</summary>
+            <remarks>A second assignment throws, and a value assigned after disposal is disposed immediately. Keep the field non-readonly.</remarks>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Disposables.AssignmentState.DisposedSentinel">
+            <summary>Marker used once the slot has been disposed.</summary>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Disposables.AssignmentState._action">
+            <summary>Action invoked before disposal.</summary>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Disposables.AssignmentState._disposable">
+            <summary>Assigned disposable or the disposed marker.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.AssignmentState.#ctor(System.Action)">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.Primitives.Disposables.AssignmentState"/> struct.</summary>
+            <param name="action">Action to invoke before the assigned disposable is disposed.</param>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Disposables.AssignmentState.IsDisposed">
+            <summary>Gets a value indicating whether the slot is disposed.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.AssignmentState.Dispose">
+            <summary>Runs the action and then disposes the assigned value, once.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.AssignmentState.Create(System.IDisposable)">
+            <summary>Assigns the disposable held by the slot.</summary>
+            <param name="disposable">The disposable.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="disposable"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.InvalidOperationException">The slot holds an earlier assignment.</exception>
+        </member>
+        <member name="T:ReactiveUI.Primitives.Disposables.AssignmentState.DisposedMarker">
+            <summary>Disposable marker for disposed slots.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.AssignmentState.DisposedMarker.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="T:ReactiveUI.Primitives.Disposables.BooleanDisposable">
+            <summary>A disposable that exposes its disposed state as a boolean flag.</summary>
+            <seealso cref="T:ReactiveUI.Primitives.Disposables.IsDisposed" />
+        </member>
+        <member name="F:ReactiveUI.Primitives.Disposables.BooleanDisposable._isDisposed">
+            <summary>Disposed latch; 0 when alive, 1 once disposed.</summary>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Disposables.BooleanDisposable.IsDisposed">
+            <summary>Gets a value indicating whether this instance is disposed.</summary>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Disposables.BooleanDisposable.DebuggerDisplay">
+            <summary>Gets the debugger display text.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.BooleanDisposable.Dispose">
+            <summary>Latches the disposed flag; repeated calls have no further effect.</summary>
+        </member>
+        <member name="T:ReactiveUI.Primitives.Disposables.CancellationDisposable">
+            <summary>A disposable that cancels a <see cref="T:System.Threading.CancellationTokenSource"/> when disposed; the source itself is left undisposed.</summary>
+            <seealso cref="T:System.IDisposable" />
+        </member>
+        <member name="F:ReactiveUI.Primitives.Disposables.CancellationDisposable._cts">
+            <summary>The source cancelled on disposal.</summary>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Disposables.CancellationDisposable._isDisposed">
+            <summary>Disposed latch; 0 when alive, 1 once disposed.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.CancellationDisposable.#ctor(System.Threading.CancellationTokenSource)">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.Primitives.Disposables.CancellationDisposable"/> class.</summary>
+            <param name="cts">The source to cancel when this instance is disposed.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="cts"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.CancellationDisposable.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.Primitives.Disposables.CancellationDisposable"/> class.</summary>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Disposables.CancellationDisposable.Token">
+            <summary>Gets the token that enters the cancelled state when this instance is disposed.</summary>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Disposables.CancellationDisposable.IsDisposed">
+            <summary>Gets a value indicating whether this instance is disposed.</summary>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Disposables.CancellationDisposable.DebuggerDisplay">
+            <summary>Gets the debugger display text.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.CancellationDisposable.Dispose">
+            <summary>Cancels the source on the first call; repeated calls have no further effect.</summary>
+        </member>
+        <member name="T:ReactiveUI.Primitives.Disposables.DisposableBag">
+            <summary>A composite disposable that holds its first two entries in inline fields and spills further entries into a heap-allocated array.</summary>
+            <remarks>Disposal is idempotent and disposes every contained entry, in registration order, exactly once.</remarks>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Disposables.DisposableBag.OverflowInitialCapacity">
+            <summary>Starting capacity of the overflow array once the two inline slots are taken.</summary>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Disposables.DisposableBag.OverflowGrowthFactor">
+            <summary>Growth factor for the overflow array.</summary>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Disposables.DisposableBag._gate">
+            <summary>The synchronization object.</summary>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Disposables.DisposableBag._slot0">
+            <summary>The first disposable slot.</summary>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Disposables.DisposableBag._slot1">
+            <summary>The second disposable slot.</summary>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Disposables.DisposableBag._overflow">
+            <summary>The overflow array for additional disposables.</summary>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Disposables.DisposableBag._overflowCount">
+            <summary>The number of disposables in the overflow array.</summary>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Disposables.DisposableBag._disposed">
+            <summary>Indicates whether the bag has been disposed.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.DisposableBag.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.Primitives.Disposables.DisposableBag"/> class.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.DisposableBag.#ctor(System.IDisposable,System.IDisposable)">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.Primitives.Disposables.DisposableBag"/> class with two pre-populated slots.</summary>
+            <param name="first">The first disposable.</param>
+            <param name="second">The second disposable.</param>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.DisposableBag.#ctor(System.IDisposable,System.IDisposable,System.IDisposable)">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.Primitives.Disposables.DisposableBag"/> class with three pre-populated slots.</summary>
+            <param name="first">The first disposable.</param>
+            <param name="second">The second disposable.</param>
+            <param name="third">The third disposable.</param>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Disposables.DisposableBag.IsDisposed">
+            <summary>Gets a value indicating whether this instance has been disposed.</summary>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Disposables.DisposableBag.DebuggerDisplay">
+            <summary>Gets the debugger display text.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.DisposableBag.Add(System.IDisposable)">
+            <summary>Adds a disposable to the bag, disposing it immediately if the bag is disposed and ignoring a <see langword="null"/> argument.</summary>
+            <param name="disposable">The disposable to add.</param>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.DisposableBag.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="T:ReactiveUI.Primitives.Disposables.DisposableSet">
+            <summary>A group of disposables that are disposed together, embedded as a mutable field by the type that owns them.</summary>
+            <remarks>
+            It needs no object of its own, so a type that owns several disposables can hold them without allocating a group. Keep
+            the field non-readonly and call it in place, since a copy is a separate set. Every disposable is released outside the
+            gate, in registration order: the two inline slots first, then the overflow entries. The default value is an empty set.
+            </remarks>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Disposables.DisposableSet.OverflowInitialCapacity">
+            <summary>Initial capacity for overflow disposable storage.</summary>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Disposables.DisposableSet.OverflowGrowthFactor">
+            <summary>Growth factor for overflow disposable storage.</summary>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Disposables.DisposableSet._gate">
+            <summary>Synchronizes mutations to the disposable set, created on first use; never held while a disposable is disposed.</summary>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Disposables.DisposableSet._slot0">
+            <summary>First inline disposable slot.</summary>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Disposables.DisposableSet._slot1">
+            <summary>Second inline disposable slot.</summary>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Disposables.DisposableSet._overflow">
+            <summary>Overflow disposable slots used after the inline slots are occupied.</summary>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Disposables.DisposableSet._overflowCount">
+            <summary>Number of active overflow disposable slots.</summary>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Disposables.DisposableSet._disposed">
+            <summary>Value indicating whether the set is disposed.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.DisposableSet.#ctor(System.IDisposable,System.IDisposable)">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.Primitives.Disposables.DisposableSet"/> struct holding two disposables.</summary>
+            <param name="first">The first disposable.</param>
+            <param name="second">The second disposable.</param>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.DisposableSet.#ctor(System.IDisposable,System.IDisposable,System.IDisposable)">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.Primitives.Disposables.DisposableSet"/> struct holding three disposables.</summary>
+            <param name="first">The first disposable.</param>
+            <param name="second">The second disposable.</param>
+            <param name="third">The third disposable.</param>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.DisposableSet.#ctor(System.IDisposable[])">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.Primitives.Disposables.DisposableSet"/> struct from a group of disposables, skipping null entries.</summary>
+            <param name="disposables">Disposables that will be disposed together.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="disposables"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Disposables.DisposableSet.IsDisposed">
+            <summary>Gets a value indicating whether the set is disposed.</summary>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Disposables.DisposableSet.Count">
+            <summary>Gets the number of held disposables, or zero after disposal.</summary>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Disposables.DisposableSet.Gate">
+            <summary>Gets the gate, creating it on first use.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.DisposableSet.Add(System.IDisposable)">
+            <summary>Adds a disposable, or disposes it immediately when the set is disposed.</summary>
+            <param name="item">Disposable to add.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="item"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.DisposableSet.Remove(System.IDisposable)">
+            <summary>Removes and disposes the requested disposable.</summary>
+            <param name="item">Disposable to remove.</param>
+            <returns><see langword="true"/> if the item was found and disposed; otherwise, <see langword="false"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="item"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.DisposableSet.Clear">
+            <summary>Removes and disposes every disposable currently held without disposing the set itself.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.DisposableSet.Dispose">
+            <summary>Disposes every held disposable and marks the set disposed; repeated calls have no further effect.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.DisposableSet.Contains(System.IDisposable)">
+            <summary>Determines whether the set currently holds the supplied disposable.</summary>
+            <param name="item">Disposable to locate.</param>
+            <returns><see langword="true"/> when the disposable is held; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.DisposableSet.CopyTo(System.IDisposable[],System.Int32)">
+            <summary>Copies the disposables currently held into <paramref name="array"/> starting at <paramref name="arrayIndex"/>.</summary>
+            <param name="array">Destination array.</param>
+            <param name="arrayIndex">Zero-based index in <paramref name="array"/> at which copying begins.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="array"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="arrayIndex"/> is negative.</exception>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.DisposableSet.Snapshot">
+            <summary>Captures the disposables currently held into a list under the gate.</summary>
+            <returns>A snapshot list of the held disposables.</returns>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.DisposableSet.CreateGate(System.Threading.Lock@)">
+            <summary>Publishes a new gate, keeping the one another thread published first.</summary>
+            <param name="gate">The gate field.</param>
+            <returns>The published gate.</returns>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.DisposableSet.Release(System.Boolean)">
+            <summary>Takes every held disposable under the gate and disposes them outside it.</summary>
+            <param name="markDisposed">Whether the set is marked disposed, so later additions are disposed at once.</param>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.DisposableSet.AddCore(System.IDisposable)">
+            <summary>Adds a disposable while the caller holds the gate.</summary>
+            <param name="disposable">Disposable to add.</param>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.DisposableSet.RemoveCore(System.IDisposable)">
+            <summary>Removes a disposable while the caller holds the gate.</summary>
+            <param name="item">Disposable to remove.</param>
+            <returns><see langword="true"/> when the item was removed; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="T:ReactiveUI.Primitives.Disposables.DisposableSlotHelper">
+            <summary>Assigns and disposes slots according to their holder's disposal state.</summary>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Disposables.DisposableSlotHelper.DisposedSentinel">
+            <summary>Sentinel value indicating the holder has been disposed.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.DisposableSlotHelper.AssignWithoutDisposingPrevious(System.IDisposable@,System.Int32@,System.IDisposable)">
+            <summary>Replaces a slot without disposing its previous value; a disposed holder disposes the incoming value.</summary>
+            <param name="slot">The reference to the current-inner field.</param>
+            <param name="disposed">The reference to the disposed-flag field.</param>
+            <param name="value">The incoming value (or <see langword="null"/>).</param>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.DisposableSlotHelper.SwapAndDisposePrevious(System.IDisposable@,System.Int32@,System.IDisposable)">
+            <summary>Replaces a slot and disposes its previous value; a disposed holder also disposes the incoming value.</summary>
+            <param name="slot">The reference to the current-inner field.</param>
+            <param name="disposed">The reference to the disposed-flag field.</param>
+            <param name="value">The incoming value (or <see langword="null"/>).</param>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.DisposableSlotHelper.TryDispose(System.IDisposable@,System.Int32@)">
+            <summary>Claims disposal and releases the inner value, returning true only for the first caller.</summary>
+            <param name="slot">The reference to the current-inner field.</param>
+            <param name="disposed">The reference to the disposed-flag field.</param>
+            <returns>
+            <see langword="true"/> if the current invocation latched the flag; otherwise
+            <see langword="false"/>.
+            </returns>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.DisposableSlotHelper.DisposeIfRaced(System.IDisposable@,System.Int32@)">
+            <summary>Releases the stored value if disposal overlaps assignment.</summary>
+            <param name="slot">The reference to the current-inner field.</param>
+            <param name="disposed">The reference to the disposed-flag field.</param>
+        </member>
+        <member name="T:ReactiveUI.Primitives.Disposables.EmptyDisposable">
+            <summary>A no-op <see cref="T:System.IDisposable"/> whose shared instance stands in for the absence of a resource.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.EmptyDisposable.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.Primitives.Disposables.EmptyDisposable"/> class.</summary>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Disposables.EmptyDisposable.Instance">
+            <summary>Gets the shared singleton instance.</summary>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Disposables.EmptyDisposable.DebuggerDisplay">
+            <summary>Gets the debugger display text.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.EmptyDisposable.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="T:ReactiveUI.Primitives.Disposables.IsDisposed">
+            <summary>An <see cref="T:System.IDisposable"/> that reports whether it has been disposed.</summary>
+            <seealso cref="T:System.IDisposable" />
+        </member>
+        <member name="P:ReactiveUI.Primitives.Disposables.IsDisposed.IsDisposed">
+            <summary>Gets a value indicating whether this instance is disposed.</summary>
+        </member>
+        <member name="T:ReactiveUI.Primitives.Disposables.MultipleDisposable">
+            <summary>A group of disposables that are disposed together.</summary>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Disposables.MultipleDisposable._set">
+            <summary>The held disposables.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.MultipleDisposable.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.Primitives.Disposables.MultipleDisposable"/> class.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.MultipleDisposable.#ctor(System.IDisposable,System.IDisposable)">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.Primitives.Disposables.MultipleDisposable"/> class.</summary>
+            <param name="first">The first disposable.</param>
+            <param name="second">The second disposable.</param>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.MultipleDisposable.#ctor(System.IDisposable,System.IDisposable,System.IDisposable)">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.Primitives.Disposables.MultipleDisposable"/> class.</summary>
+            <param name="first">The first disposable.</param>
+            <param name="second">The second disposable.</param>
+            <param name="third">The third disposable.</param>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.MultipleDisposable.#ctor(System.IDisposable[])">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.Primitives.Disposables.MultipleDisposable"/> class from a group of disposables.</summary>
+            <param name="disposables">Disposables that will be disposed together.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="disposables"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Disposables.MultipleDisposable.IsDisposed">
+            <summary>Gets a value indicating whether the object is disposed.</summary>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Disposables.MultipleDisposable.Count">
+            <summary>Gets the number of held disposables, or zero after disposal.</summary>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Disposables.MultipleDisposable.IsReadOnly">
+            <summary>Gets a value indicating whether the collection is read-only, which is always false.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.MultipleDisposable.Create(System.IDisposable[])">
+            <summary>Creates a new group of disposable resources that are disposed together.</summary>
+            <param name="disposables">Disposable resources to add to the group.</param>
+            <returns>Group of disposable resources that are disposed together.</returns>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.MultipleDisposable.Add(System.IDisposable)">
+            <summary>Adds a disposable to the group, or disposes it immediately when the group is disposed.</summary>
+            <param name="item">Disposable to add.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="item"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.MultipleDisposable.Remove(System.IDisposable)">
+            <summary>Removes and disposes the requested disposable from the group.</summary>
+            <param name="item">Disposable to remove.</param>
+            <returns><see langword="true"/> if the item was found and disposed; otherwise, <see langword="false"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="item"/> is null.</exception>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.MultipleDisposable.Clear">
+            <summary>Removes and disposes every disposable currently held without disposing the group itself.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.MultipleDisposable.Contains(System.IDisposable)">
+            <summary>Determines whether the group currently holds the supplied disposable.</summary>
+            <param name="item">Disposable to locate.</param>
+            <returns><see langword="true"/> when the disposable is held; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.MultipleDisposable.CopyTo(System.IDisposable[],System.Int32)">
+            <summary>Copies the disposables currently held into <paramref name="array"/> starting at <paramref name="arrayIndex"/>.</summary>
+            <param name="array">Destination array.</param>
+            <param name="arrayIndex">Zero-based index in <paramref name="array"/> at which copying begins.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="array"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="arrayIndex"/> is negative.</exception>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.MultipleDisposable.GetEnumerator">
+            <summary>Returns an enumerator over a snapshot of the disposables currently held.</summary>
+            <returns>An enumerator over the held disposables.</returns>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.MultipleDisposable.Dispose">
+            <summary>Disposes every held disposable and marks the group disposed; repeated calls have no further effect.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.MultipleDisposable.System#Collections#IEnumerable#GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="T:ReactiveUI.Primitives.Disposables.MultipleDisposable.DisposableArray">
+            <summary>Array-backed disposable group returned by the static factory.</summary>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Disposables.MultipleDisposable.DisposableArray._disposables">
+            <summary>Disposables to release, or <see langword="null"/> after disposal.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.MultipleDisposable.DisposableArray.#ctor(System.IDisposable[])">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.Primitives.Disposables.MultipleDisposable.DisposableArray"/> class.</summary>
+            <param name="disposables">Disposables owned by the group.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="disposables"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.MultipleDisposable.DisposableArray.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="T:ReactiveUI.Primitives.Disposables.MutableDisposable">
+            <summary>Holds a replaceable disposable without disposing the displaced value.</summary>
+            <remarks>Assignments after disposal are disposed immediately.</remarks>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Disposables.MutableDisposable._current">
+            <summary>The current inner disposable.</summary>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Disposables.MutableDisposable._disposed">
+            <summary>Indicates whether the object has been disposed (0 = open, 1 = disposed).</summary>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Disposables.MutableDisposable.IsDisposed">
+            <summary>Gets a value indicating whether this instance has been disposed.</summary>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Disposables.MutableDisposable.Disposable">
+            <summary>Gets or sets the current inner disposable.</summary>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Disposables.MutableDisposable.DebuggerDisplay">
+            <summary>Gets the debugger display text.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.MutableDisposable.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="T:ReactiveUI.Primitives.Disposables.OnceDisposable">
+            <summary>Holds a disposable that can be assigned once.</summary>
+            <remarks>Repeated assignment throws InvalidOperationException; an assignment after disposal is disposed immediately.</remarks>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Disposables.OnceDisposable.DisposedSentinel">
+            <summary>Sentinel value indicating the object has been disposed.</summary>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Disposables.OnceDisposable._current">
+            <summary>The current inner disposable.</summary>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Disposables.OnceDisposable.IsAssigned">
+            <summary>Gets a value indicating whether a disposable has been assigned.</summary>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Disposables.OnceDisposable.IsDisposed">
+            <summary>Gets a value indicating whether this instance has been disposed.</summary>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Disposables.OnceDisposable.Disposable">
+            <summary>Gets or sets the inner disposable, throwing on repeated assignment.</summary>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Disposables.OnceDisposable.DebuggerDisplay">
+            <summary>Gets the debugger display text.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.OnceDisposable.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="T:ReactiveUI.Primitives.Disposables.OnceDisposable.DisposedMarker">
+            <summary>Disposable marker for disposed instances.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.OnceDisposable.DisposedMarker.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="T:ReactiveUI.Primitives.Disposables.Pocket">
+            <summary>Primitives alias for a group of disposables that are disposed together.</summary>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Disposables.Pocket._set">
+            <summary>The held disposables.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.Pocket.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.Primitives.Disposables.Pocket"/> class.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.Pocket.#ctor(System.IDisposable,System.IDisposable)">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.Primitives.Disposables.Pocket"/> class.</summary>
+            <param name="first">The first disposable.</param>
+            <param name="second">The second disposable.</param>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.Pocket.#ctor(System.IDisposable,System.IDisposable,System.IDisposable)">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.Primitives.Disposables.Pocket"/> class.</summary>
+            <param name="first">The first disposable.</param>
+            <param name="second">The second disposable.</param>
+            <param name="third">The third disposable.</param>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.Pocket.#ctor(System.IDisposable[])">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.Primitives.Disposables.Pocket"/> class.</summary>
+            <param name="disposables">Initial disposables.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="disposables"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Disposables.Pocket.IsDisposed">
+            <summary>Gets a value indicating whether the object is disposed.</summary>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Disposables.Pocket.Count">
+            <summary>Gets the number of held disposables, or zero after disposal.</summary>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Disposables.Pocket.IsReadOnly">
+            <summary>Gets a value indicating whether the collection is read-only, which is always false.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.Pocket.Add(System.IDisposable)">
+            <summary>Adds a disposable to the pocket, or disposes it immediately when the pocket is disposed.</summary>
+            <param name="item">Disposable to add.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="item"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.Pocket.Remove(System.IDisposable)">
+            <summary>Removes and disposes the requested disposable from the pocket.</summary>
+            <param name="item">Disposable to remove.</param>
+            <returns><see langword="true"/> if the item was found and disposed; otherwise, <see langword="false"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="item"/> is null.</exception>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.Pocket.Clear">
+            <summary>Removes and disposes every disposable currently held without disposing the pocket itself.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.Pocket.Contains(System.IDisposable)">
+            <summary>Determines whether the pocket currently holds the supplied disposable.</summary>
+            <param name="item">Disposable to locate.</param>
+            <returns><see langword="true"/> when the disposable is held; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.Pocket.CopyTo(System.IDisposable[],System.Int32)">
+            <summary>Copies the disposables currently held into <paramref name="array"/> starting at <paramref name="arrayIndex"/>.</summary>
+            <param name="array">Destination array.</param>
+            <param name="arrayIndex">Zero-based index in <paramref name="array"/> at which copying begins.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="array"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="arrayIndex"/> is negative.</exception>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.Pocket.GetEnumerator">
+            <summary>Returns an enumerator over a snapshot of the disposables currently held.</summary>
+            <returns>An enumerator over the held disposables.</returns>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.Pocket.Dispose">
+            <summary>Disposes every held disposable and marks the pocket disposed; repeated calls have no further effect.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.Pocket.System#Collections#IEnumerable#GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="T:ReactiveUI.Primitives.Disposables.ReplaceableState">
+            <summary>The state of a disposable slot whose inner value can be replaced, embedded as a mutable field by the slot that owns it.</summary>
+            <remarks>A replacement disposes the displaced value, and a value assigned after disposal is disposed immediately. Keep the field non-readonly.</remarks>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Disposables.ReplaceableState.DisposedSentinel">
+            <summary>Marker used once the slot has been disposed.</summary>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Disposables.ReplaceableState._action">
+            <summary>Action invoked on disposal.</summary>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Disposables.ReplaceableState._disposable">
+            <summary>Current disposable or the disposed marker.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.ReplaceableState.#ctor(System.Action)">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.Primitives.Disposables.ReplaceableState"/> struct.</summary>
+            <param name="action">The action to call on disposal.</param>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Disposables.ReplaceableState.IsDisposed">
+            <summary>Gets a value indicating whether the slot is disposed.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.ReplaceableState.Dispose">
+            <summary>Disposes the inner value and then invokes the action, once.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.ReplaceableState.Create(System.IDisposable)">
+            <summary>Assigns the inner disposable and disposes the value it displaces; once disposed the incoming value is disposed instead.</summary>
+            <param name="disposable">The disposable to take as the new inner value.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="disposable"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.ReplaceableState.TryCreate(System.IDisposable,System.IDisposable)">
+            <summary>Replaces the observed value, or disposes the incoming value when the slot is closed.</summary>
+            <param name="current">The observed slot value.</param>
+            <param name="disposable">The incoming disposable.</param>
+            <returns>True when the incoming value was handled; false when the observed slot was stale.</returns>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.ReplaceableState.CreateWithRetry(System.IDisposable)">
+            <summary>Retries replacement until the observed slot is current.</summary>
+            <param name="disposable">The incoming disposable.</param>
+        </member>
+        <member name="T:ReactiveUI.Primitives.Disposables.ReplaceableState.DisposedMarker">
+            <summary>Disposable marker for disposed slots.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.ReplaceableState.DisposedMarker.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="T:ReactiveUI.Primitives.Disposables.Scope">
+            <summary>Provides factory helpers for creating disposables.</summary>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Disposables.Scope.Empty">
+            <summary>Gets the disposable that does nothing when disposed.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.Scope.Create(System.Action)">
+            <summary>Creates a disposable object that invokes the specified action when disposed.</summary>
+            <param name="dispose">Action to run during the first call to <see cref="M:System.IDisposable.Dispose"/>. The action is guaranteed to be run at most once.</param>
+            <returns>The disposable object that runs the given action upon disposal.</returns>
+            <remarks>A <see langword="null"/> action returns <see cref="P:ReactiveUI.Primitives.Disposables.Scope.Empty"/>.</remarks>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.Scope.Create``1(``0,System.Action{``0})">
+            <summary>Creates a disposable object that invokes the specified stateful action when disposed.</summary>
+            <typeparam name="TState">The state type.</typeparam>
+            <param name="state">State passed to <paramref name="dispose"/>.</param>
+            <param name="dispose">Action to run during the first call to <see cref="M:System.IDisposable.Dispose"/>.</param>
+            <returns>The disposable object that runs the given action upon disposal.</returns>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.Scope.Combine(System.IDisposable,System.IDisposable)">
+            <summary>Combines two disposable resources into a single disposable.</summary>
+            <param name="first">The first disposable.</param>
+            <param name="second">The second disposable.</param>
+            <returns>A disposable that disposes both supplied resources.</returns>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.Scope.Combine(System.IDisposable[])">
+            <summary>Combines disposable resources into a single disposable.</summary>
+            <param name="disposables">The disposables to combine.</param>
+            <returns>A disposable that disposes all supplied resources.</returns>
+        </member>
+        <member name="T:ReactiveUI.Primitives.Disposables.SingleDisposable">
+            <summary>A disposable slot that accepts one assignment: a second assignment throws, and a value assigned after disposal is disposed immediately.</summary>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Disposables.SingleDisposable._state">
+            <summary>The slot state.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.SingleDisposable.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.Primitives.Disposables.SingleDisposable"/> class.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.SingleDisposable.#ctor(System.Action)">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.Primitives.Disposables.SingleDisposable"/> class.</summary>
+            <param name="action">Action to invoke before the assigned disposable is disposed.</param>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.SingleDisposable.#ctor(System.IDisposable)">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.Primitives.Disposables.SingleDisposable"/> class.</summary>
+            <param name="disposable">The disposable.</param>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.SingleDisposable.#ctor(System.IDisposable,System.Action)">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.Primitives.Disposables.SingleDisposable"/> class.</summary>
+            <param name="disposable">The disposable.</param>
+            <param name="action">Action to invoke before the assigned disposable is disposed.</param>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Disposables.SingleDisposable.IsDisposed">
+            <summary>Gets a value indicating whether this instance is disposed.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.SingleDisposable.Create(System.IDisposable)">
+            <summary>Assigns the disposable held by this slot.</summary>
+            <param name="disposable">The disposable.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="disposable"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.InvalidOperationException">The slot holds an earlier assignment.</exception>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.SingleDisposable.Dispose">
+            <summary>Runs the constructor-supplied action, then disposes the assigned value and blocks further assignments; repeated calls have no further effect.</summary>
+        </member>
+        <member name="T:ReactiveUI.Primitives.Disposables.SingleReplaceableDisposable">
+            <summary>A disposable slot whose inner disposable can be replaced, disposing the previous one.</summary>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Disposables.SingleReplaceableDisposable._state">
+            <summary>The slot state.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.SingleReplaceableDisposable.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.Primitives.Disposables.SingleReplaceableDisposable"/> class.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.SingleReplaceableDisposable.#ctor(System.Action)">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.Primitives.Disposables.SingleReplaceableDisposable"/> class.</summary>
+            <param name="action">The action.</param>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.SingleReplaceableDisposable.#ctor(System.IDisposable)">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.Primitives.Disposables.SingleReplaceableDisposable"/> class.</summary>
+            <param name="disposable">The disposable.</param>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.SingleReplaceableDisposable.#ctor(System.IDisposable,System.Action)">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.Primitives.Disposables.SingleReplaceableDisposable"/> class.</summary>
+            <param name="disposable">The disposable.</param>
+            <param name="action">The action to call before disposal.</param>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Disposables.SingleReplaceableDisposable.IsDisposed">
+            <summary>Gets a value indicating whether this instance is disposed.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.SingleReplaceableDisposable.Create(System.IDisposable)">
+            <summary>Assigns the inner disposable and disposes the value it displaces; once this slot is disposed the incoming value is disposed instead.</summary>
+            <param name="disposable">The disposable to take as the new inner value.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="disposable"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.SingleReplaceableDisposable.Dispose">
+            <summary>Disposes the inner value, invokes the constructor-supplied action and blocks further assignments; repeated calls have no further effect.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.SingleReplaceableDisposable.TryCreate(System.IDisposable,System.IDisposable)">
+            <summary>Replaces the observed value, or disposes the incoming value when the slot is closed.</summary>
+            <param name="current">The observed slot value.</param>
+            <param name="disposable">The incoming disposable.</param>
+            <returns>True when the incoming value was handled; false when the observed slot was stale.</returns>
+        </member>
+        <member name="T:ReactiveUI.Primitives.Disposables.Slot">
+            <summary>Primitives alias for a replaceable disposable slot.</summary>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Disposables.Slot._state">
+            <summary>The slot state.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.Slot.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.Primitives.Disposables.Slot"/> class.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.Slot.#ctor(System.Action)">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.Primitives.Disposables.Slot"/> class.</summary>
+            <param name="action">Action to call when the slot is disposed.</param>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.Slot.#ctor(System.IDisposable)">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.Primitives.Disposables.Slot"/> class.</summary>
+            <param name="disposable">Initial disposable.</param>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.Slot.#ctor(System.IDisposable,System.Action)">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.Primitives.Disposables.Slot"/> class.</summary>
+            <param name="disposable">Initial disposable.</param>
+            <param name="action">Action to call when the slot is disposed.</param>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Disposables.Slot.IsDisposed">
+            <summary>Gets a value indicating whether this instance is disposed.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.Slot.Create(System.IDisposable)">
+            <summary>Assigns the inner disposable and disposes the value it displaces; once this slot is disposed the incoming value is disposed instead.</summary>
+            <param name="disposable">The disposable to take as the new inner value.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="disposable"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.Slot.Dispose">
+            <summary>Disposes the inner value, invokes the constructor-supplied action and blocks further assignments; repeated calls have no further effect.</summary>
+        </member>
+        <member name="T:ReactiveUI.Primitives.Disposables.StateActionDisposable`1">
+            <summary>Disposable that invokes a stateful action once.</summary>
+            <typeparam name="TState">The state type.</typeparam>
+            <param name="state">State passed to the dispose action.</param>
+            <param name="dispose">The dispose action.</param>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.StateActionDisposable`1.#ctor(`0,System.Action{`0})">
+            <summary>Disposable that invokes a stateful action once.</summary>
+            <typeparam name="TState">The state type.</typeparam>
+            <param name="state">State passed to the dispose action.</param>
+            <param name="dispose">The dispose action.</param>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Disposables.StateActionDisposable`1._state">
+            <summary>State supplied to the dispose action.</summary>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Disposables.StateActionDisposable`1._dispose">
+            <summary>Dispose action, cleared after the first invocation.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.StateActionDisposable`1.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="T:ReactiveUI.Primitives.Disposables.SwapDisposable">
+            <summary>Holds a replaceable disposable and disposes each displaced value.</summary>
+            <remarks>Assignments after disposal are disposed immediately.</remarks>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Disposables.SwapDisposable._current">
+            <summary>The current inner disposable.</summary>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Disposables.SwapDisposable._disposed">
+            <summary>Indicates whether the object has been disposed (0 = open, 1 = disposed).</summary>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Disposables.SwapDisposable.IsDisposed">
+            <summary>Gets a value indicating whether this instance has been disposed.</summary>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Disposables.SwapDisposable.Disposable">
+            <summary>Gets or sets the current inner disposable, disposing the previous value on assignment.</summary>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Disposables.SwapDisposable.DebuggerDisplay">
+            <summary>Gets the debugger display text.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Disposables.SwapDisposable.Dispose">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

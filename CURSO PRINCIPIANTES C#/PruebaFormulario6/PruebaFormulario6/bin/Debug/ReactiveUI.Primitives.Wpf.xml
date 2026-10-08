@@ -1,0 +1,385 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ReactiveUI.Primitives.Wpf</name>
+    </assembly>
+    <members>
+        <member name="T:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute">
+            <summary>Specifies that when a method returns <see cref="P:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute.ReturnValue"/>, the parameter is not <see langword="null"/>.</summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute.#ctor(System.Boolean)">
+            <summary>Initializes a new instance of the <see cref="T:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute"/> class.</summary>
+            <param name="returnValue">The return value condition for which the parameter is not <see langword="null"/>.</param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute.ReturnValue">
+            <summary>Gets the return value condition for which the parameter is not <see langword="null"/>.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.MemberNotNullWhenAttribute">
+            <summary>Specifies that the listed members are not <see langword="null"/> when the method returns the given value.</summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.MemberNotNullWhenAttribute.#ctor(System.Boolean,System.String[])">
+            <summary>Initializes a new instance of the <see cref="T:System.Diagnostics.CodeAnalysis.MemberNotNullWhenAttribute"/> class.</summary>
+            <param name="returnValue">The return value condition for which the members are not <see langword="null"/>.</param>
+            <param name="members">The field and property members that are promised to be not-<see langword="null"/>.</param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.MemberNotNullWhenAttribute.ReturnValue">
+            <summary>Gets the return value condition for which the members are not <see langword="null"/>.</summary>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.MemberNotNullWhenAttribute.Members">
+            <summary>Gets the field and property member names that are promised to be not-<see langword="null"/>.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.NotNullAttribute">
+            <summary>Specifies that an output is not <see langword="null"/> even if the corresponding type allows it.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.AllowNullAttribute">
+            <summary>Specifies that <see langword="null"/> is allowed as an input even if the corresponding type disallows it.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute">
+            <summary>Specifies that a constructor sets all required members, satisfying the compiler's required-member checks.</summary>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.CallerArgumentExpressionAttribute">
+            <summary>Indicates that a parameter captures the expression passed for another parameter as a string.</summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.CallerArgumentExpressionAttribute.#ctor(System.String)">
+            <summary>Initializes a new instance of the <see cref="T:System.Runtime.CompilerServices.CallerArgumentExpressionAttribute"/> class.</summary>
+            <param name="parameterName">The name of the parameter whose expression should be captured.</param>
+        </member>
+        <member name="P:System.Runtime.CompilerServices.CallerArgumentExpressionAttribute.ParameterName">
+            <summary>Gets the name of the parameter whose expression should be captured.</summary>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.IsExternalInit">
+            <summary>Reserved for the compiler to track metadata for <see langword="init"/>-only members; not for use in source.</summary>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.RequiredMemberAttribute">
+            <summary>Indicates that a type or member is required by the compiler and must be initialized.</summary>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.CompilerFeatureRequiredAttribute">
+            <summary>Indicates that compiler support for a particular feature is required for the location where it is applied.</summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.CompilerFeatureRequiredAttribute.RefStructs">
+            <summary>The <see cref="P:System.Runtime.CompilerServices.CompilerFeatureRequiredAttribute.FeatureName"/> used for the ref structs C# feature.</summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.CompilerFeatureRequiredAttribute.RequiredMembers">
+            <summary>The <see cref="P:System.Runtime.CompilerServices.CompilerFeatureRequiredAttribute.FeatureName"/> used for the required members C# feature.</summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.CompilerFeatureRequiredAttribute.#ctor(System.String)">
+            <summary>Initializes a new instance of the <see cref="T:System.Runtime.CompilerServices.CompilerFeatureRequiredAttribute"/> class.</summary>
+            <param name="featureName">The name of the required compiler feature.</param>
+        </member>
+        <member name="P:System.Runtime.CompilerServices.CompilerFeatureRequiredAttribute.FeatureName">
+            <summary>Gets the name of the required compiler feature.</summary>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.OverloadResolutionPriorityAttribute">
+            <summary>Specifies the relative priority of a member during overload resolution.</summary>
+            <param name="priority">The overload resolution priority.</param>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.OverloadResolutionPriorityAttribute.#ctor(System.Int32)">
+            <summary>Specifies the relative priority of a member during overload resolution.</summary>
+            <param name="priority">The overload resolution priority.</param>
+        </member>
+        <member name="P:System.Runtime.CompilerServices.OverloadResolutionPriorityAttribute.Priority">
+            <summary>Gets the overload resolution priority.</summary>
+        </member>
+        <member name="T:System.Threading.Tasks.TaskCompletionSource">
+            <summary>Polyfill for the non-generic <see cref="T:System.Threading.Tasks.TaskCompletionSource"/> introduced in .NET 5, backed by a <see cref="T:System.Threading.Tasks.TaskCompletionSource`1"/>.</summary>
+        </member>
+        <member name="F:System.Threading.Tasks.TaskCompletionSource._inner">
+            <summary>The underlying generic completion source that backs this non-generic facade.</summary>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskCompletionSource.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:System.Threading.Tasks.TaskCompletionSource"/> class.</summary>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskCompletionSource.SetResult">
+            <summary>Transitions the underlying task to the <see cref="F:System.Threading.Tasks.TaskStatus.RanToCompletion"/> state.</summary>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskCompletionSource.TrySetResult">
+            <summary>Attempts to transition the underlying task to the <see cref="F:System.Threading.Tasks.TaskStatus.RanToCompletion"/> state.</summary>
+            <returns><see langword="true"/> if the operation was successful; otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskCompletionSource.SetException(System.Exception)">
+            <summary>Transitions the underlying task to the <see cref="F:System.Threading.Tasks.TaskStatus.Faulted"/> state with the specified exception.</summary>
+            <param name="exception">The exception to bind to the task.</param>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskCompletionSource.TrySetException(System.Exception)">
+            <summary>Attempts to transition the underlying task to the <see cref="F:System.Threading.Tasks.TaskStatus.Faulted"/> state with the specified exception.</summary>
+            <param name="exception">The exception to bind to the task.</param>
+            <returns><see langword="true"/> if the operation was successful; otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskCompletionSource.SetCanceled">
+            <summary>Transitions the underlying task to the <see cref="F:System.Threading.Tasks.TaskStatus.Canceled"/> state.</summary>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskCompletionSource.TrySetCanceled">
+            <summary>Attempts to transition the underlying task to the <see cref="F:System.Threading.Tasks.TaskStatus.Canceled"/> state.</summary>
+            <returns><see langword="true"/> if the operation was successful; otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskCompletionSource.TrySetCanceled(System.Threading.CancellationToken)">
+            <summary>Attempts to transition the underlying task to the <see cref="F:System.Threading.Tasks.TaskStatus.Canceled"/> state for the specified token.</summary>
+            <param name="cancellationToken">The token associated with the cancellation.</param>
+            <returns><see langword="true"/> if the operation was successful; otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="T:System.Threading.Tasks.TaskPolyfillExtensions">
+            <summary>Polyfill extensions for <see cref="T:System.Threading.Tasks.Task"/> on frameworks without the .NET 6 <c>WaitAsync</c> overloads.</summary>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskPolyfillExtensions.WaitAsync(System.Threading.Tasks.Task,System.TimeSpan,System.Threading.CancellationToken)">
+            <inheritdoc cref="M:System.Threading.Tasks.TaskPolyfillExtensions.&lt;G&gt;$96CB7C060F6C3BA9D49BEC9D5AB7FADB.WaitAsync(System.TimeSpan,System.Threading.CancellationToken)"/>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskPolyfillExtensions.WaitAsync``1(System.Threading.Tasks.Task{``0},System.TimeSpan,System.Threading.CancellationToken)">
+            <inheritdoc cref="M:System.Threading.Tasks.TaskPolyfillExtensions.&lt;G&gt;$E7A2230C6C70DB328A0B266127AB188B`1.WaitAsync(System.TimeSpan,System.Threading.CancellationToken)"/>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskPolyfillExtensions.WaitForCompletionAsync(System.Threading.Tasks.Task,System.TimeSpan,System.Threading.CancellationToken)">
+            <summary>Waits for the task to complete, timeout, or cancellation.</summary>
+            <param name="task">The task to observe.</param>
+            <param name="timeout">The timeout after which the wait fails, or <see cref="F:System.Threading.Timeout.InfiniteTimeSpan"/> for no timeout.</param>
+            <param name="cancellationToken">A token that cancels the wait.</param>
+            <returns>A task that completes when the wait condition is resolved.</returns>
+            <exception cref="T:System.TimeoutException"><paramref name="timeout"/> elapsed before <paramref name="task"/> completed.</exception>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskPolyfillExtensions.ScheduleTimeout(System.Threading.CancellationTokenSource,System.TimeSpan)">
+            <summary>Schedules cancellation when the timeout elapses.</summary>
+            <param name="source">The cancellation source.</param>
+            <param name="timeout">The timeout duration.</param>
+        </member>
+        <member name="T:System.Threading.Tasks.TaskPolyfillExtensions.&lt;G&gt;$96CB7C060F6C3BA9D49BEC9D5AB7FADB.&lt;M&gt;$0390098B20AD7CE159B192C68157C136">
+            <summary>Polyfill awaiting operations for a task.</summary>
+            <param name="task">The task to await.</param>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskPolyfillExtensions.&lt;G&gt;$96CB7C060F6C3BA9D49BEC9D5AB7FADB.WaitAsync(System.TimeSpan,System.Threading.CancellationToken)">
+            <summary>Gets a task that completes with <paramref name="task"/>, or faults when the timeout elapses or the token is cancelled.</summary>
+            <param name="timeout">The timeout after which the returned task faults, or <see cref="F:System.Threading.Timeout.InfiniteTimeSpan"/> for no timeout.</param>
+            <param name="cancellationToken">A token that cancels the wait.</param>
+            <returns>A task that mirrors <paramref name="task"/> subject to the timeout and cancellation.</returns>
+        </member>
+        <member name="T:System.Threading.Tasks.TaskPolyfillExtensions.&lt;G&gt;$E7A2230C6C70DB328A0B266127AB188B`1.&lt;M&gt;$1021E5BC2849FECF3DC3DC41DAD21BF0">
+            <summary>Polyfill awaiting operations for a task that produces a result.</summary>
+            <typeparam name="T">The task result type.</typeparam>
+            <param name="task">The task to await.</param>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskPolyfillExtensions.&lt;G&gt;$E7A2230C6C70DB328A0B266127AB188B`1.WaitAsync(System.TimeSpan,System.Threading.CancellationToken)">
+            <summary>Gets a task that completes with the same result as <paramref name="task"/>, or faults when the timeout elapses or the token is cancelled.</summary>
+            <param name="timeout">The timeout after which the returned task faults, or <see cref="F:System.Threading.Timeout.InfiniteTimeSpan"/> for no timeout.</param>
+            <param name="cancellationToken">A token that cancels the wait.</param>
+            <returns>A task that mirrors <paramref name="task"/> subject to the timeout and cancellation.</returns>
+        </member>
+        <member name="T:System.Threading.CancellationTokenSourcePolyfillExtensions">
+            <summary>Polyfill extensions for <see cref="T:System.Threading.CancellationTokenSource"/> on frameworks without the .NET 8 async cancellation API.</summary>
+        </member>
+        <member name="M:System.Threading.CancellationTokenSourcePolyfillExtensions.CancelAsync(System.Threading.CancellationTokenSource)">
+            <inheritdoc cref="M:System.Threading.CancellationTokenSourcePolyfillExtensions.&lt;G&gt;$13E906D51D7598E2A935990F49884309.CancelAsync"/>
+        </member>
+        <member name="T:System.Threading.CancellationTokenSourcePolyfillExtensions.&lt;G&gt;$13E906D51D7598E2A935990F49884309.&lt;M&gt;$492689839C316161CDE5C042BEF85CD5">
+            <summary>Polyfill operations for a cancellation token source.</summary>
+            <param name="source">The cancellation token source.</param>
+        </member>
+        <member name="M:System.Threading.CancellationTokenSourcePolyfillExtensions.&lt;G&gt;$13E906D51D7598E2A935990F49884309.CancelAsync">
+            <summary>Communicates a request for cancellation, completing synchronously (no asynchronous callback draining on this framework).</summary>
+            <returns>A completed task representing the cancellation request.</returns>
+        </member>
+        <member name="T:System.Threading.CancellationTokenPolyfillExtensions">
+            <summary>Polyfill extensions for <see cref="T:System.Threading.CancellationToken"/> on frameworks without <c>UnsafeRegister</c>.</summary>
+        </member>
+        <member name="M:System.Threading.CancellationTokenPolyfillExtensions.UnsafeRegister(System.Threading.CancellationToken,System.Action{System.Object},System.Object)">
+            <inheritdoc cref="M:System.Threading.CancellationTokenPolyfillExtensions.&lt;G&gt;$49853BDED5F7090FEA8BBA2FA1B20683.UnsafeRegister(System.Action{System.Object},System.Object)"/>
+        </member>
+        <member name="M:System.Threading.CancellationTokenPolyfillExtensions.UnsafeRegister(System.Threading.CancellationToken,System.Action{System.Object,System.Threading.CancellationToken},System.Object)">
+            <inheritdoc cref="M:System.Threading.CancellationTokenPolyfillExtensions.&lt;G&gt;$49853BDED5F7090FEA8BBA2FA1B20683.UnsafeRegister(System.Action{System.Object,System.Threading.CancellationToken},System.Object)"/>
+        </member>
+        <member name="M:System.Threading.CancellationTokenPolyfillExtensions.Unregister(System.Threading.CancellationTokenRegistration)">
+            <inheritdoc cref="M:System.Threading.CancellationTokenPolyfillExtensions.&lt;G&gt;$15BF26D18BA22BDE17A22DBB8F9B58C2.Unregister"/>
+        </member>
+        <member name="T:System.Threading.CancellationTokenPolyfillExtensions.&lt;G&gt;$49853BDED5F7090FEA8BBA2FA1B20683.&lt;M&gt;$A38FAFDA8CA6AD7C362890E0C0BB89F5">
+            <summary>Polyfill registration operations for a cancellation token.</summary>
+            <param name="token">The cancellation token.</param>
+        </member>
+        <member name="M:System.Threading.CancellationTokenPolyfillExtensions.&lt;G&gt;$49853BDED5F7090FEA8BBA2FA1B20683.UnsafeRegister(System.Action{System.Object},System.Object)">
+            <summary>Registers a delegate that is invoked when the token is cancelled, without capturing the execution context.</summary>
+            <param name="callback">The delegate to invoke on cancellation.</param>
+            <param name="state">The state passed to <paramref name="callback"/>.</param>
+            <returns>A registration that can be disposed to remove the callback.</returns>
+        </member>
+        <member name="M:System.Threading.CancellationTokenPolyfillExtensions.&lt;G&gt;$49853BDED5F7090FEA8BBA2FA1B20683.UnsafeRegister(System.Action{System.Object,System.Threading.CancellationToken},System.Object)">
+            <summary>Registers a delegate that is invoked with the triggering token when the token is cancelled, without capturing the execution context.</summary>
+            <param name="callback">The delegate to invoke on cancellation, receiving the state and the triggering token.</param>
+            <param name="state">The state passed to <paramref name="callback"/>.</param>
+            <returns>A registration that can be disposed to remove the callback.</returns>
+        </member>
+        <member name="T:System.Threading.CancellationTokenPolyfillExtensions.&lt;G&gt;$15BF26D18BA22BDE17A22DBB8F9B58C2.&lt;M&gt;$7845FE0D56B823CEFCE4E7163A33584B">
+            <summary>Polyfill removal operations for a cancellation token registration.</summary>
+            <param name="registration">The registration to remove.</param>
+        </member>
+        <member name="M:System.Threading.CancellationTokenPolyfillExtensions.&lt;G&gt;$15BF26D18BA22BDE17A22DBB8F9B58C2.Unregister">
+            <summary>Removes the registered callback; on this framework the removal may wait for an in-flight callback.</summary>
+            <returns><see langword="true"/> when the registration was released.</returns>
+        </member>
+        <member name="T:ReactiveUI.Primitives.Internal.ArgumentExceptionHelper">
+            <summary>Polyfill for <c>ArgumentNullException.ThrowIfNull</c> on target frameworks that predate it.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Internal.ArgumentExceptionHelper.ThrowIfNull(System.Object,System.String)">
+            <summary>Throws an <see cref="T:System.ArgumentNullException"/> if <paramref name="argument"/> is <see langword="null"/>.</summary>
+            <param name="argument">The reference type argument to validate as non-null.</param>
+            <param name="paramName">The name of the parameter with which <paramref name="argument"/> corresponds.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="argument"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="T:ReactiveUI.Primitives.Internal.ArgumentOutOfRangeExceptionHelper">
+            <summary>Polyfill for modern <see cref="T:System.ArgumentOutOfRangeException"/> guard helpers on target frameworks that predate them.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Internal.ArgumentOutOfRangeExceptionHelper.ThrowIfNegative(System.Int32,System.String)">
+            <summary>Throws when <paramref name="value"/> is negative.</summary>
+            <param name="value">The value to validate.</param>
+            <param name="paramName">The parameter name.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="value"/> is negative.</exception>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Internal.ArgumentOutOfRangeExceptionHelper.ThrowIfNegativeOrZero(System.Int32,System.String)">
+            <summary>Throws when <paramref name="value"/> is negative or zero.</summary>
+            <param name="value">The value to validate.</param>
+            <param name="paramName">The parameter name.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="value"/> is negative or zero.</exception>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Internal.ArgumentOutOfRangeExceptionHelper.ThrowIfLessThan(System.Int32,System.Int32,System.String)">
+            <summary>Throws when <paramref name="value"/> is less than <paramref name="other"/>.</summary>
+            <param name="value">The value to validate.</param>
+            <param name="other">The lower bound.</param>
+            <param name="paramName">The parameter name.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="value"/> is less than <paramref name="other"/>.</exception>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Internal.ArgumentOutOfRangeExceptionHelper.ThrowIfLessThan(System.TimeSpan,System.TimeSpan,System.String)">
+            <summary>Throws when <paramref name="value"/> is less than <paramref name="other"/>.</summary>
+            <param name="value">The value to validate.</param>
+            <param name="other">The lower bound.</param>
+            <param name="paramName">The parameter name.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="value"/> is less than <paramref name="other"/>.</exception>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Internal.ArgumentOutOfRangeExceptionHelper.ThrowIfLessThanOrEqual(System.TimeSpan,System.TimeSpan,System.String)">
+            <summary>Throws when <paramref name="value"/> is less than or equal to <paramref name="other"/>.</summary>
+            <param name="value">The value to validate.</param>
+            <param name="other">The lower bound.</param>
+            <param name="paramName">The parameter name.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="value"/> is less than or equal to <paramref name="other"/>.</exception>
+        </member>
+        <member name="T:ReactiveUI.Primitives.Internal.ObjectDisposedExceptionHelper">
+            <summary>Polyfill for <c>ObjectDisposedException.ThrowIf</c> on target frameworks that predate it.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Internal.ObjectDisposedExceptionHelper.ThrowIf(System.Boolean,System.Object)">
+            <summary>Throws an <see cref="T:System.ObjectDisposedException"/> if <paramref name="condition"/> is <see langword="true"/>.</summary>
+            <param name="condition">The condition to evaluate for a disposed instance.</param>
+            <param name="instance">The object whose type name is used to build the exception message.</param>
+            <exception cref="T:System.ObjectDisposedException"><paramref name="condition"/> is <see langword="true"/>.</exception>
+        </member>
+        <member name="T:ReactiveUI.Primitives.Concurrency.DispatcherSequencer">
+            <summary>WPF dispatcher sequencer that coalesces scheduled work onto a dispatcher drain.</summary>
+            <remarks>Callbacks run at Priority in posted dispatcher batches without inline reentrancy; cancellation suppresses unstarted work.</remarks>
+            <seealso cref="T:ReactiveUI.Primitives.Concurrency.ISequencer" />
+        </member>
+        <member name="F:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.ByDispatcher">
+            <summary>The sequencer created for each dispatcher other than <see cref="P:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.Main"/>'s, kept while its dispatcher lives.</summary>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Concurrency.DispatcherSequencer._main">
+            <summary>The shared main-thread sequencer, set once the application's dispatcher is available.</summary>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Concurrency.DispatcherSequencer._current">
+            <summary>The sequencer for the calling thread's dispatcher, cached per thread.</summary>
+        </member>
+        <member name="F:ReactiveUI.Primitives.Concurrency.DispatcherSequencer._state">
+            <summary>Coalescing dispatch engine.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.#ctor(System.Windows.Threading.Dispatcher)">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.Primitives.Concurrency.DispatcherSequencer"/> class.</summary>
+            <param name="dispatcher">The dispatcher whose thread runs the scheduled work.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="dispatcher"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.#ctor(System.Windows.Threading.Dispatcher,System.Windows.Threading.DispatcherPriority)">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.Primitives.Concurrency.DispatcherSequencer"/> class.</summary>
+            <param name="dispatcher">The dispatcher whose thread runs the scheduled work.</param>
+            <param name="priority">Dispatcher priority used for posted drains.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="dispatcher"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.#ctor(System.Windows.Threading.Dispatcher,System.Windows.Threading.DispatcherPriority,System.Func{System.Action,System.Boolean},System.Action{ReactiveUI.Primitives.Concurrency.IWorkItem,System.Int64})">
+            <summary>Initializes a new instance of the <see cref="T:ReactiveUI.Primitives.Concurrency.DispatcherSequencer"/> class.</summary>
+            <param name="dispatcher">The dispatcher associated with this sequencer.</param>
+            <param name="priority">The dispatcher priority.</param>
+            <param name="post">Posts ready work, or null to use the dispatcher.</param>
+            <param name="scheduleDelayed">Schedules delayed work, or null to use a dispatcher timer.</param>
+            <exception cref="T:System.ArgumentNullException">The dispatcher is null.</exception>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.Main">
+            <summary>Gets the shared sequencer for the WPF main (UI) thread.</summary>
+            <exception cref="T:System.InvalidOperationException">No application exists yet and the calling thread has no dispatcher.</exception>
+            <remarks>
+            Bound once to the running <see cref="T:System.Windows.Application"/>'s dispatcher, from any thread. Until an
+            application exists nothing is cached, and the calling thread's existing dispatcher is used instead.
+            </remarks>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.Current">
+            <summary>Gets the sequencer for the calling thread's dispatcher.</summary>
+            <exception cref="T:System.InvalidOperationException">The calling thread has no dispatcher.</exception>
+            <remarks>
+            Cached per thread, for applications that run UI on more than one thread. Never creates a dispatcher: a thread
+            that has none cannot run the scheduled work.
+            </remarks>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.Dispatcher">
+            <summary>Gets the dispatcher whose thread runs the scheduled work.</summary>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.Priority">
+            <summary>Gets the dispatcher priority used for posted drains.</summary>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.Now">
+            <inheritdoc/>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.Timestamp">
+            <inheritdoc/>
+        </member>
+        <member name="P:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.DebuggerDisplay">
+            <summary>Gets the debugger display text.</summary>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.For(System.Windows.Threading.Dispatcher)">
+            <summary>Returns the sequencer for <paramref name="dispatcher"/>, created once per dispatcher.</summary>
+            <param name="dispatcher">The dispatcher whose thread runs the scheduled work.</param>
+            <returns>
+            <see cref="P:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.Main"/> once it is bound to <paramref name="dispatcher"/>; otherwise one sequencer per dispatcher at
+            <see cref="F:System.Windows.Threading.DispatcherPriority.Normal"/>, kept while the dispatcher lives.
+            </returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="dispatcher"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.CheckAccess">
+            <summary>Returns whether the calling thread owns <see cref="P:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.Dispatcher"/>.</summary>
+            <returns><see langword="true"/> when the calling thread may run work for this sequencer inline.</returns>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.Schedule(ReactiveUI.Primitives.Concurrency.IWorkItem)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.Schedule(ReactiveUI.Primitives.Concurrency.IWorkItem,System.Int64)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.For(System.Windows.Threading.Dispatcher,ReactiveUI.Primitives.Concurrency.DispatcherSequencer)">
+            <summary>Returns <paramref name="main"/> when it runs on <paramref name="dispatcher"/>, and otherwise the cached sequencer for it.</summary>
+            <param name="dispatcher">The dispatcher whose thread runs the scheduled work.</param>
+            <param name="main">The shared main-thread sequencer, or <see langword="null"/> while it is unbound.</param>
+            <returns>The sequencer for <paramref name="dispatcher"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="dispatcher"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.BindMain(ReactiveUI.Primitives.Concurrency.DispatcherSequencer@,System.Windows.Threading.Dispatcher)">
+            <summary>Caches the shared main-thread sequencer for the application's dispatcher, keeping the first one bound.</summary>
+            <param name="slot">The field that holds the shared sequencer.</param>
+            <param name="applicationDispatcher">The application's dispatcher, or <see langword="null"/> when no application exists.</param>
+            <returns>The shared sequencer, or <see langword="null"/> when <paramref name="applicationDispatcher"/> is <see langword="null"/>.</returns>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.ResolveCurrentDispatcher">
+            <summary>Returns the calling thread's existing dispatcher without creating one.</summary>
+            <returns>The calling thread's dispatcher.</returns>
+            <exception cref="T:System.InvalidOperationException">The calling thread has no dispatcher.</exception>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.Post(System.Action)">
+            <summary>Marshals the cached drain callback onto the dispatcher.</summary>
+            <param name="drain">The drain callback.</param>
+            <returns><see langword="true"/>, since the dispatcher always accepts the work.</returns>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.ScheduleDelayed(ReactiveUI.Primitives.Concurrency.IWorkItem,System.Int64)">
+            <summary>Runs delayed work on a dispatcher timer so it executes directly on the dispatcher thread.</summary>
+            <param name="item">Work item to execute at the due time.</param>
+            <param name="dueTimestamp">Absolute monotonic timestamp at which to execute the item.</param>
+        </member>
+        <member name="M:ReactiveUI.Primitives.Concurrency.DispatcherSequencer.RunDrain">
+            <summary>Runs one queued batch on the coalescing engine.</summary>
+        </member>
+    </members>
+</doc>

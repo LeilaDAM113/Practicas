@@ -1,0 +1,11 @@
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\PruebaFormulario2\PruebaFormulario2\bin\Debug\PruebaFormulario2.exe.config
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\PruebaFormulario2\PruebaFormulario2\bin\Debug\PruebaFormulario2.exe
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\PruebaFormulario2\PruebaFormulario2\bin\Debug\PruebaFormulario2.pdb
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\PruebaFormulario2\PruebaFormulario2\obj\Debug\PruebaFormulario2.csproj.AssemblyReference.cache
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\PruebaFormulario2\PruebaFormulario2\obj\Debug\PruebaFormulario2.CustomUserControl.resources
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\PruebaFormulario2\PruebaFormulario2\obj\Debug\PruebaFormulario2.Form1.resources
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\PruebaFormulario2\PruebaFormulario2\obj\Debug\PruebaFormulario2.Properties.Resources.resources
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\PruebaFormulario2\PruebaFormulario2\obj\Debug\PruebaFormulario2.csproj.GenerateResource.cache
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\PruebaFormulario2\PruebaFormulario2\obj\Debug\PruebaFormulario2.csproj.CoreCompileInputs.cache
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\PruebaFormulario2\PruebaFormulario2\obj\Debug\PruebaFormulario2.exe
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\PruebaFormulario2\PruebaFormulario2\obj\Debug\PruebaFormulario2.pdb

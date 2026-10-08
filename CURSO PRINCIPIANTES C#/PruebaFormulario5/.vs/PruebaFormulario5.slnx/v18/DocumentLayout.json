@@ -1,0 +1,202 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\PruebaFormulario5\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8406E0D7-E840-4327-BE59-93D163416065}|PruebaFormulario5\\PruebaFormulario5.csproj|C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\PruebaFormulario5\\pruebaformulario5\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8406E0D7-E840-4327-BE59-93D163416065}|PruebaFormulario5\\PruebaFormulario5.csproj|solutionrelative:pruebaformulario5\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8406E0D7-E840-4327-BE59-93D163416065}|PruebaFormulario5\\PruebaFormulario5.csproj|C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\PruebaFormulario5\\pruebaformulario5\\viewmodel\\base\\baseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8406E0D7-E840-4327-BE59-93D163416065}|PruebaFormulario5\\PruebaFormulario5.csproj|solutionrelative:pruebaformulario5\\viewmodel\\base\\baseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8406E0D7-E840-4327-BE59-93D163416065}|PruebaFormulario5\\PruebaFormulario5.csproj|c:\\users\\leila.fraile\\desktop\\leila fraile sim\u00F3n pr\u00E1cticas\\curso principiantes c#\\pruebaformulario5\\pruebaformulario5\\viewmodel\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8406E0D7-E840-4327-BE59-93D163416065}|PruebaFormulario5\\PruebaFormulario5.csproj|solutionrelative:pruebaformulario5\\viewmodel\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8406E0D7-E840-4327-BE59-93D163416065}|PruebaFormulario5\\PruebaFormulario5.csproj|c:\\users\\leila.fraile\\desktop\\leila fraile sim\u00F3n pr\u00E1cticas\\curso principiantes c#\\pruebaformulario5\\pruebaformulario5\\view\\loginview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8406E0D7-E840-4327-BE59-93D163416065}|PruebaFormulario5\\PruebaFormulario5.csproj|solutionrelative:pruebaformulario5\\view\\loginview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8406E0D7-E840-4327-BE59-93D163416065}|PruebaFormulario5\\PruebaFormulario5.csproj|C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\PruebaFormulario5\\pruebaformulario5\\view\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{8406E0D7-E840-4327-BE59-93D163416065}|PruebaFormulario5\\PruebaFormulario5.csproj|solutionrelative:pruebaformulario5\\view\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8406E0D7-E840-4327-BE59-93D163416065}|PruebaFormulario5\\PruebaFormulario5.csproj|C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\PruebaFormulario5\\pruebaformulario5\\customdependecyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8406E0D7-E840-4327-BE59-93D163416065}|PruebaFormulario5\\PruebaFormulario5.csproj|solutionrelative:pruebaformulario5\\customdependecyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8406E0D7-E840-4327-BE59-93D163416065}|PruebaFormulario5\\PruebaFormulario5.csproj|C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\PruebaFormulario5\\pruebaformulario5\\viewmodel\\base\\command.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8406E0D7-E840-4327-BE59-93D163416065}|PruebaFormulario5\\PruebaFormulario5.csproj|solutionrelative:pruebaformulario5\\viewmodel\\base\\command.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8406E0D7-E840-4327-BE59-93D163416065}|PruebaFormulario5\\PruebaFormulario5.csproj|C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\PruebaFormulario5\\pruebaformulario5\\services\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8406E0D7-E840-4327-BE59-93D163416065}|PruebaFormulario5\\PruebaFormulario5.csproj|solutionrelative:pruebaformulario5\\services\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8406E0D7-E840-4327-BE59-93D163416065}|PruebaFormulario5\\PruebaFormulario5.csproj|C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\PruebaFormulario5\\pruebaformulario5\\services\\iloginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8406E0D7-E840-4327-BE59-93D163416065}|PruebaFormulario5\\PruebaFormulario5.csproj|solutionrelative:pruebaformulario5\\services\\iloginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8406E0D7-E840-4327-BE59-93D163416065}|PruebaFormulario5\\PruebaFormulario5.csproj|C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\PruebaFormulario5\\pruebaformulario5\\model\\userdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8406E0D7-E840-4327-BE59-93D163416065}|PruebaFormulario5\\PruebaFormulario5.csproj|solutionrelative:pruebaformulario5\\model\\userdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8406E0D7-E840-4327-BE59-93D163416065}|PruebaFormulario5\\PruebaFormulario5.csproj|C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\PruebaFormulario5\\pruebaformulario5\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{8406E0D7-E840-4327-BE59-93D163416065}|PruebaFormulario5\\PruebaFormulario5.csproj|solutionrelative:pruebaformulario5\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\PruebaFormulario5\\PruebaFormulario5\\ViewModel\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "PruebaFormulario5\\ViewModel\\LoginViewModel.cs",
+              "ToolTip": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\PruebaFormulario5\\PruebaFormulario5\\ViewModel\\LoginViewModel.cs",
+              "RelativeToolTip": "PruebaFormulario5\\ViewModel\\LoginViewModel.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAiwB4AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-02T11:41:10.761Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LoginView.xaml",
+              "DocumentMoniker": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\PruebaFormulario5\\PruebaFormulario5\\View\\LoginView.xaml",
+              "RelativeDocumentMoniker": "PruebaFormulario5\\View\\LoginView.xaml",
+              "ToolTip": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\PruebaFormulario5\\PruebaFormulario5\\View\\LoginView.xaml",
+              "RelativeToolTip": "PruebaFormulario5\\View\\LoginView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-10-02T09:23:09.052Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoginView.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\PruebaFormulario5\\PruebaFormulario5\\View\\LoginView.xaml.cs",
+              "RelativeDocumentMoniker": "PruebaFormulario5\\View\\LoginView.xaml.cs",
+              "ToolTip": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\PruebaFormulario5\\PruebaFormulario5\\View\\LoginView.xaml.cs",
+              "RelativeToolTip": "PruebaFormulario5\\View\\LoginView.xaml.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAwBkAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-02T09:36:52.958Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Command.cs",
+              "DocumentMoniker": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\PruebaFormulario5\\PruebaFormulario5\\ViewModel\\Base\\Command.cs",
+              "RelativeDocumentMoniker": "PruebaFormulario5\\ViewModel\\Base\\Command.cs",
+              "ToolTip": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\PruebaFormulario5\\PruebaFormulario5\\ViewModel\\Base\\Command.cs",
+              "RelativeToolTip": "PruebaFormulario5\\ViewModel\\Base\\Command.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAiwA8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-02T09:41:56.504Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\PruebaFormulario5\\PruebaFormulario5\\App.xaml.cs",
+              "RelativeDocumentMoniker": "PruebaFormulario5\\App.xaml.cs",
+              "ToolTip": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\PruebaFormulario5\\PruebaFormulario5\\App.xaml.cs",
+              "RelativeToolTip": "PruebaFormulario5\\App.xaml.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABAAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-02T10:21:37.037Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BaseViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\PruebaFormulario5\\PruebaFormulario5\\ViewModel\\Base\\BaseViewModel.cs",
+              "RelativeDocumentMoniker": "PruebaFormulario5\\ViewModel\\Base\\BaseViewModel.cs",
+              "ToolTip": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\PruebaFormulario5\\PruebaFormulario5\\ViewModel\\Base\\BaseViewModel.cs",
+              "RelativeToolTip": "PruebaFormulario5\\ViewModel\\Base\\BaseViewModel.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAqwA0AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-02T09:13:14.237Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CustomDependecyService.cs",
+              "DocumentMoniker": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\PruebaFormulario5\\PruebaFormulario5\\CustomDependecyService.cs",
+              "RelativeDocumentMoniker": "PruebaFormulario5\\CustomDependecyService.cs",
+              "ToolTip": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\PruebaFormulario5\\PruebaFormulario5\\CustomDependecyService.cs",
+              "RelativeToolTip": "PruebaFormulario5\\CustomDependecyService.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAuwBoAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-02T10:08:22.308Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "LoginService.cs",
+              "DocumentMoniker": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\PruebaFormulario5\\PruebaFormulario5\\Services\\LoginService.cs",
+              "RelativeDocumentMoniker": "PruebaFormulario5\\Services\\LoginService.cs",
+              "ToolTip": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\PruebaFormulario5\\PruebaFormulario5\\Services\\LoginService.cs",
+              "RelativeToolTip": "PruebaFormulario5\\Services\\LoginService.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAYwAkAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-02T09:55:50.506Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UserData.cs",
+              "DocumentMoniker": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\PruebaFormulario5\\PruebaFormulario5\\Model\\UserData.cs",
+              "RelativeDocumentMoniker": "PruebaFormulario5\\Model\\UserData.cs",
+              "ToolTip": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\PruebaFormulario5\\PruebaFormulario5\\Model\\UserData.cs",
+              "RelativeToolTip": "PruebaFormulario5\\Model\\UserData.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-02T09:56:48.471Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ILoginService.cs",
+              "DocumentMoniker": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\PruebaFormulario5\\PruebaFormulario5\\Services\\ILoginService.cs",
+              "RelativeDocumentMoniker": "PruebaFormulario5\\Services\\ILoginService.cs",
+              "ToolTip": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\PruebaFormulario5\\PruebaFormulario5\\Services\\ILoginService.cs",
+              "RelativeToolTip": "PruebaFormulario5\\Services\\ILoginService.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAsAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-02T10:03:04.718Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\PruebaFormulario5\\PruebaFormulario5\\App.xaml",
+              "RelativeDocumentMoniker": "PruebaFormulario5\\App.xaml",
+              "ToolTip": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\PruebaFormulario5\\PruebaFormulario5\\App.xaml",
+              "RelativeToolTip": "PruebaFormulario5\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-10-02T09:23:41.982Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

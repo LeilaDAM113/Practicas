@@ -1,0 +1,7 @@
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\PruebaConsola\PruebaConsola\bin\Debug\PruebaConsola.exe.config
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\PruebaConsola\PruebaConsola\bin\Debug\PruebaConsola.exe
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\PruebaConsola\PruebaConsola\bin\Debug\PruebaConsola.pdb
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\PruebaConsola\PruebaConsola\obj\Debug\PruebaConsola.csproj.AssemblyReference.cache
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\PruebaConsola\PruebaConsola\obj\Debug\PruebaConsola.csproj.CoreCompileInputs.cache
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\PruebaConsola\PruebaConsola\obj\Debug\PruebaConsola.exe
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\PruebaConsola\PruebaConsola\obj\Debug\PruebaConsola.pdb

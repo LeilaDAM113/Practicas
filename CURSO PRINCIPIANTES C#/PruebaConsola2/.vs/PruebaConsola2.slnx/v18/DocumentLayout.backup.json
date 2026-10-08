@@ -1,0 +1,75 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\PruebaConsola2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AD48B711-1CDB-4008-A120-E0ACCFDB0367}|PruebaConsola2\\PruebaConsola2.csproj|c:\\users\\leila.fraile\\desktop\\leila fraile sim\u00F3n pr\u00E1cticas\\curso principiantes c#\\pruebaconsola2\\pruebaconsola2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD48B711-1CDB-4008-A120-E0ACCFDB0367}|PruebaConsola2\\PruebaConsola2.csproj|solutionrelative:pruebaconsola2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD48B711-1CDB-4008-A120-E0ACCFDB0367}|PruebaConsola2\\PruebaConsola2.csproj|c:\\users\\leila.fraile\\desktop\\leila fraile sim\u00F3n pr\u00E1cticas\\curso principiantes c#\\pruebaconsola2\\pruebaconsola2\\playlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD48B711-1CDB-4008-A120-E0ACCFDB0367}|PruebaConsola2\\PruebaConsola2.csproj|solutionrelative:pruebaconsola2\\playlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD48B711-1CDB-4008-A120-E0ACCFDB0367}|PruebaConsola2\\PruebaConsola2.csproj|c:\\users\\leila.fraile\\desktop\\leila fraile sim\u00F3n pr\u00E1cticas\\curso principiantes c#\\pruebaconsola2\\pruebaconsola2\\song.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD48B711-1CDB-4008-A120-E0ACCFDB0367}|PruebaConsola2\\PruebaConsola2.csproj|solutionrelative:pruebaconsola2\\song.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Song.cs",
+              "DocumentMoniker": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\PruebaConsola2\\PruebaConsola2\\Song.cs",
+              "RelativeDocumentMoniker": "PruebaConsola2\\Song.cs",
+              "ToolTip": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\PruebaConsola2\\PruebaConsola2\\Song.cs",
+              "RelativeToolTip": "PruebaConsola2\\Song.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-01T06:44:54.034Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PlayList.cs",
+              "DocumentMoniker": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\PruebaConsola2\\PruebaConsola2\\PlayList.cs",
+              "RelativeDocumentMoniker": "PruebaConsola2\\PlayList.cs",
+              "ToolTip": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\PruebaConsola2\\PruebaConsola2\\PlayList.cs",
+              "RelativeToolTip": "PruebaConsola2\\PlayList.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-01T06:42:27.168Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\PruebaConsola2\\PruebaConsola2\\Program.cs",
+              "RelativeDocumentMoniker": "PruebaConsola2\\Program.cs",
+              "ToolTip": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\PruebaConsola2\\PruebaConsola2\\Program.cs",
+              "RelativeToolTip": "PruebaConsola2\\Program.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABwAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-01T06:39:06.288Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

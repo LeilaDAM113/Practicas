@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ReactiveUI.SourceGenerators</name>
+    </assembly>
+    <members>
+        <member name="T:ReactiveUI.SourceGenerators.AccessModifier">
+            <summary>The accessibility of a generated property's set accessor.</summary>
+        </member>
+        <member name="F:ReactiveUI.SourceGenerators.AccessModifier.Public">
+            <summary>A <c>public</c> accessor.</summary>
+        </member>
+        <member name="F:ReactiveUI.SourceGenerators.AccessModifier.Protected">
+            <summary>A <c>protected</c> accessor.</summary>
+        </member>
+        <member name="F:ReactiveUI.SourceGenerators.AccessModifier.Internal">
+            <summary>An <c>internal</c> accessor.</summary>
+        </member>
+        <member name="F:ReactiveUI.SourceGenerators.AccessModifier.Private">
+            <summary>A <c>private</c> accessor.</summary>
+        </member>
+        <member name="F:ReactiveUI.SourceGenerators.AccessModifier.InternalProtected">
+            <summary>A <c>protected internal</c> accessor.</summary>
+        </member>
+        <member name="F:ReactiveUI.SourceGenerators.AccessModifier.PrivateProtected">
+            <summary>A <c>private protected</c> accessor.</summary>
+        </member>
+        <member name="F:ReactiveUI.SourceGenerators.AccessModifier.Init">
+            <summary>An <c>init</c> accessor.</summary>
+        </member>
+        <member name="T:ReactiveUI.SourceGenerators.BindableDerivedListAttribute">
+            <summary>Generates a property that exposes the annotated <c>ReadOnlyObservableCollection&lt;T&gt;</c> field.</summary>
+        </member>
+        <member name="P:ReactiveUI.SourceGenerators.BindableDerivedListAttribute.AccessModifier">
+            <summary>Gets or sets the accessibility of the generated property.</summary>
+        </member>
+        <member name="T:ReactiveUI.SourceGenerators.InheritanceModifier">
+            <summary>The inheritance modifier of a generated property.</summary>
+        </member>
+        <member name="F:ReactiveUI.SourceGenerators.InheritanceModifier.None">
+            <summary>No modifier.</summary>
+        </member>
+        <member name="F:ReactiveUI.SourceGenerators.InheritanceModifier.Virtual">
+            <summary>A <c>virtual</c> property.</summary>
+        </member>
+        <member name="F:ReactiveUI.SourceGenerators.InheritanceModifier.Override">
+            <summary>An <c>override</c> property.</summary>
+        </member>
+        <member name="F:ReactiveUI.SourceGenerators.InheritanceModifier.New">
+            <summary>A <c>new</c> property.</summary>
+        </member>
+        <member name="T:ReactiveUI.SourceGenerators.IReactiveObjectAttribute">
+            <summary>Generates an <c>IReactiveObject</c> implementation for a class that cannot inherit from <c>ReactiveObject</c>.</summary>
+        </member>
+        <member name="T:ReactiveUI.SourceGenerators.KeepAttributes">
+            <summary>The compilation symbol that keeps the generator attributes in a consumer's metadata.</summary>
+            <remarks>
+            Every attribute in this assembly is <see cref="T:System.Diagnostics.ConditionalAttribute"/> on this symbol. The
+            generators read the attributes from source, so a consumer that does not define it keeps no reference to this
+            assembly, and nothing about the attributes reaches its dependents.
+            </remarks>
+        </member>
+        <member name="F:ReactiveUI.SourceGenerators.KeepAttributes.Symbol">
+            <summary>The symbol a consumer defines to keep the attributes in its metadata.</summary>
+        </member>
+        <member name="T:ReactiveUI.SourceGenerators.PropertyAccessModifier">
+            <summary>The accessibility of a generated property.</summary>
+        </member>
+        <member name="F:ReactiveUI.SourceGenerators.PropertyAccessModifier.Public">
+            <summary>A <c>public</c> property.</summary>
+        </member>
+        <member name="F:ReactiveUI.SourceGenerators.PropertyAccessModifier.Protected">
+            <summary>A <c>protected</c> property.</summary>
+        </member>
+        <member name="F:ReactiveUI.SourceGenerators.PropertyAccessModifier.Internal">
+            <summary>An <c>internal</c> property.</summary>
+        </member>
+        <member name="F:ReactiveUI.SourceGenerators.PropertyAccessModifier.Private">
+            <summary>A <c>private</c> property.</summary>
+        </member>
+        <member name="F:ReactiveUI.SourceGenerators.PropertyAccessModifier.InternalProtected">
+            <summary>A <c>protected internal</c> property.</summary>
+        </member>
+        <member name="F:ReactiveUI.SourceGenerators.PropertyAccessModifier.PrivateProtected">
+            <summary>A <c>private protected</c> property.</summary>
+        </member>
+        <member name="T:ReactiveUI.SourceGenerators.ReactiveAttribute">
+            <summary>Generates a property that raises change notifications from the annotated field or partial property.</summary>
+            <param name="alsoNotify">The names of other properties to raise change notifications for.</param>
+        </member>
+        <member name="M:ReactiveUI.SourceGenerators.ReactiveAttribute.#ctor(System.String[])">
+            <summary>Generates a property that raises change notifications from the annotated field or partial property.</summary>
+            <param name="alsoNotify">The names of other properties to raise change notifications for.</param>
+        </member>
+        <member name="P:ReactiveUI.SourceGenerators.ReactiveAttribute.SetModifier">
+            <summary>Gets or sets the accessibility of the generated set accessor.</summary>
+        </member>
+        <member name="P:ReactiveUI.SourceGenerators.ReactiveAttribute.Inheritance">
+            <summary>Gets or sets the inheritance modifier of the generated property.</summary>
+        </member>
+        <member name="P:ReactiveUI.SourceGenerators.ReactiveAttribute.UseRequired">
+            <summary>Gets or sets a value indicating whether the generated property is <c>required</c>.</summary>
+        </member>
+        <member name="P:ReactiveUI.SourceGenerators.ReactiveAttribute.AlsoNotify">
+            <summary>Gets the names of other properties to raise change notifications for.</summary>
+        </member>
+        <member name="T:ReactiveUI.SourceGenerators.ReactiveCollectionAttribute">
+            <summary>Generates a property that raises change notifications when the annotated <c>ObservableCollection&lt;T&gt;</c> changes.</summary>
+        </member>
+        <member name="T:ReactiveUI.SourceGenerators.ReactiveCommandAttribute">
+            <summary>Generates a <c>ReactiveCommand</c> property that executes the annotated method.</summary>
+        </member>
+        <member name="P:ReactiveUI.SourceGenerators.ReactiveCommandAttribute.CanExecute">
+            <summary>Gets or sets the name of the <c>IObservable&lt;bool&gt;</c> member that decides whether the command can execute.</summary>
+        </member>
+        <member name="P:ReactiveUI.SourceGenerators.ReactiveCommandAttribute.OutputScheduler">
+            <summary>Gets or sets the scheduler the command delivers its results on.</summary>
+        </member>
+        <member name="P:ReactiveUI.SourceGenerators.ReactiveCommandAttribute.RunInBackground">
+            <summary>Gets or sets a value indicating whether the command runs its method off the calling thread.</summary>
+            <value>
+            <see langword="true"/> to create a synchronous method's command with <c>ReactiveCommand.CreateRunInBackground</c>,
+            and to start a task-returning method with <c>Task.Run</c>. Observable-returning methods are unaffected.
+            </value>
+        </member>
+        <member name="P:ReactiveUI.SourceGenerators.ReactiveCommandAttribute.BackgroundScheduler">
+            <summary>Gets or sets the scheduler a synchronous method runs on in the background.</summary>
+            <value>
+            A scheduler member of the containing type, or a built-in ReactiveUI scheduler. Setting it implies
+            <see cref="P:ReactiveUI.SourceGenerators.ReactiveCommandAttribute.RunInBackground"/>; when it is not set, ReactiveUI's background scheduler is used. A task-returning
+            method always starts on the thread pool.
+            </value>
+        </member>
+        <member name="P:ReactiveUI.SourceGenerators.ReactiveCommandAttribute.AccessModifier">
+            <summary>Gets or sets the accessibility of the generated command property.</summary>
+        </member>
+        <member name="T:ReactiveUI.SourceGenerators.WinForms.RoutedControlHostAttribute">
+            <summary>Generates a WinForms control that hosts the view for the current route.</summary>
+            <param name="baseType">The fully qualified name of the control type the generated host derives from.</param>
+        </member>
+        <member name="M:ReactiveUI.SourceGenerators.WinForms.RoutedControlHostAttribute.#ctor(System.String)">
+            <summary>Generates a WinForms control that hosts the view for the current route.</summary>
+            <param name="baseType">The fully qualified name of the control type the generated host derives from.</param>
+        </member>
+        <member name="P:ReactiveUI.SourceGenerators.WinForms.RoutedControlHostAttribute.BaseType">
+            <summary>Gets the fully qualified name of the control type the generated host derives from.</summary>
+        </member>
+        <member name="T:ReactiveUI.SourceGenerators.WinForms.ViewModelControlHostAttribute">
+            <summary>Generates a WinForms control that hosts the view for its view model.</summary>
+            <param name="baseType">The fully qualified name of the control type the generated host derives from.</param>
+        </member>
+        <member name="M:ReactiveUI.SourceGenerators.WinForms.ViewModelControlHostAttribute.#ctor(System.String)">
+            <summary>Generates a WinForms control that hosts the view for its view model.</summary>
+            <param name="baseType">The fully qualified name of the control type the generated host derives from.</param>
+        </member>
+        <member name="P:ReactiveUI.SourceGenerators.WinForms.ViewModelControlHostAttribute.BaseType">
+            <summary>Gets the fully qualified name of the control type the generated host derives from.</summary>
+        </member>
+    </members>
+</doc>
