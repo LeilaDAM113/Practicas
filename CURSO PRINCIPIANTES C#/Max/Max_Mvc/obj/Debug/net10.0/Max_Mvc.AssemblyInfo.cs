@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Max_Mvc")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d100d5252cd99e1e75b29d3eab51d701c6cf4b31")]
 [assembly: System.Reflection.AssemblyProductAttribute("Max_Mvc")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Max_Mvc")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

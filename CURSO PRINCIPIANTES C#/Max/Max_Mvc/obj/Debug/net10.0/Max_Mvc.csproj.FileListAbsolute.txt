@@ -344,3 +344,4 @@ C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES
 C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\Max\Max_Mvc\obj\Debug\net10.0\Max_Mvc.pdb
 C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\Max\Max_Mvc\obj\Debug\net10.0\Max_Mvc.genruntimeconfig.cache
 C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\Max\Max_Mvc\obj\Debug\net10.0\ref\Max_Mvc.dll
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\Max\Max_Mvc\obj\Debug\net10.0\Max_Mvc.sourcelink.json

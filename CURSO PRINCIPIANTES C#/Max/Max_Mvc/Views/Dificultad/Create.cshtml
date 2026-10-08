@@ -1,31 +1,24 @@
-﻿@model Max_Mvc.Models.MTipoCurso
+@model Max_Mvc.Models.MDificultad
 
 @{
-    ViewData["Title"] = "Editar Tipo de Curso";
+    ViewData["Title"] = "Crear Dificultad";
 }
 
 <div class="container mt-4">
-    <h1>Editar Tipo de Curso</h1>
+    <h1>Crear Nueva Dificultad</h1>
     <hr />
 
     <div class="row">
         <div class="col-md-6">
-            <form asp-action="Edit">
+            <form asp-action="Create">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <input type="hidden" asp-for="Id" />
 
                 <table class="table table-bordered table-striped">
                     <tbody>
                         <tr>
-                            <th class="bg-light align-middle" style="width: 30%;">ID actual</th>
+                            <th class="bg-light align-middle" style="width: 30%;">Descripcion</th>
                             <td>
-                                <input class="form-control" value="@Model.Id" disabled />
-                            </td>
-                        </tr>
-                        <tr>
-                            <th class="bg-light align-middle">Descripcion</th>
-                            <td>
-                                <input asp-for="Descripcion" class="form-control" />
+                                <input asp-for="Descripcion" class="form-control" placeholder="Introduce la descripcion" />
                                 <span asp-validation-for="Descripcion" class="text-danger"></span>
                             </td>
                         </tr>
@@ -33,7 +26,7 @@
                 </table>
 
                 <div class="mt-3">
-                    <input type="submit" value="Guardar Cambios" class="btn btn-warning" /> 
+                    <input type="submit" value="Guardar" class="btn btn-primary" />
                     <a asp-action="Index" class="btn btn-secondary">Volver al Listado</a>
                 </div>
             </form>

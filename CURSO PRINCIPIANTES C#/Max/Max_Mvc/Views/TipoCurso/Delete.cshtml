@@ -4,30 +4,31 @@
     ViewData["Title"] = "Eliminar Tipo de Curso";
 }
 
-<h1>Eliminar Tipo de Curso</h1>
-<h3 class="text-danger">¿Estás seguro de que deseas borrar este registro?</h3>
-<hr />
+<div class="container mt-4">
+    <h1>Eliminar Tipo de Curso</h1>
+    <h3 class="text-danger">¿Estás seguro de que deseas borrar este registro?</h3>
+    <hr />
 
-<div>
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Id)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Id)
-        </dd>
+    <div class="row">
+        <div class="col-md-6">
+            <table class="table table-bordered table-striped">
+                <tbody>
+                    <tr>
+                        <th class="bg-light" style="width: 30%;">ID</th>
+                        <td>@Html.DisplayFor(model => model.Id)</td>
+                    </tr>
+                    <tr>
+                        <th class="bg-light">Descripción</th>
+                        <td>@Html.DisplayFor(model => model.Descripcion)</td>
+                    </tr>
+                </tbody>
+            </table>
 
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Descripcion)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Descripcion)
-        </dd>
-    </dl>
-
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Sí, Eliminar" class="btn btn-danger" /> |
-        <a asp-action="Index" class="btn btn-secondary">Cancelar y Volver</a>
-    </form>
+            <form asp-action="Delete" class="mt-3">
+                <input type="hidden" asp-for="Id" />
+                <input type="submit" value="Sí, Eliminar" class="btn btn-danger" /> 
+                <a asp-action="Index" class="btn btn-secondary">Cancelar y Volver</a>
+            </form>
+        </div>
+    </div>
 </div>

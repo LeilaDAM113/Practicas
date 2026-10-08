@@ -3,28 +3,80 @@
   "WorkspaceRootPath": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|c:\\users\\leila.fraile\\desktop\\leila fraile sim\u00F3n pr\u00E1cticas\\curso principiantes c#\\max\\max_mvc\\views\\tipocurso\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|solutionrelative:max_mvc\\views\\tipocurso\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|c:\\users\\leila.fraile\\desktop\\leila fraile sim\u00F3n pr\u00E1cticas\\curso principiantes c#\\max\\max_mvc\\controllers\\dificultadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|solutionrelative:max_mvc\\controllers\\dificultadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|c:\\users\\leila.fraile\\desktop\\leila fraile sim\u00F3n pr\u00E1cticas\\curso principiantes c#\\max\\max_mvc\\views\\tipocurso\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|solutionrelative:max_mvc\\views\\tipocurso\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|c:\\users\\leila.fraile\\desktop\\leila fraile sim\u00F3n pr\u00E1cticas\\curso principiantes c#\\max\\max_mvc\\max_mvc.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|solutionrelative:max_mvc\\max_mvc.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|c:\\users\\leila.fraile\\desktop\\leila fraile sim\u00F3n pr\u00E1cticas\\curso principiantes c#\\max\\max_mvc\\views\\tipocurso\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|solutionrelative:max_mvc\\views\\tipocurso\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|c:\\users\\leila.fraile\\desktop\\leila fraile sim\u00F3n pr\u00E1cticas\\curso principiantes c#\\max\\max_mvc\\views\\dificultad\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|solutionrelative:max_mvc\\views\\dificultad\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|c:\\users\\leila.fraile\\desktop\\leila fraile sim\u00F3n pr\u00E1cticas\\curso principiantes c#\\max\\max_mvc\\dtos\\dificultaddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|solutionrelative:max_mvc\\dtos\\dificultaddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|c:\\users\\leila.fraile\\desktop\\leila fraile sim\u00F3n pr\u00E1cticas\\curso principiantes c#\\max\\max_mvc\\models\\mdificultad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|solutionrelative:max_mvc\\models\\mdificultad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|c:\\users\\leila.fraile\\desktop\\leila fraile sim\u00F3n pr\u00E1cticas\\curso principiantes c#\\max\\max_mvc\\views\\tipocurso\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|solutionrelative:max_mvc\\views\\tipocurso\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|c:\\users\\leila.fraile\\desktop\\leila fraile sim\u00F3n pr\u00E1cticas\\curso principiantes c#\\max\\max_mvc\\views\\tipocurso\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|solutionrelative:max_mvc\\views\\tipocurso\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|c:\\users\\leila.fraile\\desktop\\leila fraile sim\u00F3n pr\u00E1cticas\\curso principiantes c#\\max\\max_mvc\\models\\fejercicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|solutionrelative:max_mvc\\models\\fejercicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|c:\\users\\leila.fraile\\desktop\\leila fraile sim\u00F3n pr\u00E1cticas\\curso principiantes c#\\max\\max_mvc\\models\\mtipocurso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|solutionrelative:max_mvc\\models\\mtipocurso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|c:\\users\\leila.fraile\\desktop\\leila fraile sim\u00F3n pr\u00E1cticas\\curso principiantes c#\\max\\max_mvc\\models\\maxdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|solutionrelative:max_mvc\\models\\maxdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|c:\\users\\leila.fraile\\desktop\\leila fraile sim\u00F3n pr\u00E1cticas\\curso principiantes c#\\max\\max_mvc\\views\\dificultad\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|solutionrelative:max_mvc\\views\\dificultad\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|c:\\users\\leila.fraile\\desktop\\leila fraile sim\u00F3n pr\u00E1cticas\\curso principiantes c#\\max\\max_mvc\\views\\dificultad\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|solutionrelative:max_mvc\\views\\dificultad\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|c:\\users\\leila.fraile\\desktop\\leila fraile sim\u00F3n pr\u00E1cticas\\curso principiantes c#\\max\\max_mvc\\controllers\\tipocursocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|solutionrelative:max_mvc\\controllers\\tipocursocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|c:\\users\\leila.fraile\\desktop\\leila fraile sim\u00F3n pr\u00E1cticas\\curso principiantes c#\\max\\max_mvc\\views\\dificultad\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|solutionrelative:max_mvc\\views\\dificultad\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|c:\\users\\leila.fraile\\desktop\\leila fraile sim\u00F3n pr\u00E1cticas\\curso principiantes c#\\max\\max_mvc\\views\\tipocurso\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|solutionrelative:max_mvc\\views\\tipocurso\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|c:\\users\\leila.fraile\\desktop\\leila fraile sim\u00F3n pr\u00E1cticas\\curso principiantes c#\\max\\max_mvc\\views\\dificultad\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|solutionrelative:max_mvc\\views\\dificultad\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|c:\\users\\leila.fraile\\desktop\\leila fraile sim\u00F3n pr\u00E1cticas\\curso principiantes c#\\max\\max_mvc\\views\\tipocurso\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|solutionrelative:max_mvc\\views\\tipocurso\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|c:\\users\\leila.fraile\\desktop\\leila fraile sim\u00F3n pr\u00E1cticas\\curso principiantes c#\\max\\max_mvc\\views\\tipocurso\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|solutionrelative:max_mvc\\views\\tipocurso\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|c:\\users\\leila.fraile\\desktop\\leila fraile sim\u00F3n pr\u00E1cticas\\curso principiantes c#\\max\\max_mvc\\views\\tipocurso\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|solutionrelative:max_mvc\\views\\tipocurso\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|c:\\users\\leila.fraile\\desktop\\leila fraile sim\u00F3n pr\u00E1cticas\\curso principiantes c#\\max\\max_mvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|solutionrelative:max_mvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|c:\\users\\leila.fraile\\desktop\\leila fraile sim\u00F3n pr\u00E1cticas\\curso principiantes c#\\max\\max_mvc\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -41,14 +93,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|c:\\users\\leila.fraile\\desktop\\leila fraile sim\u00F3n pr\u00E1cticas\\curso principiantes c#\\max\\max_mvc\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|solutionrelative:max_mvc\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|c:\\users\\leila.fraile\\desktop\\leila fraile sim\u00F3n pr\u00E1cticas\\curso principiantes c#\\max\\max_mvc\\models\\maxdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|solutionrelative:max_mvc\\models\\maxdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|c:\\users\\leila.fraile\\desktop\\leila fraile sim\u00F3n pr\u00E1cticas\\curso principiantes c#\\max\\max_mvc\\max_mvc.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{47D1BB02-4ED3-4798-18E5-44710A6C9962}|Max_Mvc\\Max_Mvc.csproj|solutionrelative:max_mvc\\max_mvc.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,7 +102,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -66,46 +110,254 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DificultadController.cs",
+              "DocumentMoniker": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Controllers\\DificultadController.cs",
+              "RelativeDocumentMoniker": "Max_Mvc\\Controllers\\DificultadController.cs",
+              "ToolTip": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Controllers\\DificultadController.cs",
+              "RelativeToolTip": "Max_Mvc\\Controllers\\DificultadController.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-08T08:17:02.268Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MaxDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Models\\MaxDbContext.cs",
+              "RelativeDocumentMoniker": "Max_Mvc\\Models\\MaxDbContext.cs",
+              "ToolTip": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Models\\MaxDbContext.cs",
+              "RelativeToolTip": "Max_Mvc\\Models\\MaxDbContext.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAYwBsAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-07T12:34:48.865Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MTipoCurso.cs",
+              "DocumentMoniker": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Models\\MTipoCurso.cs",
+              "RelativeDocumentMoniker": "Max_Mvc\\Models\\MTipoCurso.cs",
+              "ToolTip": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Models\\MTipoCurso.cs",
+              "RelativeToolTip": "Max_Mvc\\Models\\MTipoCurso.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAewA8AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-08T07:41:03.679Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MDificultad.cs",
+              "DocumentMoniker": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Models\\MDificultad.cs",
+              "RelativeDocumentMoniker": "Max_Mvc\\Models\\MDificultad.cs",
+              "ToolTip": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Models\\MDificultad.cs",
+              "RelativeToolTip": "Max_Mvc\\Models\\MDificultad.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-08T08:40:08.615Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Delete.cshtml",
-              "DocumentMoniker": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Views\\TipoCurso\\Delete.cshtml",
-              "RelativeDocumentMoniker": "Max_Mvc\\Views\\TipoCurso\\Delete.cshtml",
-              "ToolTip": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Views\\TipoCurso\\Delete.cshtml",
-              "RelativeToolTip": "Max_Mvc\\Views\\TipoCurso\\Delete.cshtml",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAACAAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-10-08T06:25:02.867Z",
+              "Title": "Max_Mvc.csproj",
+              "DocumentMoniker": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Max_Mvc.csproj",
+              "RelativeDocumentMoniker": "Max_Mvc\\Max_Mvc.csproj",
+              "ToolTip": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Max_Mvc.csproj",
+              "RelativeToolTip": "Max_Mvc\\Max_Mvc.csproj",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-10-07T12:28:26.215Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DificultadDTO.cs",
+              "DocumentMoniker": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\DTOs\\DificultadDTO.cs",
+              "RelativeDocumentMoniker": "Max_Mvc\\DTOs\\DificultadDTO.cs",
+              "ToolTip": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\DTOs\\DificultadDTO.cs",
+              "RelativeToolTip": "Max_Mvc\\DTOs\\DificultadDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA8AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-08T08:54:54.796Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Views\\TipoCurso\\Details.cshtml",
-              "RelativeDocumentMoniker": "Max_Mvc\\Views\\TipoCurso\\Details.cshtml",
-              "ToolTip": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Views\\TipoCurso\\Details.cshtml",
-              "RelativeToolTip": "Max_Mvc\\Views\\TipoCurso\\Details.cshtml",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAgwB4AAAAGAAAAAAAAAA==",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Views\\Dificultad\\Index.cshtml",
+              "RelativeDocumentMoniker": "Max_Mvc\\Views\\Dificultad\\Index.cshtml",
+              "ToolTip": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Views\\Dificultad\\Index.cshtml",
+              "RelativeToolTip": "Max_Mvc\\Views\\Dificultad\\Index.cshtml",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAwwBoAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-10-08T06:24:29.068Z",
+              "WhenOpened": "2026-10-08T08:19:04.879Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 10,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Views\\Dificultad\\Details.cshtml",
+              "RelativeDocumentMoniker": "Max_Mvc\\Views\\Dificultad\\Details.cshtml",
+              "ToolTip": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Views\\Dificultad\\Details.cshtml",
+              "RelativeToolTip": "Max_Mvc\\Views\\Dificultad\\Details.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-10-08T08:25:19.693Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "TipoCursoController.cs",
+              "DocumentMoniker": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Controllers\\TipoCursoController.cs",
+              "RelativeDocumentMoniker": "Max_Mvc\\Controllers\\TipoCursoController.cs",
+              "ToolTip": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Controllers\\TipoCursoController.cs",
+              "RelativeToolTip": "Max_Mvc\\Controllers\\TipoCursoController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-07T12:57:15.751Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Views\\TipoCurso\\Index.cshtml",
+              "RelativeDocumentMoniker": "Max_Mvc\\Views\\TipoCurso\\Index.cshtml",
+              "ToolTip": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Views\\TipoCurso\\Index.cshtml",
+              "RelativeToolTip": "Max_Mvc\\Views\\TipoCurso\\Index.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-10-07T13:10:47.472Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FEjercicio.cs",
+              "DocumentMoniker": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Models\\FEjercicio.cs",
+              "RelativeDocumentMoniker": "Max_Mvc\\Models\\FEjercicio.cs",
+              "ToolTip": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Models\\FEjercicio.cs",
+              "RelativeToolTip": "Max_Mvc\\Models\\FEjercicio.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAxwBYAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-08T08:42:20.37Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Views\\TipoCurso\\Edit.cshtml",
               "RelativeDocumentMoniker": "Max_Mvc\\Views\\TipoCurso\\Edit.cshtml",
               "ToolTip": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Views\\TipoCurso\\Edit.cshtml",
               "RelativeToolTip": "Max_Mvc\\Views\\TipoCurso\\Edit.cshtml",
-              "ViewState": "AgIAABMAAAAAAAAAAAAuwCkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAC4AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-10-08T06:22:30.867Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Views\\Dificultad\\Create.cshtml",
+              "RelativeDocumentMoniker": "Max_Mvc\\Views\\Dificultad\\Create.cshtml",
+              "ToolTip": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Views\\Dificultad\\Create.cshtml",
+              "RelativeToolTip": "Max_Mvc\\Views\\Dificultad\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-10-08T08:22:37.887Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Views\\Dificultad\\Delete.cshtml",
+              "RelativeDocumentMoniker": "Max_Mvc\\Views\\Dificultad\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Views\\Dificultad\\Delete.cshtml",
+              "RelativeToolTip": "Max_Mvc\\Views\\Dificultad\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-10-08T08:24:43.815Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Views\\Dificultad\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Max_Mvc\\Views\\Dificultad\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Views\\Dificultad\\Edit.cshtml",
+              "RelativeToolTip": "Max_Mvc\\Views\\Dificultad\\Edit.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAcAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-10-08T08:25:58.254Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Views\\TipoCurso\\Delete.cshtml",
+              "RelativeDocumentMoniker": "Max_Mvc\\Views\\TipoCurso\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Views\\TipoCurso\\Delete.cshtml",
+              "RelativeToolTip": "Max_Mvc\\Views\\TipoCurso\\Delete.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACEAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-10-08T06:25:02.867Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Views\\TipoCurso\\Details.cshtml",
+              "RelativeDocumentMoniker": "Max_Mvc\\Views\\TipoCurso\\Details.cshtml",
+              "ToolTip": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Views\\TipoCurso\\Details.cshtml",
+              "RelativeToolTip": "Max_Mvc\\Views\\TipoCurso\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-10-08T06:24:29.068Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Views\\TipoCurso\\Create.cshtml",
+              "RelativeDocumentMoniker": "Max_Mvc\\Views\\TipoCurso\\Create.cshtml",
+              "ToolTip": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Views\\TipoCurso\\Create.cshtml",
+              "RelativeToolTip": "Max_Mvc\\Views\\TipoCurso\\Create.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABQAAAB2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-10-07T13:25:18.882Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Max_Mvc\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Max_Mvc\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-08T08:17:42.472Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Max_Mvc\\Views\\Home\\Index.cshtml",
@@ -117,20 +369,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Views\\TipoCurso\\Index.cshtml",
-              "RelativeDocumentMoniker": "Max_Mvc\\Views\\TipoCurso\\Index.cshtml",
-              "ToolTip": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Views\\TipoCurso\\Index.cshtml",
-              "RelativeToolTip": "Max_Mvc\\Views\\TipoCurso\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-10-07T13:10:47.472Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 20,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\appsettings.Development.json",
               "RelativeDocumentMoniker": "Max_Mvc\\appsettings.Development.json",
@@ -142,33 +381,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "TipoCursoController.cs",
-              "DocumentMoniker": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Controllers\\TipoCursoController.cs",
-              "RelativeDocumentMoniker": "Max_Mvc\\Controllers\\TipoCursoController.cs",
-              "ToolTip": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Controllers\\TipoCursoController.cs",
-              "RelativeToolTip": "Max_Mvc\\Controllers\\TipoCursoController.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAEwCsAAABAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-07T12:57:15.751Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Views\\TipoCurso\\Create.cshtml",
-              "RelativeDocumentMoniker": "Max_Mvc\\Views\\TipoCurso\\Create.cshtml",
-              "ToolTip": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Views\\TipoCurso\\Create.cshtml",
-              "RelativeToolTip": "Max_Mvc\\Views\\TipoCurso\\Create.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-10-07T13:25:18.882Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 21,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Program.cs",
               "RelativeDocumentMoniker": "Max_Mvc\\Program.cs",
@@ -180,7 +393,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 22,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\appsettings.json",
               "RelativeDocumentMoniker": "Max_Mvc\\appsettings.json",
@@ -189,30 +402,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2026-10-07T12:38:30.033Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "MaxDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Models\\MaxDbContext.cs",
-              "RelativeDocumentMoniker": "Max_Mvc\\Models\\MaxDbContext.cs",
-              "ToolTip": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Models\\MaxDbContext.cs",
-              "RelativeToolTip": "Max_Mvc\\Models\\MaxDbContext.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAA3wBsAAABDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-07T12:34:48.865Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Max_Mvc.csproj",
-              "DocumentMoniker": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Max_Mvc.csproj",
-              "RelativeDocumentMoniker": "Max_Mvc\\Max_Mvc.csproj",
-              "ToolTip": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIM\u00D3N PR\u00C1CTICAS\\CURSO PRINCIPIANTES C#\\Max\\Max_Mvc\\Max_Mvc.csproj",
-              "RelativeToolTip": "Max_Mvc\\Max_Mvc.csproj",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-10-07T12:28:26.215Z"
             }
           ]
         }
