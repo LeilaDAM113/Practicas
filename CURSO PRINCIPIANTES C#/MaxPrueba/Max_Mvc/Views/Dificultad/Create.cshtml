@@ -1,0 +1,41 @@
+@model Max_Mvc.Models.MDificultad
+
+@{
+    ViewData["Title"] = "Crear Dificultad";
+}
+
+<div class="container mt-4">
+    <h1>Crear Nueva Dificultad</h1>
+    <hr />
+
+    <div class="row">
+        <div class="col-md-6">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <table class="table table-bordered table-striped">
+                    <tbody>
+                        <tr>
+                            <th class="bg-light align-middle" style="width: 30%;">Descripcion</th>
+                            <td>
+                                <input asp-for="Descripcion" class="form-control" placeholder="Introduce la descripcion" />
+                                <span asp-validation-for="Descripcion" class="text-danger"></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="mt-3">
+                    <input type="submit" value="Guardar" class="btn btn-primary" />
+                    <a asp-action="Index" class="btn btn-secondary">Volver al Listado</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
