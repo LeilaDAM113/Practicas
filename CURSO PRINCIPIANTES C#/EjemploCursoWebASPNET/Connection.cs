@@ -17,7 +17,7 @@ namespace EjemploCursoWebASPNET
 			WSHttpBinding basicHttpBinding = new WSHttpBinding();
 			basicHttpBinding.Security.Mode = SecurityMode.None;
 			basicHttpBinding.Name = "MetadataExchangeHttpBinding_IService1";
-			EndpointAddress endpoint = new EndpointAddress("http://localhost:61416/Service1.svc/mex");
+			EndpointAddress endpoint = new EndpointAddress("http://localhost/Service1.svc/mex");
 			return new Service1Client(basicHttpBinding, endpoint);
 		}
 	}
