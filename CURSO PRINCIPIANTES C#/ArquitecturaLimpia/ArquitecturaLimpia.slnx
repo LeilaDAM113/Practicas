@@ -1,0 +1,17 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="README.md" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="../Soccer.Application/Soccer.Application.csproj" />
+    <Project Path="../Soccer.Domain/Soccer.Domain.csproj" />
+    <Project Path="../Soccer.Notification.Abstractions/Soccer.Notification.Abstractions.csproj" />
+    <Project Path="../Soccer.Notification.Email/Soccer.Notification.Email.csproj" />
+    <Project Path="../Soccer.Persistence.Abstractions/Soccer.Persistence.Abstractions.csproj" />
+    <Project Path="../Soccer.Persistence.InMemory/Soccer.Persistence.InMemory.csproj" />
+    <Project Path="../Soccer.WebApi/Soccer.WebApi.csproj" />
+  </Folder>
+  <Folder Name="/test/">
+    <Project Path="../Soccer.Domain.UnitTests/Soccer.Domain.UnitTests.csproj" />
+  </Folder>
+</Solution>

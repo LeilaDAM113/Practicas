@@ -1,0 +1,16 @@
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\Soccer.Domain\bin\Debug\net10.0\Soccer.Domain.deps.json
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\Soccer.Domain\bin\Debug\net10.0\Soccer.Domain.dll
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\Soccer.Domain\bin\Debug\net10.0\Soccer.Domain.pdb
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\Soccer.Domain\bin\Debug\net10.0\Soccer.Notification.Abstractions.dll
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\Soccer.Domain\bin\Debug\net10.0\Soccer.Notification.Abstractions.pdb
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\Soccer.Domain\obj\Debug\net10.0\Soccer.Domain.csproj.AssemblyReference.cache
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\Soccer.Domain\obj\Debug\net10.0\Soccer.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\Soccer.Domain\obj\Debug\net10.0\Soccer.Domain.AssemblyInfoInputs.cache
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\Soccer.Domain\obj\Debug\net10.0\Soccer.Domain.AssemblyInfo.cs
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\Soccer.Domain\obj\Debug\net10.0\Soccer.Domain.csproj.CoreCompileInputs.cache
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\Soccer.Domain\obj\Debug\net10.0\Soccer.Domain.sourcelink.json
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\Soccer.Domain\obj\Debug\net10.0\Soccer.D.50166BA5.Up2Date
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\Soccer.Domain\obj\Debug\net10.0\Soccer.Domain.dll
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\Soccer.Domain\obj\Debug\net10.0\refint\Soccer.Domain.dll
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\Soccer.Domain\obj\Debug\net10.0\Soccer.Domain.pdb
+C:\Users\leila.fraile\Desktop\LEILA FRAILE SIMÓN PRÁCTICAS\CURSO PRINCIPIANTES C#\Soccer.Domain\obj\Debug\net10.0\ref\Soccer.Domain.dll

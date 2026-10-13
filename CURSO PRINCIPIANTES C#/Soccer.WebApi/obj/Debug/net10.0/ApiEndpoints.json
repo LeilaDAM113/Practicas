@@ -1,0 +1,76 @@
+[
+  {
+    "ContainingType": "Soccer.WebApi.Controllers.GamesController",
+    "Method": "CreateGame",
+    "RelativePath": "api/Games",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "newGame",
+        "Type": "Soccer.Application.Models.NewGame",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Soccer.WebApi.Controllers.GamesController",
+    "Method": "GetScoreBoard",
+    "RelativePath": "api/Games/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Soccer.WebApi.Controllers.GamesController",
+    "Method": "StartGame",
+    "RelativePath": "api/Games/{id}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "gameProgress",
+        "Type": "Soccer.Application.Models.GameProgress",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Soccer.WebApi.Controllers.GamesController",
+    "Method": "AddGoal",
+    "RelativePath": "api/Games/{id}/goals",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "newGoal",
+        "Type": "Soccer.Application.Models.NewGoal",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

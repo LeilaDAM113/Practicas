@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "9aS6dbiBCv0=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIMÓN PRÁCTICAS\\CURSO PRINCIPIANTES C#\\Soccer.Notification.Email\\Soccer.Notification.Email.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\leila.fraile\\.nuget\\packages\\bouncycastle.cryptography\\2.7.0\\bouncycastle.cryptography.2.7.0.nupkg.sha512",
+    "C:\\Users\\leila.fraile\\.nuget\\packages\\mailkit\\4.18.1\\mailkit.4.18.1.nupkg.sha512",
+    "C:\\Users\\leila.fraile\\.nuget\\packages\\mimekit\\4.18.1\\mimekit.4.18.1.nupkg.sha512",
+    "C:\\Users\\leila.fraile\\.nuget\\packages\\system.security.cryptography.pkcs\\10.0.0\\system.security.cryptography.pkcs.10.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "fOaP31QiOg4=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIMÓN PRÁCTICAS\\CURSO PRINCIPIANTES C#\\ArquitecturaLimpia\\ArquitecturaLimpia.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\leila.fraile\\.nuget\\packages\\microsoft.codecoverage\\18.10.1\\microsoft.codecoverage.18.10.1.nupkg.sha512",
+    "C:\\Users\\leila.fraile\\.nuget\\packages\\microsoft.net.test.sdk\\18.10.1\\microsoft.net.test.sdk.18.10.1.nupkg.sha512",
+    "C:\\Users\\leila.fraile\\.nuget\\packages\\microsoft.testplatform.objectmodel\\18.10.1\\microsoft.testplatform.objectmodel.18.10.1.nupkg.sha512",
+    "C:\\Users\\leila.fraile\\.nuget\\packages\\microsoft.testplatform.testhost\\18.10.1\\microsoft.testplatform.testhost.18.10.1.nupkg.sha512",
+    "C:\\Users\\leila.fraile\\.nuget\\packages\\xunit.runner.visualstudio\\4.0.1\\xunit.runner.visualstudio.4.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

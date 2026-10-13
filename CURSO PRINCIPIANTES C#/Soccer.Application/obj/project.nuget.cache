@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "w4o8TBeeq7o=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\leila.fraile\\Desktop\\LEILA FRAILE SIMÓN PRÁCTICAS\\CURSO PRINCIPIANTES C#\\Soccer.Application\\Soccer.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\leila.fraile\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.12\\microsoft.aspnetcore.openapi.10.0.12.nupkg.sha512",
+    "C:\\Users\\leila.fraile\\.nuget\\packages\\microsoft.openapi\\2.12.0\\microsoft.openapi.2.12.0.nupkg.sha512"
+  ],
+  "logs": []
+}
