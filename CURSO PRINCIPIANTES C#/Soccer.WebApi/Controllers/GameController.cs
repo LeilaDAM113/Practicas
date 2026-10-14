@@ -19,6 +19,9 @@ namespace Soccer.WebApi.Controllers
 			_gameQueryService = gameQueryService;
 		}
 
+		/// <summary>
+		/// Retrieves the current scoreboard of a game by its unique identifier.
+		/// </summary>
 		/// <param name="id" example="00000000-0000-0000-0000-000000000000">The game id</param>
 		[HttpGet("{id}")]
 		public IActionResult GetScoreBoard(Guid id)
@@ -26,6 +29,10 @@ namespace Soccer.WebApi.Controllers
 			var scoreBoard = _gameQueryService.GetScoreBoard(id);
 			return Ok(scoreBoard);
 		}
+
+		/// <summary>
+		/// Creates a new football game and initializes its scoreboard.
+		/// </summary>
 		[HttpPost]
 		public IActionResult CreateGame([FromBody] NewGame newGame)
 		{

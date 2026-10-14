@@ -1,4 +1,5 @@
-﻿using Soccer.Domain.Exceptions;
+﻿
+using Soccer.Domain.Exceptions;
 using Soccer.Notification.Abstractions;
 
 namespace Soccer.Domain

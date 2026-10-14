@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="README.md" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="../ExchangeRateCalculation.WebApi/ExchangeRateCalculation.WebApi.csproj" Id="10443722-3f8d-44b1-a51a-82311463e168" />
+    <Project Path="ExchangeRateCalculation.csproj" />
+  </Folder>
+  <Folder Name="/test/">
+    <Project Path="../ExchangeRateCalculation.FunctionalTests/ExchangeRateCalculation.FunctionalTests.csproj" Id="7dfc7f01-29b2-4b3f-b2c0-f0e7393da6fc" />
+    <Project Path="../ExchangeRateCalculation.UnitTests/ExchangeRateCalculation.UnitTests.csproj" Id="4d97ec89-1e70-47c0-b4c9-e9a8cc1acee7" />
+  </Folder>
+</Solution>

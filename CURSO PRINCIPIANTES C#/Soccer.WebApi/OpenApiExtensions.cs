@@ -23,11 +23,11 @@ public static class OpenApiExtensions
 				}
 			});
 
-			//var xmlCommentsWebApi = Path.Combine(AppContext.BaseDirectory, $"{mainAssemblyName}.xml");
-			//c.IncludeXmlComments(xmlCommentsWebApi);
+			var xmlCommentsWebApi = Path.Combine(AppContext.BaseDirectory, $"{mainAssemblyName}.xml");
+			c.IncludeXmlComments(xmlCommentsWebApi);
 
-			//var xmlCommentsApplication = Path.Combine(AppContext.BaseDirectory, $"{applicationAssemblyName}.xml");
-			//c.IncludeXmlComments(xmlCommentsApplication);
+			var xmlCommentsApplication = Path.Combine(AppContext.BaseDirectory, $"{applicationAssemblyName}.xml");
+			c.IncludeXmlComments(xmlCommentsApplication);
 		});
 
 		return services;
