@@ -10,8 +10,11 @@
     <Project Path="../Soccer.Persistence.Abstractions/Soccer.Persistence.Abstractions.csproj" />
     <Project Path="../Soccer.Persistence.InMemory/Soccer.Persistence.InMemory.csproj" />
     <Project Path="../Soccer.WebApi/Soccer.WebApi.csproj" />
+    <Project Path="Soccer.Persistence.MongoDb/Soccer.Persistence.MongoDb.csproj" Id="675e7372-743b-441f-9a87-b163a508fa50" />
   </Folder>
   <Folder Name="/test/">
     <Project Path="../Soccer.Domain.UnitTests/Soccer.Domain.UnitTests.csproj" />
+    <Project Path="Soccer.Application.UnitTests/Soccer.Application.UnitTests.csproj" Id="52970fae-7a22-44f3-8811-fe747cb18418" />
+    <Project Path="Soccer.FunctionalTests/Soccer.FunctionalTests.csproj" Id="03d2e9c6-6a1b-4cd0-86c0-6fab994618ee" />
   </Folder>
 </Solution>

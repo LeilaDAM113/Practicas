@@ -5,9 +5,8 @@ using Soccer.Application.Models;
 namespace Soccer.WebApi.Controllers
 {
 	[ApiController]
-	[Route("api/[controller]")]
-	public class GamesController : ControllerBase
-	{
+	[Route("games")] 
+	public class GamesController : ControllerBase {
 		private readonly GameCommandService _gameCommandService;
 		private readonly GameQueryService _gameQueryService;
 

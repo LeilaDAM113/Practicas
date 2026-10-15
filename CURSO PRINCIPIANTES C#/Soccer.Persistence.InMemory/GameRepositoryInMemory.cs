@@ -4,7 +4,8 @@ using Soccer.Persistence.Abstractions;
 using Soccer.Domain;
 namespace Soccer.Persistence.InMemory
 {
-	public class GameRepositoryInMemory : IGameRepository
+	public class GameRepositoryInMemory
+	: IGameRepository
 	{
 		private readonly IDictionary<Guid, Game> _games = new Dictionary<Guid, Game>();
 
