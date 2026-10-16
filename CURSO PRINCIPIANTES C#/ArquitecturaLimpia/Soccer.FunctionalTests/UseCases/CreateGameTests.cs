@@ -9,7 +9,8 @@ using Xunit;
 
 namespace Soccer.FunctionalTests.UseCases
 {
-	public class CreateGameTests: FunctionalTest
+	public class CreateGameTests
+	: FunctionalTest
 	{
 		private string _url = string.Empty;
 		private NewGame _newGame = default!;
