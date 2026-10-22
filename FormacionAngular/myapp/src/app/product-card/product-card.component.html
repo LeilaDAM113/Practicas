@@ -1,0 +1,57 @@
+<!--attribute binding-->
+<div class="product" [attr.units-available]="product?.unitAvailable">
+  <div class="product--image">
+      <img
+      (mouseenter)="onMouseEnter()"
+      (mouseleave)="onMouseLeave()"
+      [attr.src]="product.image"
+      [alt]="product.name"
+      [style]="productImageStyle"
+    />
+  </div> <!--[class]="'border-btn'" -->
+  <!-- [style]="product.unitAvailable<1? productImageStyle : {}"-->
+  
+  <div class="product--info">
+    <h1 class="product--info__title">{{ product.name | uppercase }}</h1>
+    <h3>{{product.date | date:'longDate'}}</h3>
+    <p class="product--info__description">{{ product.description }}</p>
+    <div class="product--info__price">
+      <h1>{{product.price | currency}}</h1>
+    </div>
+      <!-- <h1>{{ product.price | number | currency}}</h1>-->
+  </div>
+  <div class="product--actions">
+    <button
+      (click)="buyProduct()"
+      [disabled]="!(product.unitAvailable > 1)"
+      class="product--actions__btn buy"
+    >
+      BUY
+    </button>
+    <button 
+      (click)="addToCart()"
+      class="product--actions__btn add">+ CART</button>
+  </div>
+</div>
+
+<form 
+  [style.display]="!formState ? 'none': 'flex'"
+  class="form"
+>
+  <h2>Datos de compra</h2>
+  <label for="address">Direccion</label>
+  <input 
+    [(ngModel)]="address"
+    type="text" 
+    name="address" 
+    id="address"
+  >
+  <label for="postalCode">Codigo Postal</label>
+  <input 
+    [(ngModel)]="postalCode"
+    type="number" name="postalCode" id="postalCode"
+  >
+  <div class="actions">
+    <button (click)="orderProduct()">ORDER</button>
+  </div>
+</form>
