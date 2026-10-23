@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   template: `
-    <h2>Footer 2</h2>
+   <h1>Footer 2</h1>
   `
 })
 export class FooterComponent {

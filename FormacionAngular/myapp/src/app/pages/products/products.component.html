@@ -1,0 +1,38 @@
+<ng-container *ngIf="products?.length > 0; else noProducts">
+  <div class="title">
+    <h1>Ultimos productos</h1>
+  </div>
+  
+ <div class="products">
+    <ng-container *ngFor="let product of products">
+      <ng-container *ngIf="product.unitAvailable > 0">
+        <div class="product">
+          <div class="container">
+            <app-product-card [product]="product"></app-product-card>
+          </div>
+        </div>
+      </ng-container>
+    </ng-container>
+  </div>
+</ng-container>
+
+  <div class="checkout-section"> 
+    <h2>Datos de compra</h2>
+    <div class="form">
+      <label>Dirección</label>
+      <input type="text">
+      
+      <label>Código Postal</label>
+      <input type="number" value="0">
+      
+      <div class="actions">
+        <button class="border-btn">ORDEN</button>
+      </div>
+    </div>
+  </div>
+
+<ng-template #noProducts>
+  <div class="title">
+    <h1>No hay productos disponibles</h1>
+  </div>
+</ng-template>

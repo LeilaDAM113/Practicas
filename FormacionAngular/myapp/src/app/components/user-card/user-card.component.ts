@@ -18,7 +18,7 @@ export class UserCardComponent {
     city: 'Damascus',
     street: 'Liberty'
   }
-  private dni = '34432432'
+   private dni = '34432432'
   public nationality = 'Japanese'
   getDate(){
     return new Date()

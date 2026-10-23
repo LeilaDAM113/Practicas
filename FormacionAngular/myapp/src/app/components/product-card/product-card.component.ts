@@ -1,13 +1,15 @@
 import { Component, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { UpperCasePipe } from '@angular/common';
+import { UpperCasePipe, NgStyle, NgSwitchCase } from '@angular/common';
 import { DatePipe } from '@angular/common';
 import { CurrencyPipe } from '@angular/common';
+import { NgSwitch } from '@angular/common';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-product-card',
   standalone: true,
-  imports: [FormsModule, UpperCasePipe, DatePipe, CurrencyPipe],
+  imports: [FormsModule, UpperCasePipe, DatePipe, CurrencyPipe, NgStyle, NgSwitch, NgSwitchCase, CommonModule],
   templateUrl: './product-card.component.html',
   styleUrl: './product-card.component.scss'
 })
