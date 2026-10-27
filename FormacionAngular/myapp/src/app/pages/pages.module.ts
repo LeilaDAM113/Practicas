@@ -13,7 +13,6 @@ import { ProductsService } from '../services/products/products.service';
   ], 
   exports: [
     ProductsComponent, AboutUsComponent, NotFoundComponent
-  ],
-  providers: [ProductsService]
+  ]
 })
 export class PagesModule { }
