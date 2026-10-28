@@ -1,0 +1,23 @@
+<div class="flex border-2 border-dashed border-gray-500 m-4 p-5 min-h-[400px]">
+<nav class="w-1/4">
+    <ul class="flex flex-col gap-4 font-mono text-xl">
+    <li>
+        <a routerLink="dashboardhome" routerLinkActive="font-bold">🏠 Dashboard Home</a>
+      </li>
+      <li>
+        <a routerLink="profile" routerLinkActive="font-bold">👤 Profile</a>
+      </li>
+      <li>
+        <a routerLink="settings" routerLinkActive="font-bold">⚙️ Settings</a>
+      </li>
+      <li>
+        <a routerLink="orders" routerLinkActive="font-bold">📦 Orders</a>
+      </li>
+    </ul>
+</nav>
+<div class="border-l"></div>
+<div class="flex-1 flex justify-center items-center">
+<router-outlet></router-outlet>
+</div>
+</div>
+

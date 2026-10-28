@@ -1,0 +1,18 @@
+<div class="flex justify-center items-center min-h-[80vh] bg-gray-100">
+    <div class="w-full max-w-xl bg-white border border-gray-300 rounded-xl p-6 shadow">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6"> Register </h2>
+        <input type="text" placeholder="Username" class="w-full border border-gray-300 rounded-lg px-2 py-2 text-2xl outline-none focus:ring-2 focus:ring-blue-500 mb-4">
+        <input type="email" placeholder="Email Address" class="w-full border border-gray-300  rounded-lg px-2 py-2 text-2xl outline-none focus:ring-2 focus:ring-blue-500 mb-4">
+         <input type="number" placeholder="Contact Number" class="w-full border border-gray-300  rounded-lg px-2 py-2 text-2xl outline-none focus:ring-2 focus:ring-blue-500 mb-4">
+          <input type="password" placeholder="Password" class="w-full border border-gray-300  rounded-lg px-2 py-2 text-2xl outline-none focus:ring-2 focus:ring-blue-500 mb-4">
+           <input type="password" placeholder="Re-enter Password" class="w-full border border-gray-300  rounded-lg px-2 py-2 text-2xl outline-none focus:ring-2 focus:ring-blue-500 mb-4">
+        <div class="flex justify-center gap-4">
+            <button class="w-60 bg-blue-600 hover:bg-blue-700 text-white text-2xl font-semibold py-2 rounded-lg transition" (click)="onRegister()">
+                Register
+            </button>
+              <button class="w-60 bg-blue-600 hover:bg-blue-700 text-white text-2xl font-semibold py-2 rounded-lg transition" (click)="onCancel()">
+                Cancel
+            </button>
+        </div>
+    </div>
+</div>

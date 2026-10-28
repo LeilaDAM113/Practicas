@@ -1,0 +1,87 @@
+<div class="border-2 border-dashed border-gray-500 m-4">
+    <div class="h-100 flex flex-col items-center justify-center text-center font-mono">
+        <h2 class="text-3xl text-yellow-500 mb-5">
+            ℹ️ Directives
+        </h2>
+        <!-- <p class="text-2xl mb-10">
+            Welcome to the About page!
+        </p> -->
+        <div class="text-center">
+            <b>Attribute Directives</b>
+        <!-- <div [ngClass]="isActive? 'active' : 'inactive'">
+            User Status
+        </div>
+        <p [ngStyle]="{color:textColor}">
+          Welcome to Angular 22
+        </p> -->
+        <hr class="m-5">
+        <b>Structural Directives</b>
+        <!-- <p *ngIf="isLoggedIn; else loginTemplate">
+            Welcome back!
+            <ng-template #loginTemplate>
+                <p> Please login </p>
+            </ng-template>
+        </p> -->
+        @if(role==='admin'){
+            <p> 
+                Welcome Admin!
+            </p>
+        }@else if (role==='user') {
+                  <p>
+                    Welcome User!
+                  </p>
+        }
+        @else {
+            <p>
+            Please login
+            </p>
+           
+        }
+        <!-- <ul>
+            <li *ngFor="let user of users">
+             {{user}}
+            </li>
+        </ul> -->
+        <!-- <p *ngIf="users.length===0">
+            No users found 
+        </p> -->
+        <ul>
+        @for(user of users;track user){
+         <li>
+            {{user}}
+         </li>
+        }@empty {
+            <p>
+                No users found
+            </p>
+        }
+       </ul>
+        <!-- <div [ngSwitch]="status">
+            <p *ngSwitchCase="'active'">
+                User is Active.
+            </p>
+            <p *ngSwitchCase="'inactive'">
+                User is Inactive.
+            </p>
+            <p *ngSwitchDefault>
+                Unknown Status.
+            </p>
+        </div> -->
+       @switch (status) {
+         @case ('active') {
+            <p>User is Active.</p>
+                }
+                @case ('inactive') {
+            <p>User is Inactive.</p>
+                }
+                @default {
+                <p>Unknown Status.</p>
+                }
+            }
+             <b>Custom Direcitves</b>
+            <p appTextStyle>
+                Example of Custom Directives
+            </p>
+        </div>
+    </div>
+</div>

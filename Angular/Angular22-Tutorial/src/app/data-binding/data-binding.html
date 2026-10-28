@@ -1,0 +1,30 @@
+<div class="text-center">
+    <b>1. Interpolation</b>
+    <p class="text-sm">{{name}}</p>
+
+    <b>2. Property Binding</b> <br>
+    <input class="text-sm" type="text" [value]="topic">
+
+  <div class="h-50 w-50 border border-black p-2 mx-auto">
+<img [src]="image" alt="House" class="w-full h-full object cover">
+  </div>
+  
+  <b>3. Event Binding</b><br>
+<div>
+  <button class="text-white text-sm bg-blue-500 rounded px-2 cursor-pointer" (click)="onSubmitClick()">Submit</button>
+  </div>
+  <div class="p-2">
+  <select class="w-50 bg-gray-400 text-white text-sm cursor-pointer" (change)="onCountryChange()">
+      <option value="">Select Country</option>
+      <option value="India">India</option>
+      <option value="Germany">Germany</option>
+      <option value="France">France</option>
+      <option value="Spain">Spain</option>
+  </select>
+  </div>
+  <b>4. Two-way Data Binding - ngModel</b><br>
+  <div class="p-2">
+  <input type="text" class="border border-black" [(ngModel)]="name">
+  <p>{{name}}</p>
+  </div>
+</div>

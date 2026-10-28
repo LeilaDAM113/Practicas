@@ -1,0 +1,56 @@
+<div class="border-2 border-dashed border-gray-500 m-4">
+  <div class="min-h-screen flex flex-col items-center justify-center text-center font-mono p-6 gap-6">
+    <h2 class="text-3xl text-yellow-500 mb-2">
+      🏠 {{ title }}
+    </h2>
+
+    <div class="flex flex-col items-center gap-2">
+      <button class="bg-gray-200 hover:bg-gray-300 border border-gray-400 rounded px-3 py-1 text-xl" (click)="setCount()">
+        Set count
+      </button>
+
+      <!-- <h2>{{count()}}</h2> -->
+      <!-- Total : {{price * quantity}} -->
+      <!-- {{getMessage()}} -->
+      <!-- {{users.filter(user=>user.active).length}} -->
+      <!-- <button class="bg-blue-500 text-white rounded px-3 py-1" (click)="showMessage($event)">Click Me</button> -->
+      <!-- <button class="bg-blue-500 text-white rounded px-3 py-1" (click)="showMessage('Jhon')">Click Me</button> -->
+      <!-- <input type="text" (input)="getValue($event)"> -->
+      <!-- <input type="text" (keyup)="keyPreassed($event)"> -->
+      <!-- <input class="border-2" type="text" (keyup.enter)="search()"> -->
+      <!-- <input class="border-2" type="text" (keyup.escape)="clear()">  -->
+      
+      <!-- Inputs con variables de referencia y ViewChild -->
+      <!-- <input class="border-2" type="text" #name>
+      <button class="bg-blue-500 text-white rounded px-3 py-1" (click)="showName(name.value)">Submit</button> -->
+    </div>
+
+    <div class="flex items-center gap-2">
+      <input type="text" #email class="border-2 border-gray-300 rounded px-2 py-1" placeholder="Email...">
+      <button class="bg-blue-500 hover:bg-blue-600 text-white rounded px-3 py-1" (click)="focusInput()">
+        Focus
+      </button>
+    </div>
+
+    <div class="flex flex-col items-center gap-2 border border-gray-200 p-4 rounded bg-gray-50">
+      <app-profile #profile></app-profile>
+      <button class="bg-blue-500 hover:bg-blue-600 text-white rounded px-3 py-1" (click)="profile.updateProfile()">
+        Update
+      </button>
+    </div>
+
+    <div class="flex items-center gap-2">
+      <input type="text" appTextStyle #highlight="appTextStyle" class="border-2 border-gray-300 rounded px-2 py-1" placeholder="Texto con estilo...">
+      <button class="bg-blue-500 hover:bg-blue-600 text-white rounded px-3 py-1" (click)="highlight.changeStyle()">
+        Change Type
+      </button>
+    </div>
+
+    <ng-template #message>
+      <p class="text-gray-600">
+        Hello Angular 22!
+      </p>
+    </ng-template>
+
+  </div>
+</div>

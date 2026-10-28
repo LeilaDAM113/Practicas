@@ -1,0 +1,24 @@
+<div class="border-2 border-dashed border-gray-500 m-4">
+    <p class="m-5 float-right text-3xl font-bold text-blue-700">
+     🔔 Notification
+     <b class="text-red-700">
+        {{cartService.notifications()}}
+     </b>
+    </p>
+  <div class="h-full flex flex-col items-center justify-center text-center font-mono py-10">
+    <h2 class="text-3xl text-red-500 mb-5">
+       📈 Signal Component
+    </h2>
+    <div>
+        <h2 class="text-3xl font-bold">Shopping Cart</h2>
+        <h2 class="text-1xl font-bold">Cart-total: {{cartService.total()}}</h2>
+         <button class="bg-blue-500 text-white rounded px-3 py-1 m-2" (click)="cartService.increaseQuantity()"> Add Item </button>
+         <button class="bg-orange-500 text-white rounded px-3 py-1 m-2" (click)="cartService.changePrice(200)"> Change Price </button> 
+      <!-- <p>Total : {{ total() }}</p> -->
+      <!-- <h2 class="text-3xl font-bold">Count : {{count()}}</h2> -->
+       <!--<button class="bg-blue-500 text-white rounded px-3 py-1 m-2" (click)="increment()"> Increment </button>-->
+       <!--<button class="bg-orange-500 text-white rounded px-3 py-1 m-2" (click)="decrement()"> Decrement </button> -->
+      <!--<button class="bg-gray-500 text-white rounded px-3 py-1 m-2" (click)="reset()"> Reset </button>-->
+    </div>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+<div class="h-full rounded-2xl border border-gray-100 bg-white p-6 shadow-xl shadow-gray-100 flex flex-col justify-between">
+  
+  <div>
+    <!-- Header-->
+    <div class="mb-6 flex items-center gap-3">
+      <div class="rounded-lg bg-amber-50 p-2.5 text-xl">👶</div>
+      <div>
+        <h2 class="text-lg font-bold leading-tight text-gray-800">Child Component</h2>
+        <p class="text-xs text-gray-400">Receiving data</p>
+      </div>
+    </div>
+
+    <!-- Cajas de Datos Recibidos -->
+    <div class="space-y-3 mb-6">
+      <div class="rounded-xl bg-purple-50/50 p-4">
+        <p class="text-xs text-purple-400">Username received</p>
+        <p class="text-base font-semibold text-gray-700">{{ userName() }}</p>
+      </div>
+
+      <div class="rounded-xl bg-rose-50/50 p-4">
+        <p class="text-xs text-rose-400">Quantity received</p>
+        <p class="text-base font-semibold text-gray-700">{{ quantityValue() }}         
+        </p>
+      </div>
+      <button (click)="increaseQuantity()" class="rounded-lg bg-orange-500 px-5 py-3 font-semibold text-white hover:bg-orange-700">
+         + Increase Quantity
+      </button>
+      <div class="mt-4 rounded-xl bg-purple-50 p-5">
+  <div class="mt-4 flex gap-3">
+    <button (click)="increase()" class="rounded-lg bg-red-500 px-5 py-3 font-bold text-white hover:bg-red-700">
+      +
+    </button>
+    <button (click)="decrease()" class="rounded-lg bg-green-500 px-5 py-3 font-bold text-white hover:bg-green-700">
+      -
+    </button>
+
+  </div>
+</div>
+<p class="mt-4">
+    Example of viewChild() : <b class="text-pink-700">{{message()}}</b>
+</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- <h2 class="mb-4 text-xl font font-semibold">
+            Child Component
+        </h2>
+        <p class="mb-2">
+            Username: <strong>{{username()}}</strong>
+        </p>
+         <p class="mb-2">
+            Quantity: <strong>{{quantity()}}</strong>
+        </p>
+        <div class="flex gap-2">
+            <button class="rounded bg-green-500 px-3 py-2 text-white" (click)="onSave()">
+                Save
+            </button>
+            <button class="rounded bg-orange-500 px-3 py-2 text-white" (click)="selectUser()">
+                Select User
+            </button>
+            <button class="rounded bg-blue-500 px-3 py-2 text-white" (click)="increase()">
+                Increase
+            </button>
+        </div> -->
