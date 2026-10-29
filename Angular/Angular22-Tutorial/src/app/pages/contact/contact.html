@@ -1,7 +1,64 @@
 <div class="border-2 border-dashed border-gray-500 m-4">
-<div class="h-100 flex flex-col items-center justify-center text-center font-mono">
-    <h2 class="text-3xl text-yellow-500 mb-5">
-       📞 Contact Component
-    </h2>
-</div>
+    <div class="h-100vh flex flex-col items-center justify-center font-mono">
+        <!-- <h2 class="text-3xl text-yellow-500 mb-5">
+           📞 Contact Component
+        </h2> -->
+        <!-- <p class="text-2xl mb-10">
+            Welcome to the Contact Page!
+        </p> -->
+        <!-- <p class="text-lg font-semibold">
+            Cart Items: {{shoppingService.cartCount()}}
+        </p> -->
+        
+        <div class="min-h-screen bg-slate-100 p-8">
+            <div class="mx-auto max-w-5xl">
+
+                <h1 class="mb-6 text-2xl font-bold text-slate-800">
+                    Posts
+                </h1>
+
+                <!-- Buttons -->
+                <div class="mb-6 flex gap-3">
+                    <button (click)="loadPosts()" class="rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700">
+                        GET Posts
+                    </button>
+                    <button (click)="createPost()" class="rounded-lg bg-green-600 px-4 py-2 text-white hover:bg-green-700">
+                        POST
+                    </button>
+                </div>  
+
+                <!-- POSTS -->
+                <div class="space-y-4">
+                    @for(post of posts(); track post.id) {
+                        <div class="rounded-lg bg-white p-5 shadow-sm">
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <h2 class="font-semibold text-slate-800">
+                                        {{post.title}}
+                                    </h2>
+                                    <p class="mt-2 text-sm text-slate-500">
+                                        {{post.body}}
+                                    </p>
+                                    <p class="mt-2 text-xs text-slate-400">
+                                        Post Id: {{post.id}}
+                                        User Id: {{post.userId}}
+                                    </p>
+                                </div> 
+                                <div class="flex gap-2">
+                                    <button (click)="updatePost(post)" class="rounded bg-amber-100 px-3 py-1 text-sm text-amber-700">
+                                        PUT
+                                    </button>
+                                    <button (click)="deletePost(post.id)" class="rounded bg-red-100 px-3 py-1 text-sm text-red-700">
+                                        DELETE
+                                    </button>
+                                </div>
+                            </div> 
+                        </div> 
+                    } 
+                </div> 
+
+            </div> 
+        </div> 
+
+    </div>
 </div>

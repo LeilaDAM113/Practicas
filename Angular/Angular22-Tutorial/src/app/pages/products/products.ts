@@ -1,5 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { Shopping } from '../../Services/shopping';
 
 @Component({
   imports: [RouterLink],
@@ -8,8 +9,13 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
   templateUrl: './products.html',
 })
 export class Products implements OnInit {
-  private router = inject(Router);
-  private activatedRoute = inject(ActivatedRoute);
+ protected shoppingService= inject(Shopping)
+ addProducts(){
+  this.shoppingService.addToCart()
+ }
+
+  // private router = inject(Router);
+  // private activatedRoute = inject(ActivatedRoute);
 
   // passing the Route Parameters using navigate()
   //   viewDetails(productId:number){
@@ -29,11 +35,11 @@ export class Products implements OnInit {
 
   // passing the Query Parameters using navigate()
   viewDetails(category: string) {
-    this.router.navigate(['/pages/products'], {
-      queryParams: {
-        category: category
-      }
-    });
-    console.log(category);
+    // this.router.navigate(['/pages/products'], {
+    //   queryParams: {
+    //     category: category
+    //   }
+    // });
+    // console.log(category);
   }
 }

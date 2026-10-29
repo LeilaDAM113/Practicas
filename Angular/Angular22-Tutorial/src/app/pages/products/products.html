@@ -3,6 +3,14 @@
     <h2 class="text-3xl text-yellow-500 mb-5">
             📄 Products Component
         </h2>
+        <div class="space-y-4">
+            <p class="text-lg font-semibold">
+                Cart Items: {{shoppingService.cartCount()}}
+            </p>
+        <button (click)="addProducts()" class="rounded-lg bg-blue-500 px-5 py-2 text-white">
+          Add To Cart
+        </button>
+        </div>
         <!-- <p class="text-2xl mb-10">
             Welcome to the Products page!
         </p> -->
@@ -25,10 +33,10 @@
                 <a routerLink="/pages/products" [queryParams]="{category: 'tablet', sort: 'price'}">Tablet</a>
           </nav>-->
           <!-- Query Parameter with Navigate()-->
-         <nav class="flex gap-2">
+         <!-- <nav class="flex gap-2">
             <button class="bg-blue-500 text-white rounded px-3 py-1" (click)="viewDetails('laptop')">Laptop</button>
             <button class="bg-blue-500 text-white rounded px-3 py-1" (click)="viewDetails('mobile')">Mobile</button>
             <button class="bg-blue-500 text-white rounded px-3 py-1" (click)="viewDetails('tablet')">Tablet</button>
-        </nav> 
+        </nav>  -->
     </div>
 </div>
