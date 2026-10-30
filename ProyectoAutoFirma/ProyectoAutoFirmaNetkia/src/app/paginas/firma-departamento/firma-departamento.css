@@ -1,0 +1,13 @@
+.buzones { border: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.buzones legend { padding: 0; margin-bottom: 8px; }
+.buzones__boton {
+  display: flex; align-items: center; gap: 14px; width: 100%; min-height: 64px; padding: 10px 14px;
+  border-radius: 6px; font: inherit; text-align: left; border: 1px solid var(--nk-borde); background: #ffffff;
+  transition: var(--nk-transicion);
+}
+.buzones__boton:hover { border-color: var(--nk-azul); }
+.buzones__boton.activo { border: 2px solid var(--nk-azul); background: var(--nk-fondo-suave); }
+.buzones__boton img { width: 36px; height: 36px; object-fit: contain; flex: 0 0 auto; }
+.buzones__textos { display: flex; flex-direction: column; align-items: flex-start; min-width: 0; flex: 1 1 auto; }
+.buzones__nombre { font-size: 15px; font-weight: 500; color: var(--nk-titulo); }
+.buzones__correo { font-size: 13px; color: var(--nk-gris); overflow-wrap: anywhere; }

@@ -1,0 +1,25 @@
+.login { min-height: 100vh; display: flex; flex-direction: column; }
+.login__main { flex: 1 0 auto; background: linear-gradient(180deg, #ffffff 0%, var(--nk-fondo-azul) 100%); }
+.login__rejilla {
+  padding-top: 80px; padding-bottom: 64px; display: grid; gap: 64px; align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(min(460px, 100%), 1fr));
+}
+.login__columna { display: flex; flex-direction: column; gap: 32px; }
+.login__textos { display: flex; flex-direction: column; gap: 16px; }
+.login__titulo { max-width: 560px; }
+.login__tarjeta { max-width: 460px; padding: 40px; }
+.login__bloque { display: flex; flex-direction: column; gap: 8px; }
+.login__subtitulo { margin: 0; font-size: 23px; font-style: italic; font-weight: 700; line-height: 1.25; color: var(--nk-titulo); }
+.login__texto { margin: 0; font-size: 15px; line-height: 1.6; }
+.login__boton { width: 100%; }
+.login__info { border-top: 1px solid var(--nk-borde); padding-top: 20px; display: flex; flex-direction: column; gap: 12px; }
+.login__info-titulo { font-size: 12px; font-weight: 600; letter-spacing: 1.4px; text-transform: uppercase; color: var(--nk-titulo); }
+.login__lista { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 14px; line-height: 1.6; }
+.login__lista li { display: flex; align-items: center; gap: 10px; }
+.login__nota { margin: 0; font-size: 13px; line-height: 1.6; color: var(--nk-gris); }
+.login__nota code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; background: var(--nk-fondo-suave);
+  border: 1px solid var(--nk-borde-azul); padding: 1px 6px; border-radius: 6px;
+}
+.login__ilustracion { display: flex; justify-content: center; }
+.login__ilustracion img { width: 100%; max-width: 546px; height: auto; }

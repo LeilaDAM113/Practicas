@@ -1,0 +1,10 @@
+.selector {
+  display: flex; flex-wrap: wrap; gap: 4px; padding: 4px; background: #ffffff;
+  border: 1px solid var(--nk-borde-azul); border-radius: 999px; box-shadow: var(--nk-sombra);
+}
+.selector a {
+  min-height: 44px; padding: 0 22px; border-radius: 999px; display: inline-flex; align-items: center;
+  font-size: 14px; font-weight: 500; white-space: nowrap; text-decoration: none;
+  color: var(--nk-azul); background: transparent; transition: var(--nk-transicion);
+}
+.selector a.activo { background: var(--nk-azul); color: #ffffff; }

@@ -1,0 +1,71 @@
+<app-cabecera [mostrarUsuario]="true" />
+
+<div class="banda-hero">
+  <div class="contenedor banda-hero__contenido">
+    <div class="banda-hero__textos">
+      <span class="etiqueta-superior">Firmas de correo</span>
+      <h1 class="titulo-hero">Tu firma</h1>
+      <p class="entradilla">Revisa tus datos, elige el formato y pégala en tu cliente de correo.</p>
+    </div>
+    <app-selector-modo />
+  </div>
+</div>
+
+<div class="zona-trabajo">
+  <div class="contenedor zona-trabajo__contenido">
+
+    <section class="tarjeta columna-datos" aria-labelledby="datos-h">
+      <div class="tarjeta__cabecera">
+        <h2 id="datos-h" class="titulo-seccion">Tus datos</h2>
+        <button type="button" class="nk-ghost" (click)="restaurar()">Restaurar valores</button>
+      </div>
+
+      @if (perfilService.cargando()) {
+        <p class="ayuda">Cargando tus datos de Microsoft 365…</p>
+      }
+      @if (perfilService.error(); as error) {
+        <p class="aviso-error">{{ error }}</p>
+      }
+
+      <div class="campos">
+        <div class="campo">
+          <label for="f-name">Nombre y apellidos 🔒</label>
+          <input id="f-name" class="control" type="text" readonly [value]="perfil()?.nombre ?? ''">
+          <span class="ayuda">Viene de Azure AD y no se puede editar.</span>
+        </div>
+        <div class="campo">
+          <label for="f-mail">Correo electrónico 🔒</label>
+          <input id="f-mail" class="control" type="email" readonly [value]="perfil()?.correo ?? ''">
+        </div>
+        <div class="campo">
+          <label for="f-dept">Departamento / cargo</label>
+          <input id="f-dept" class="control" type="text" [(ngModel)]="departamento">
+        </div>
+        <div class="rejilla-2">
+          <div class="campo">
+            <label for="f-office">Teléfono oficina</label>
+            <input id="f-office" class="control" type="tel" [(ngModel)]="telefonoOficina">
+          </div>
+          <div class="campo">
+            <label for="f-mobile">Móvil <span class="opcional">(opcional)</span></label>
+            <input id="f-mobile" class="control" type="tel" placeholder="600 000 000" [(ngModel)]="movil">
+          </div>
+        </div>
+      </div>
+
+      <app-selector-iconos
+        [seleccionado]="iconoActual()"
+        [automatico]="iconoAuto()"
+        pista="AUTO marca el icono detectado a partir de tu departamento en Azure AD."
+        (elegir)="iconoElegido.set($event)" />
+    </section>
+
+    <div class="columna-resultado">
+      <app-vista-previa [datos]="datos()" />
+      <app-guia-instalacion />
+    </div>
+
+  </div>
+</div>
+
+<app-pie />

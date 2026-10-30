@@ -1,0 +1,20 @@
+<section class="guia" aria-labelledby="inst-h">
+  <div class="tarjeta__cabecera">
+    <h2 id="inst-h" class="titulo-seccion">Cómo instalarla</h2>
+    <div role="tablist" aria-label="Cliente de correo" class="guia__pestanas">
+      @for (g of guias; track g.id) {
+        <button type="button" role="tab" class="nk-tab"
+          [class.activo]="guiaId() === g.id" [attr.aria-selected]="guiaId() === g.id"
+          (click)="guiaId.set(g.id)">{{ g.etiqueta }}</button>
+      }
+    </div>
+  </div>
+  <ol class="guia__pasos">
+    @for (paso of guia().pasos; track $index) {
+      <li>
+        <span class="guia__numero" aria-hidden="true">{{ $index + 1 }}</span>
+        <span class="guia__texto">{{ paso }}</span>
+      </li>
+    }
+  </ol>
+</section>

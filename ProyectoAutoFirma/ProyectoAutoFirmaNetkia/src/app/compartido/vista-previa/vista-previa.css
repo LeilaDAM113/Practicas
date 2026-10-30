@@ -1,0 +1,20 @@
+.previa { padding: 0; gap: 0; }
+.previa__cabecera { padding: 32px 32px 0; gap: 16px; }
+.previa__pestanas { display: flex; flex-wrap: wrap; gap: 24px; }
+.previa__cuerpo { padding: 24px 32px; }
+.previa__marco { background: var(--nk-fondo-suave); border: 1px solid var(--nk-borde-azul); border-radius: 6px; padding: 24px; overflow-x: auto; }
+.previa__hoja { background: #ffffff; border-radius: 6px; padding: 20px 24px; min-width: 578px; box-sizing: border-box; box-shadow: 0 2px 12px rgba(52, 55, 53, .06); }
+.previa__saludo { margin: 0 0 4px; font-size: 14px; color: var(--nk-gris); }
+.previa__codigo {
+  margin: 0; background: #343735; color: #f2f2f2; border-radius: 6px; padding: 20px 24px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; line-height: 1.6;
+  white-space: pre-wrap; word-break: break-all; max-height: 420px; overflow: auto;
+}
+.previa__texto {
+  margin: 0; background: var(--nk-fondo-suave); border: 1px solid var(--nk-borde-azul); border-radius: 6px; padding: 20px 24px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; line-height: 1.75; white-space: pre-wrap;
+}
+.previa__acciones { border-top: 1px solid var(--nk-borde); padding: 24px 32px 28px; display: flex; flex-direction: column; gap: 14px; }
+.previa__botones { display: flex; flex-wrap: wrap; gap: 12px; }
+.previa__estado { margin: 0; font-size: 14px; line-height: 1.6; color: var(--nk-gris); }
+.previa__estado--ok { font-weight: 500; color: var(--nk-azul-oscuro); }

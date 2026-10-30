@@ -1,0 +1,12 @@
+.guia {
+  background: var(--nk-fondo-suave); border: 1px solid var(--nk-borde-azul); border-radius: 6px;
+  padding: 32px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px;
+}
+.guia__pestanas { display: flex; flex-wrap: wrap; gap: 24px; }
+.guia__pasos { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; }
+.guia__pasos li { display: flex; gap: 14px; align-items: flex-start; }
+.guia__numero {
+  flex: 0 0 30px; height: 30px; border-radius: 50%; background: var(--nk-azul); color: #ffffff;
+  font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center;
+}
+.guia__texto { font-size: 15px; line-height: 1.6; padding-top: 3px; }

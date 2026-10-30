@@ -1,0 +1,20 @@
+<fieldset class="iconos">
+  <legend class="etiqueta">Icono</legend>
+  <div class="iconos__rejilla">
+    @for (icono of iconos; track icono.id) {
+      <button
+        type="button"
+        class="iconos__boton"
+        [class.activo]="icono.id === seleccionado()"
+        [attr.aria-pressed]="icono.id === seleccionado()"
+        (click)="elegir.emit(icono.id)">
+        <img [src]="firma.urlIconoPantalla(icono)" alt="">
+        <span class="iconos__texto">{{ icono.etiqueta }}</span>
+        @if (icono.id === automatico()) {
+          <span class="iconos__auto">AUTO</span>
+        }
+      </button>
+    }
+  </div>
+  <span class="ayuda">{{ pista() }}</span>
+</fieldset>

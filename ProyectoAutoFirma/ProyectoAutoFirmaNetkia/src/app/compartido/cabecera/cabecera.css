@@ -1,0 +1,20 @@
+.cabecera { background: #ffffff; box-shadow: 0 2px 12px rgba(52, 55, 53, .06); position: relative; z-index: 2; }
+.cabecera__contenido {
+  padding-top: 12px; padding-bottom: 12px; min-height: 70px;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;
+}
+.cabecera__marca { display: flex; align-items: center; gap: 24px; }
+.cabecera__logo { height: 38px; width: auto; }
+.cabecera__etiqueta {
+  font-size: 12px; font-weight: 500; letter-spacing: 1.4px; text-transform: uppercase;
+  color: var(--nk-azul); border-bottom: 2px solid var(--nk-cian-claro); padding-bottom: 2px;
+}
+.cabecera__usuario { display: flex; align-items: center; gap: 10px; }
+.cabecera__avatar {
+  width: 38px; height: 38px; border-radius: 50%; background: var(--nk-fondo-azul); border: 1px solid var(--nk-borde-azul);
+  color: var(--nk-azul); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600;
+}
+.cabecera__datos { display: flex; flex-direction: column; line-height: 1.3; margin-right: 6px; }
+.cabecera__nombre { font-size: 14px; font-weight: 500; color: var(--nk-titulo); }
+.cabecera__correo { font-size: 13px; color: var(--nk-gris); }
+.cabecera__salir { min-height: 44px; padding: 9px 20px; font-size: 14px; }

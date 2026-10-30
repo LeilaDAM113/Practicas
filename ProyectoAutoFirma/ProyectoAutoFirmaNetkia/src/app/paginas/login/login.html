@@ -1,0 +1,45 @@
+<div class="login">
+  <app-cabecera />
+  <main class="login__main">
+    <div class="contenedor login__rejilla">
+      <div class="login__columna">
+        <div class="login__textos">
+          <span class="etiqueta-superior">Herramienta interna</span>
+          <h1 class="titulo-hero login__titulo">Tu firma de correo, en un clic</h1>
+          <p class="entradilla">Entra con tu cuenta de Microsoft 365. Leemos tus datos de Azure AD y te damos la firma lista para pegar en Outlook o Gmail.</p>
+        </div>
+
+        <div class="tarjeta login__tarjeta">
+          <div class="login__bloque">
+            <h2 class="login__subtitulo">Inicia sesión</h2>
+            <p class="login__texto">Usa tu cuenta corporativa <strong>@netkia.es</strong>.</p>
+          </div>
+
+          <button type="button" class="nk-primary login__boton" (click)="iniciarSesion()" [disabled]="comprobando()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><path d="M10 17l5-5-5-5"></path><path d="M15 12H3"></path></svg>
+            <span>{{ comprobando() ? 'Comprobando sesión…' : 'Iniciar sesión con Microsoft' }}</span>
+          </button>
+
+          <div class="login__info">
+            <span class="login__info-titulo">Qué leemos de tu perfil</span>
+            <ul class="login__lista">
+              @for (dato of ['Nombre y apellidos', 'Departamento y cargo', 'Correo y teléfonos']; track dato) {
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00aee1" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>
+                  {{ dato }}
+                </li>
+              }
+            </ul>
+            <p class="login__nota">Solo lectura de tu perfil (permiso <code>User.Read</code>). ¿No puedes acceder? Contacta con el equipo de Sistemas.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="login__ilustracion">
+        <img src="img/oficina-netkia.png" alt="Oficina de Netkia con el equipo trabajando">
+      </div>
+    </div>
+  </main>
+
+  <app-pie />
+</div>

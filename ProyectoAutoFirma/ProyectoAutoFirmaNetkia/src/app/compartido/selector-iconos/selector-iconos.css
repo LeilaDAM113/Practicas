@@ -1,0 +1,16 @@
+.iconos { border: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+.iconos legend { padding: 0; margin-bottom: 12px; }
+.iconos__rejilla { display: grid; grid-template-columns: repeat(auto-fill, minmax(86px, 1fr)); gap: 8px; }
+.iconos__boton {
+  position: relative; min-height: 92px; padding: 12px 4px 8px; border-radius: 6px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px;
+  border: 1px solid var(--nk-borde); background: #ffffff; transition: var(--nk-transicion);
+}
+.iconos__boton:hover { border-color: var(--nk-azul); }
+.iconos__boton.activo { border: 2px solid var(--nk-azul); background: var(--nk-fondo-suave); }
+.iconos__boton img { width: 40px; height: 40px; object-fit: contain; }
+.iconos__texto { font-size: 11px; line-height: 1.25; text-align: center; }
+.iconos__auto {
+  position: absolute; top: 4px; right: 4px; font-size: 9px; font-weight: 600; letter-spacing: .8px;
+  color: #ffffff; background: var(--nk-azul); padding: 2px 6px; border-radius: 999px;
+}

@@ -1,0 +1,47 @@
+<section class="tarjeta previa" aria-labelledby="prev-h">
+  <div class="tarjeta__cabecera previa__cabecera">
+    <h2 id="prev-h" class="titulo-seccion">Vista previa</h2>
+    <div role="tablist" aria-label="Formato" class="previa__pestanas">
+      @for (p of pestanas; track p.id) {
+        <button type="button" role="tab" class="nk-tab"
+          [class.activo]="pestana() === p.id" [attr.aria-selected]="pestana() === p.id"
+          (click)="pestana.set(p.id)">{{ p.etiqueta }}</button>
+      }
+    </div>
+  </div>
+
+  <div class="previa__cuerpo">
+    @switch (pestana()) {
+      @case ('preview') {
+        <div class="previa__marco">
+          <div class="previa__hoja">
+            <p class="previa__saludo">Un saludo,</p>
+            <div [innerHTML]="htmlSeguro()"></div>
+          </div>
+        </div>
+      }
+      @case ('html') {
+        <pre class="previa__codigo">{{ html() }}</pre>
+      }
+      @case ('text') {
+        <pre class="previa__texto">{{ texto() }}</pre>
+      }
+    }
+  </div>
+
+  <div class="previa__acciones">
+    <div class="previa__botones">
+      <button type="button" class="nk-primary" (click)="copiarFirma()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+        Copiar firma
+      </button>
+      <button type="button" class="nk-outline" (click)="copiarHtml()">Copiar HTML</button>
+      <button type="button" class="nk-outline" (click)="copiarTextoPlano()">Copiar texto plano</button>
+      <button type="button" class="nk-ghost" (click)="descargar()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="M7 10l5 5 5-5"></path><path d="M12 15V3"></path></svg>
+        Descargar .html
+      </button>
+    </div>
+    <p aria-live="polite" class="previa__estado" [class.previa__estado--ok]="estado() !== null">{{ mensaje() }}</p>
+  </div>
+</section>

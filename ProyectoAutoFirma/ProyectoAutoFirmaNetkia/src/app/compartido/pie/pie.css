@@ -1,0 +1,6 @@
+.pie { background: #ffffff; border-top: 1px solid var(--nk-borde); }
+.pie__contenido {
+  padding-top: 24px; padding-bottom: 24px; display: flex; flex-wrap: wrap; align-items: center;
+  justify-content: space-between; gap: 16px; font-size: 13px; color: var(--nk-gris);
+}
+.pie__logo { height: 28px; width: auto; filter: grayscale(1); opacity: .6; }

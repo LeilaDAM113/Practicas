@@ -1,0 +1,21 @@
+<header class="cabecera">
+  <div class="contenedor cabecera__contenido">
+    <div class="cabecera__marca">
+      <img src="img/logo-netkia-15.webp" alt="Netkia, 15 años impulsando negocios" class="cabecera__logo">
+      <span class="cabecera__etiqueta">Firmas de correo</span>
+    </div>
+
+    @if (mostrarUsuario()) {
+      @if (perfil(); as p) {
+        <div class="cabecera__usuario">
+          <span class="cabecera__avatar" aria-hidden="true">{{ iniciales() }}</span>
+          <div class="cabecera__datos">
+            <span class="cabecera__nombre">{{ p.nombre }}</span>
+            <span class="cabecera__correo">{{ p.correo }}</span>
+          </div>
+          <button type="button" class="nk-outline cabecera__salir" (click)="cerrarSesion()">Cerrar sesión</button>
+        </div>
+      }
+    }
+  </div>
+</header>
