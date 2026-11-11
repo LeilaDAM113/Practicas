@@ -20,7 +20,7 @@ export class FirmaService {
   detectarIcono(departamento: string): string {
     const d = this.normalizar(departamento);
     const encontrado = ICONOS.find((icono) => icono.patron.test(d));
-    return encontrado ? encontrado.id : 'comunicados';
+    return encontrado ? encontrado.id : 'diseno';
   }
 
   iconoPorId(id: string): Icono {
@@ -57,7 +57,7 @@ export class FirmaService {
 
     return `
 <table style="max-width:530px;width:530px;border:none;border-collapse:collapse;border-spacing:0;background-color:#ffffff;${fuente}" border="0" cellspacing="0" cellpadding="0">
-  <tr><td colspan="2" style="height:20px;"></td></tr>
+<tr><td colspan="2" style="height:20px;"></td></tr>
   <tr>
     <td style="border-right:1px solid #dddddd;">
       <table style="${tablaInterior}" ${atributos}>
@@ -119,7 +119,7 @@ export class FirmaService {
         <tr>
           <td>
             <p style="margin:0;font-size:12px;${fuente}color:#000000;">
-              <a style="color:#000000;text-decoration:none;" target="_blank" href="https://maps.app.goo.gl/k8JSbnFA8fAhjv1v6">Cantabria</a>
+              <a style="color:#000000;text-decoration:none;" target="_blank" href="https://www.google.com/maps/place/Netkia/@43.3516919,-4.0547448,129m/data=!3m1!1e3!4m6!3m5!1s0xd493e119f516397:0x5b9c05dd77bdcc6e!8m2!3d43.3517043!4d-4.0549555!16s%2Fg%2F1tdzbr1h?entry=ttu&g_ep=EgoyMDI2MTEwOC4wIKXMDSoASAFQAw%3D%3D">Cantabria</a>
               &nbsp;&nbsp;.&nbsp;&nbsp;
               <a style="color:#000000;text-decoration:none;" target="_blank" href="https://maps.app.goo.gl/hXPbpLwJxFXsBeFF9">Madrid</a>
               &nbsp;&nbsp;.&nbsp;&nbsp;

@@ -9,7 +9,7 @@
 .login__titulo { max-width: 560px; }
 .login__tarjeta { max-width: 460px; padding: 40px; }
 .login__bloque { display: flex; flex-direction: column; gap: 8px; }
-.login__subtitulo { margin: 0; font-size: 23px; font-style: italic; font-weight: 700; line-height: 1.25; color: var(--nk-titulo); }
+.login__subtitulo { margin: 0; font-size: 23px; font-style: italic; font-weight: 700; line-height: 1.25; color: rgb(68, 68, 68); }
 .login__texto { margin: 0; font-size: 15px; line-height: 1.6; }
 .login__boton { width: 100%; }
 .login__info { border-top: 1px solid var(--nk-borde); padding-top: 20px; display: flex; flex-direction: column; gap: 12px; }

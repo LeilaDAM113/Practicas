@@ -1,0 +1,22 @@
+.tarjeta__cabecera {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 8px;
+}
+
+.tarjeta__cabecera .titulo-seccion {
+    margin: 0;
+    font-size: 25px;
+    white-space: nowrap;
+}
+
+.tarjeta__cabecera .nk-ghost {
+    height: 26px;
+    width: auto;
+    padding-inline: 4px;
+    font-size: 14px;
+    flex-shrink: 0;
+    white-space: nowrap;
+}

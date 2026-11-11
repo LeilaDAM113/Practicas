@@ -37,7 +37,7 @@ export class FirmaDepartamento implements OnInit {
 
   protected buzon = computed<Buzon | null>(() => this.buzonesDisponibles().find((b) => b.id === this.buzonId()) ?? null);
 
-  protected iconoActual = computed(() => this.iconoElegido() ?? this.buzon()?.icono ?? 'comunicados');
+  protected iconoActual = computed(() => this.iconoElegido() ?? this.buzon()?.icono ?? 'diseno');
 
   protected datos = computed<DatosFirma | null>(() => {
     const b = this.buzon();
@@ -66,6 +66,7 @@ export class FirmaDepartamento implements OnInit {
     this.linea.set(b.linea);
     this.telefono.set(b.telefono);
     this.iconoElegido.set(null);
+    
   }
 
   //Botón "Restaurar valores"
