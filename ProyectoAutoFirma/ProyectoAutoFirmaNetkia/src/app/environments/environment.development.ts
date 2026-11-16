@@ -18,7 +18,7 @@ export const environment = {
   },
 
   firmas: {
-    imagenesPublicas: 'https://www.netkia.es/firmas/departamentos/',
+    imagenesPublicas: 'https://www.netkia.es/firmas/departamentos/iconos/',
     logo: 'https://www.netkia.es/firmas/fotos-2022/logo-netkia-15ani2.jpg',
     logoPitma: 'https://www.netkia.es/firmas/fotos-2022/logo-pitma.jpg',
   },

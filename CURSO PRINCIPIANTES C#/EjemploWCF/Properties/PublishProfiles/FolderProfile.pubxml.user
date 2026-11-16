@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- https://go.microsoft.com/fwlink/?LinkID=208121. -->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\inetpub\wwwroot\EjemploWCF</_PublishTargetUrl>
+    <History>True|2026-10-09T12:24:50.9904441Z||;False|2026-10-09T14:22:25.4512390+02:00||;False|2026-10-09T14:21:45.9287008+02:00||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/EjemploWCF.dll">
+      <publishTime>10/09/2026 14:24:50</publishTime>
+    </File>
+    <File Include="bin/EjemploWCF.pdb">
+      <publishTime>10/09/2026 14:24:50</publishTime>
+    </File>
+    <File Include="contextoDatos.dbml">
+      <publishTime>10/09/2026 08:52:08</publishTime>
+    </File>
+    <File Include="Service1.svc">
+      <publishTime>10/09/2026 08:17:57</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>10/09/2026 14:21:45</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

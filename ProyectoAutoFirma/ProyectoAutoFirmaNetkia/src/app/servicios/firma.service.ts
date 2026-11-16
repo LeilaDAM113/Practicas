@@ -33,7 +33,7 @@ export class FirmaService {
   }
 
   urlIconoPantalla(icono: Icono): string {
-    return 'iconos/' + icono.archivo;
+    return environment.firmas.imagenesPublicas + icono.archivo;
   }
 
   nombreArchivo(base: string): string {

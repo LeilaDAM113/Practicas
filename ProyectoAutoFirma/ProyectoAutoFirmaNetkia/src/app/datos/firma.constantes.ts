@@ -6,20 +6,21 @@ export const NOTA_ITECAN = 'ITECAN ahora forma parte de Netkia';
 
 export const ICONOS: Icono[] = [
   //El orden importa: se usa el PRIMER icono cuyo patrón encaje con el departamento
-  { id: 'direccion', etiqueta: 'Dirección', archivo: 'icono-direccion.png', patron: /direcci|gerencia|ceo/ },
-  { id: 'administracion', etiqueta: 'Administración', archivo: 'icono-administracion.png', patron: /administra|contab|finanz|rrhh|recursos humanos/ },
-  { id: 'comunicados', etiqueta: 'Comunicados', archivo: 'icono-comunicados.png', patron: /comunica/ },
-  { id: 'diseno', etiqueta: 'Diseño', archivo: 'icono-diseno.png', patron: /diseno/ },
-  { id: 'marketing', etiqueta: 'Marketing', archivo: 'icono-marketing.png', patron: /marketing|comercial|ventas/ },
-  { id: 'desarrollo-apps', etiqueta: 'Apps móviles', archivo: 'icono-desarrollo-apps.png', patron: /apps|movil/ },
-  { id: 'desarrollo', etiqueta: 'Desarrollo', archivo: 'icono-desarrollo.png', patron: /desarrollo|software|ingenier|programa/ },
-  { id: 'bi', etiqueta: 'Business Intelligence', archivo: 'icono-bi.png', patron: /\bbi\b|business|intelligence|datos/ },
-  { id: 'sistemas-cloud', etiqueta: 'Sistemas cloud', archivo: 'icono-sistemas-cloud.png', patron: /cloud|nube/ },
-  { id: 'sistemas-seguridad', etiqueta: 'Sistemas y seguridad', archivo: 'icono-sistemas-seguridad.png', patron: /sistemas|seguridad|ciber/ },
-  { id: 'soporte', etiqueta: 'Soporte', archivo: 'icono-soporte.png', patron: /soporte|help ?desk|atencion/ },
-  { id: 'telefonia', etiqueta: 'Telefonía', archivo: 'icono-telefonia.png', patron: /telefon|voip/ },
-  { id: 'almacen', etiqueta: 'Almacén', archivo: 'almacen-netkia.jpg', patron: /almacen|logistic/ },
+  { id: 'direccion', etiqueta: 'Dirección', archivo: 'direccion.png', patron: /direcci|gerencia|ceo/ },
+  { id: 'administracion', etiqueta: 'Administración', archivo: 'administracion.png', patron: /administra|contab|finanz|rrhh|recursos humanos/ },
+  { id: 'comunicados', etiqueta: 'Comunicados', archivo:'comunicados.png', patron: /comunica/ },
+  { id: 'diseno', etiqueta: 'Diseño', archivo: 'diseno.png', patron: /diseno/ },
+  { id: 'marketing', etiqueta: 'Marketing', archivo: 'marketing.png', patron: /marketing|comercial|ventas/ },
+  { id: 'desarrollo-apps', etiqueta: 'Apps móviles', archivo: 'apps-moviles.png', patron: /apps|movil/ },
+  { id: 'desarrollo', etiqueta: 'Desarrollo', archivo: 'desarrollo.png', patron: /desarrollo|software|ingenier|programa/ },
+  { id: 'bi', etiqueta: 'Business Intelligence', archivo: 'business-intelligence.png', patron: /\bbi\b|business|intelligence|datos/ },
+  { id: 'sistemas-cloud', etiqueta: 'Sistemas cloud', archivo: 'sistemas-cloud.png', patron: /cloud|nube/ },
+  { id: 'sistemas-seguridad', etiqueta: 'Sistemas y seguridad',  archivo: 'sistemas-seguridad.png', patron: /sistemas|seguridad|ciber/ },
+  { id: 'soporte', etiqueta: 'Soporte', archivo: 'soporte.png', patron: /soporte|help ?desk|atencion/ },
+  { id: 'telefonia', etiqueta: 'Telefonía',  archivo: 'telefonia.png', patron: /telefon|voip/ },
+  { id: 'almacen', etiqueta: 'Almacén', archivo: 'almacen.png', patron: /almacen|logistic/ },
 ];
+
 
 
 export const BUZONES: Buzon[] = [
