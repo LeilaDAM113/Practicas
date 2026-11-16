@@ -1,6 +1,13 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
-import { App } from './app/app';
 
-bootstrapApplication(App, appConfig)
-  .catch((err) => console.error(err));
+async function arrancar() {
+  //Si volvemos de Microsoft (/redirect), arrancamos solo /redirect
+  if (window.location.pathname.startsWith('/redirect')) {
+    const { Redirect } = await import('./app/auth/redirect');
+    return bootstrapApplication(Redirect);
+  }
+  const [{ App }, { appConfig }] = await Promise.all([import('./app/app'), import('./app/app.config')]);
+  return bootstrapApplication(App, appConfig);
+}
+
+arrancar().catch((err) => console.error(err));

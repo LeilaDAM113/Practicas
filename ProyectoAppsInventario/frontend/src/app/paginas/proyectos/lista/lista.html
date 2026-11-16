@@ -1,1 +1,64 @@
-<p>lista works!</p>
+<section class="pagina">
+  <div class="pagina__cabecera">
+    <div>
+      <h1 class="titulo-seccion">{{ sesion.esSeguridad() ? 'Todos los proyectos' : 'Mis proyectos' }}</h1>
+      <p class="pagina__subtitulo">
+        @if (sesion.esSeguridad()) {
+          Ves todos los proyectos de Netkia (solo lectura).
+        } @else {
+          Solo ves los proyectos que has creado tú.
+        }
+      </p>
+    </div>
+    @if (sesion.esPM()) {
+      <a class="nk-primary" routerLink="/proyectos/nuevo">+ Nuevo proyecto</a>
+    }
+  </div>
+
+  <div class="cifras">
+    <div class="cifra"><div class="cifra__valor">{{ proyectos().length }}</div><div class="cifra__texto">Proyectos</div></div>
+    <div class="cifra"><div class="cifra__valor">{{ totalApps() }}</div><div class="cifra__texto">Aplicaciones / módulos</div></div>
+    <div class="cifra"><div class="cifra__valor">{{ publicasEnProd() }}</div><div class="cifra__texto">Públicas en producción</div></div>
+  </div>
+
+  @if (error(); as e) { <p class="aviso-error">{{ e }}</p> }
+
+  <div class="tarjeta">
+    <input class="control" type="search" placeholder="Filtrar por proyecto, cliente o responsable…"
+           [ngModel]="filtro()" (ngModelChange)="filtro.set($event)">
+
+    @if (cargando()) {
+      <p class="cargando">Cargando proyectos…</p>
+    } @else {
+      <div class="envoltorio-tabla">
+        <table class="tabla">
+          <thead>
+            <tr>
+              <th>Proyecto</th><th>Cliente</th><th>Responsable</th><th>Apps</th><th>Mantenimiento</th><th>Creado por</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (p of visibles(); track p.id) {
+              <tr>
+                <td><a [routerLink]="['/proyectos', p.id]"><strong>{{ p.nombre }}</strong></a></td>
+                <td>{{ p.cliente }}</td>
+                <td>{{ p.responsable }}</td>
+                <td>{{ p.aplicaciones.length }}</td>
+                <td>{{ p.mantenimiento_contratado ? 'Sí' : 'No' }}</td>
+                <td>{{ p.creado_por_nombre }}</td>
+              </tr>
+            } @empty {
+              <tr>
+                <td colspan="6" class="vacio">
+                  @if (filtro()) { Ningún proyecto coincide con el filtro. }
+                  @else if (sesion.esPM()) { Aún no has creado ningún proyecto. }
+                  @else { No hay proyectos registrados. }
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    }
+  </div>
+</section>

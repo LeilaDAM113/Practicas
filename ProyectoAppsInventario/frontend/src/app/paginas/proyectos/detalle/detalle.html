@@ -1,1 +1,105 @@
-<p>detalle works!</p>
+<section class="pagina">
+  <div class="migas"><a routerLink="/proyectos">Proyectos</a> › {{ proyecto()?.nombre }}</div>
+
+  @if (error(); as e) { <p class="aviso-error">{{ e }}</p> }
+
+  @if (proyecto(); as p) {
+    <div class="pagina__cabecera">
+      <div>
+        <h1 class="titulo-seccion">{{ p.nombre }}</h1>
+        <p class="pagina__subtitulo">
+          Cliente: <strong>{{ p.cliente }}</strong> · Responsable: <strong>{{ p.responsable }}</strong> ·
+          Mantenimiento: <strong>{{ p.mantenimiento_contratado ? 'Sí' : 'No' }}</strong><br>
+          Creado por {{ p.creado_por_nombre }} el {{ p.creado_en | date: 'dd/MM/yyyy' }}
+        </p>
+      </div>
+      @if (p.puede_editar) {
+        <div class="barra-acciones">
+          <a class="nk-outline peq" [routerLink]="['/proyectos', p.id, 'editar']">Editar proyecto</a>
+          <button type="button" class="nk-outline peq nk-peligro" (click)="borrarProyecto(p)">Borrar</button>
+          <button type="button" class="nk-primary peq" (click)="nueva()">+ Añadir aplicación</button>
+        </div>
+      }
+    </div>
+
+    @if (mostrarForm()) {
+      <form class="tarjeta" [formGroup]="form" (ngSubmit)="guardar()">
+        <h2 class="titulo-seccion" style="font-size: 19px">{{ editandoId() ? 'Editar aplicación' : 'Nueva aplicación' }}</h2>
+
+        <div class="rejilla-2">
+          <div class="campo"><label>Aplicación / módulo</label><input class="control" formControlName="nombre" placeholder="API Core"></div>
+          <div class="campo"><label>Entorno</label>
+            <select class="control" formControlName="entorno">@for (e of entornos; track e) { <option [value]="e">{{ e }}</option> }</select></div>
+          <div class="campo"><label>Exposición</label>
+            <select class="control" formControlName="exposicion">@for (e of exposiciones; track e) { <option [value]="e">{{ e }}</option> }</select></div>
+          <div class="campo"><label>Tipo de tecnología</label>
+            <select class="control" formControlName="tipo_tecnologia">@for (t of tipos; track t) { <option [value]="t">{{ t }}</option> }</select></div>
+        </div>
+        <div class="rejilla-2">
+          <div class="campo"><label>URL aplicación <span class="opcional">(opcional)</span></label><input class="control" formControlName="url" placeholder="https://…"></div>
+          <div class="campo"><label>URL del repositorio <span class="opcional">(opcional)</span></label><input class="control" formControlName="url_repositorio" placeholder="https://github.com/netkia/…"></div>
+        </div>
+        <div class="rejilla-2">
+          <div class="campo"><label>Framework / herramienta</label><input class="control" formControlName="framework_nombre" placeholder="FastAPI"></div>
+          <div class="campo"><label>Versión</label><input class="control" formControlName="framework_version" placeholder="0.115.2"></div>
+          <div class="campo"><label>Lenguaje</label><input class="control" formControlName="lenguaje" placeholder="Python"></div>
+          <div class="campo"><label>Versión lenguaje</label><input class="control" formControlName="lenguaje_version" placeholder="3.11.9"></div>
+          <div class="campo"><label>Gestor de paquetes</label><input class="control" formControlName="gestor_paquetes" placeholder="pip / npm / composer"></div>
+          <div class="campo"><label>Versión gestor</label><input class="control" formControlName="gestor_version" placeholder="24.0"></div>
+        </div>
+
+        @if (form.controls.nombre.touched && form.controls.nombre.invalid) {
+          <p class="aviso-error">El nombre de la aplicación es obligatorio.</p>
+        }
+        @if (errorForm(); as e) { <p class="aviso-error">{{ e }}</p> }
+
+        <div class="barra-acciones">
+          <button type="submit" class="nk-primary" [disabled]="guardando()">{{ guardando() ? 'Guardando…' : 'Guardar' }}</button>
+          <button type="button" class="nk-outline" (click)="cancelar()">Cancelar</button>
+        </div>
+      </form>
+    }
+
+    <div class="tarjeta">
+      <div class="envoltorio-tabla">
+        <table class="tabla">
+          <thead>
+            <tr>
+              <th>Aplicación</th><th>Entorno</th><th>Exposición</th><th>Framework / herramienta</th>
+              <th>Lenguaje</th><th>Gestor</th><th>Enlaces</th><th></th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (a of p.aplicaciones; track a.id) {
+              <tr>
+                <td><strong>{{ a.nombre }}</strong><br><small>{{ a.tipo_tecnologia }}</small></td>
+                <td><span [class]="'chip ' + a.entorno.toLowerCase()">{{ a.entorno }}</span></td>
+                <td><span [class]="'chip ' + a.exposicion.toLowerCase()">{{ a.exposicion }}</span></td>
+                <td>{{ a.framework_nombre ?? '—' }} <small>{{ a.framework_version }}</small></td>
+                <td>{{ a.lenguaje ?? '—' }} <small>{{ a.lenguaje_version }}</small></td>
+                <td>{{ a.gestor_paquetes ?? '—' }} <small>{{ a.gestor_version }}</small></td>
+                <td>
+                  @if (a.url) { <a [href]="a.url" target="_blank" rel="noopener">Web</a> }
+                  @if (a.url && a.url_repositorio) { · }
+                  @if (a.url_repositorio) { <a [href]="a.url_repositorio" target="_blank" rel="noopener">Repo</a> }
+                </td>
+                <td class="acciones">
+                  <a class="nk-primary peq" [routerLink]="['/aplicaciones', a.id, 'analisis']">Dependencias</a>
+                  @if (p.puede_editar) {
+                    <button type="button" class="nk-ghost" (click)="editar(a)">Editar</button>
+                    <button type="button" class="nk-ghost" (click)="duplicar(a)" title="Copiar a otro entorno">Duplicar</button>
+                    <button type="button" class="nk-ghost" style="color:#c0392b" (click)="borrarAplicacion(a)">Borrar</button>
+                  }
+                </td>
+              </tr>
+            } @empty {
+              <tr><td colspan="8" class="vacio">Este proyecto aún no tiene aplicaciones.</td></tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  } @else if (!error()) {
+    <p class="cargando">Cargando proyecto…</p>
+  }
+</section>

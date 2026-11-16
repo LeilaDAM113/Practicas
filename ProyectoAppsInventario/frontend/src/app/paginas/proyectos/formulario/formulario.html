@@ -1,1 +1,41 @@
-<p>formulario works!</p>
+<section class="pagina">
+  <div class="migas">
+    <a routerLink="/proyectos">Proyectos</a> ›
+    @if (id()) { <a [routerLink]="['/proyectos', id()]">Proyecto</a> › Editar } @else { Nuevo }
+  </div>
+  <h1 class="titulo-seccion">{{ id() ? 'Editar proyecto' : 'Nuevo proyecto' }}</h1>
+
+  <form class="tarjeta" [formGroup]="form" (ngSubmit)="guardar()" style="max-width: 640px">
+    <div class="campos">
+      <div class="campo">
+        <label for="nombre">Nombre del proyecto</label>
+        <input id="nombre" class="control" formControlName="nombre" placeholder="Kialens">
+      </div>
+      <div class="rejilla-2">
+        <div class="campo">
+          <label for="cliente">Cliente</label>
+          <input id="cliente" class="control" formControlName="cliente" placeholder="Netkia">
+        </div>
+        <div class="campo">
+          <label for="responsable">Responsable</label>
+          <input id="responsable" class="control" formControlName="responsable" placeholder="Nombre y apellidos">
+        </div>
+      </div>
+      <label class="etiqueta">
+        <input type="checkbox" formControlName="mantenimiento_contratado"> Mantenimiento contratado
+      </label>
+    </div>
+
+    @if (form.touched && form.invalid) {
+      <p class="aviso-error">Rellena nombre, cliente y responsable.</p>
+    }
+    @if (error(); as e) { <p class="aviso-error">{{ e }}</p> }
+
+    <div class="barra-acciones">
+      <button type="submit" class="nk-primary" [disabled]="guardando()">
+        {{ guardando() ? 'Guardando…' : 'Guardar' }}
+      </button>
+      <a class="nk-outline" [routerLink]="id() ? ['/proyectos', id()] : ['/proyectos']">Cancelar</a>
+    </div>
+  </form>
+</section>

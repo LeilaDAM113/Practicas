@@ -1,1 +1,36 @@
-<p>cabecera works!</p>
+<header class="cabecera">
+  <div class="contenedor cabecera__contenido">
+    <div class="cabecera__marca">
+      <img src="https://www.netkia.es/firmas/fotos-2022/logo-netkia-15ani2.jpg" alt="Netkia" class="cabecera__logo">
+      <span class="cabecera__etiqueta">Inventario de aplicaciones</span>
+    </div>
+
+    @if (mostrarUsuario()) {
+      <nav class="cabecera__menu" aria-label="Menú principal">
+        <a class="nk-tab" routerLink="/proyectos" routerLinkActive="activo">Proyectos</a>
+        <a class="nk-tab" routerLink="/buscar" routerLinkActive="activo">Buscar tecnología</a>
+      </nav>
+
+      @if (usuario(); as u) {
+        <div class="cabecera__usuario">
+          @if (modoPrueba) {
+            <label class="cabecera__prueba" title="Modo prueba: cambia de usuario para probar los permisos">
+              <span>Prueba</span>
+              <select class="control" (change)="cambiarUsuarioPrueba($event)">
+                @for (up of usuariosPrueba; track up.id) {
+                  <option [value]="up.id" [selected]="up.id === usuarioPrueba">{{ up.etiqueta }}</option>
+                }
+              </select>
+            </label>
+          }
+          <span class="cabecera__avatar" aria-hidden="true">{{ iniciales() }}</span>
+          <div class="cabecera__datos">
+            <span class="cabecera__nombre">{{ u.nombre }}</span>
+            <span class="cabecera__correo">{{ rolLegible() }}</span>
+          </div>
+          <button type="button" class="nk-outline cabecera__salir" (click)="cerrarSesion()">Cerrar sesión</button>
+        </div>
+      }
+    }
+  </div>
+</header>
