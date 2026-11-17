@@ -1,9 +1,10 @@
 from fastapi import Depends,FastAPI
 from app.auth import Usuario, get_current_user
 from app.config import settings
-from app.routers import proyectos, aplicaciones, buscar
+from app.routers import analisis, proyectos, aplicaciones, buscar
 
 app = FastAPI(title="Inventario de Aplicaciones Netkia")
+app.include_router(analisis.router)
 app.include_router(proyectos.router)
 app.include_router(aplicaciones.router)
 app.include_router(buscar.router)

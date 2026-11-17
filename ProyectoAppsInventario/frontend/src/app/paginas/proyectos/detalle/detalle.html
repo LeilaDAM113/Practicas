@@ -16,7 +16,7 @@
       @if (p.puede_editar) {
         <div class="barra-acciones">
           <a class="nk-outline peq" [routerLink]="['/proyectos', p.id, 'editar']">Editar proyecto</a>
-          <button type="button" class="nk-outline peq nk-peligro" (click)="borrarProyecto(p)">Borrar</button>
+          <button type="button" class="nk-outline peq nk-peligro" (click)="borrarProyecto(p)">Borrar proyecto</button>
           <button type="button" class="nk-primary peq" (click)="nueva()">+ Añadir aplicación</button>
         </div>
       }
@@ -66,7 +66,7 @@
           <thead>
             <tr>
               <th>Aplicación</th><th>Entorno</th><th>Exposición</th><th>Framework / herramienta</th>
-              <th>Lenguaje</th><th>Gestor</th><th>Enlaces</th><th></th>
+              <th>Lenguaje</th><th>Gestor</th><th>Enlaces</th><th>Acciones</th><th></th>
             </tr>
           </thead>
           <tbody>
@@ -84,11 +84,11 @@
                   @if (a.url_repositorio) { <a [href]="a.url_repositorio" target="_blank" rel="noopener">Repo</a> }
                 </td>
                 <td class="acciones">
-                  <a class="nk-primary peq" [routerLink]="['/aplicaciones', a.id, 'analisis']">Dependencias</a>
+                  <a class="nk-primary peq" [routerLink]="['/aplicaciones', a.id, 'analisis']" style="margin-right: 10px;">Dependencias</a>
                   @if (p.puede_editar) {
                     <button type="button" class="nk-ghost" (click)="editar(a)">Editar</button>
                     <button type="button" class="nk-ghost" (click)="duplicar(a)" title="Copiar a otro entorno">Duplicar</button>
-                    <button type="button" class="nk-ghost" style="color:#c0392b" (click)="borrarAplicacion(a)">Borrar</button>
+                    <button type="button" class="nk-ghost" style="color:#c0392b " (click)="borrarAplicacion(a)">Borrar</button>
                   }
                 </td>
               </tr>

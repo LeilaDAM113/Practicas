@@ -40,3 +40,7 @@ def borrar(app_id:int , db: Session=Depends(get_db), usuario: Usuario=Depends(ge
     aplicacion=obtener_aplicacion(db,app_id,usuario, editar=True)
     db.delete(aplicacion)
     db.commit()           
+
+@router.get("/aplicaciones/{app_id}", response_model=AplicacionOut)
+def detalle(app_id: int,db: Session = Depends(get_db),usuario: Usuario = Depends(get_current_user)):
+  return obtener_aplicacion(db, app_id, usuario)

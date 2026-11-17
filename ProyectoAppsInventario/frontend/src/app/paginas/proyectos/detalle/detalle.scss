@@ -1,0 +1,18 @@
+.tabla td.acciones {
+   display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  white-space: nowrap;
+}
+
+.acciones-secundarias {
+  display: flex;
+  gap: 10px;
+  font-size: 13px;
+   flex-shrink: 0;
+}
+
+.acciones-secundarias .nk-ghost {
+  padding: 2px 4px;
+}

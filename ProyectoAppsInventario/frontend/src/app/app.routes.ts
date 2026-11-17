@@ -41,7 +41,7 @@ export const routes: Routes = [
       {
         path: 'aplicaciones/:id/analisis',
         title: 'Inventario · Dependencias',
-        loadComponent: () => import('./paginas/analisis/analisis').then((m) => m.Analisis),
+        loadComponent: () => import('./paginas/analisis/analisis').then((m) => m.AnalisisDependencias),
       },
     ],
   },

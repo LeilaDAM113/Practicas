@@ -148,3 +148,34 @@ h1, h2 { margin: 0; }
 .aviso-ok { margin: 0; padding: 12px 14px; border-radius: 6px; background: #eefaf1; border: 1px solid #bfe6c9; color: #1e6b34; font-size: 14px; }
 .aviso-info { margin: 0; padding: 12px 14px; border-radius: 6px; background: var(--nk-fondo-suave); border: 1px solid var(--nk-borde-azul); font-size: 14px; }
 .cargando { color: var(--nk-gris); font-size: 14px; }
+
+.envoltorio-tabla {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+.tabla th,
+.tabla td {
+  padding: 10px 8px;
+  vertical-align: middle;
+  word-break: normal; /* Evita que las palabras se partan en letras sueltas */
+  overflow-wrap: break-word;
+}
+
+/* Evita que los encabezados cortos se rompan */
+.tabla th {
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+/* Permite que "Framework / herramienta" baje de línea solo en el espacio */
+.tabla th:nth-child(4) {
+  white-space: normal;
+  min-width: 110px;
+}

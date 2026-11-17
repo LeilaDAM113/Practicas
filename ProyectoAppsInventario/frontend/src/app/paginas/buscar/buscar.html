@@ -1,1 +1,72 @@
+<section class="pagina">
+  <div>
+    <h1 class="titulo-seccion">Buscar por tecnología</h1>
+    <p class="pagina__subtitulo">
+      Ejemplo: ha salido una vulnerabilidad en FastAPI anterior a la 0.115 → busca <strong>FastAPI</strong> con versión menor que <strong>0.115.0</strong>.
+      @if (!sesion.esSeguridad()) { Solo se buscan tus proyectos. }
+    </p>
+  </div>
 
+  <form class="tarjeta" (ngSubmit)="buscar()">
+    <div class="rejilla-2" style="align-items: end;">
+      <div class="campo"><label>Nombre del framework</label>
+        <input class="control" [(ngModel)]="f.q" name="q" placeholder="FastAPI, React, PHP, Kialens…"></div>
+      <div class="campo"><label>Versión del framework menor que</label>
+        <input class="control" [(ngModel)]="f.version_menor_que" name="v" placeholder="0.115.0"></div>
+      <div class="campo"><label>Entorno</label>
+        <select class="control" [(ngModel)]="f.entorno" name="e">
+          <option value="">Todos</option>
+          @for (e of entornos; track e) { <option [value]="e">{{ e }}</option> }
+        </select></div>
+      <div class="campo"><label>Exposición</label>
+        <select class="control" [(ngModel)]="f.exposicion" name="x">
+          <option value="">Cualquiera</option>
+          @for (e of exposiciones; track e) { <option [value]="e">{{ e }}</option> }
+        </select></div>
+      <div class="campo"><label>Tipo</label>
+        <select class="control" [(ngModel)]="f.tipo_tecnologia" name="t">
+          <option value="">Cualquiera</option>
+          @for (t of tipos; track t) { <option [value]="t">{{ t }}</option> }
+        </select></div>
+    </div>
+    <div class="barra-acciones">
+      <button type="submit" class="nk-primary" [disabled]="cargando()">{{ cargando() ? 'Buscando…' : 'Buscar' }}</button>
+      <button type="button" class="nk-outline" (click)="limpiar()">Limpiar</button>
+      @if (resultados().length) {
+        <button type="button" class="nk-ghost" (click)="exportarCsv()">⬇ Exportar a Excel (CSV)</button>
+      }
+    </div>
+    <p class="ayuda" style="margin:0">La comparación de versiones solo usa la versión del framework. Las aplicaciones sin versión o con una versión que no se puede comparar también aparecen, para que se revisen a mano.</p>
+  </form>
+
+  @if (error(); as e) { <p class="aviso-error">{{ e }}</p> }
+
+  @if (buscado()) {
+    <div class="tarjeta">
+      <strong>{{ resultados().length }} aplicaciones encontradas</strong>
+      <div class="envoltorio-tabla">
+        <table class="tabla">
+          <thead>
+            <tr><th>Proyecto</th><th>Aplicación</th><th>Entorno</th><th>Exposición</th><th>Framework</th><th>Lenguaje</th><th>Responsable</th><th></th></tr>
+          </thead>
+          <tbody>
+            @for (r of resultados(); track r.id) {
+              <tr>
+                <td><a [routerLink]="['/proyectos', r.proyecto_id]">{{ r.proyecto_nombre }}</a><br><small>{{ r.cliente }}</small></td>
+                <td>{{ r.nombre }}</td>
+                <td><span [class]="'chip ' + r.entorno.toLowerCase()">{{ r.entorno }}</span></td>
+                <td><span [class]="'chip ' + r.exposicion.toLowerCase()">{{ r.exposicion }}</span></td>
+                <td>{{ r.framework_nombre ?? '—' }} <small>{{ r.framework_version }}</small></td>
+                <td>{{ r.lenguaje ?? '—' }} <small>{{ r.lenguaje_version }}</small></td>
+                <td>{{ r.responsable }}</td>
+                <td class="acciones"><a class="nk-outline peq" [routerLink]="['/aplicaciones', r.id, 'analisis']">Dependencias</a></td>
+              </tr>
+            } @empty {
+              <tr><td colspan="8" class="vacio">No hay aplicaciones que cumplan los filtros.</td></tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  }
+</section>

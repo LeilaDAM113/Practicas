@@ -1,1 +1,97 @@
-<p>analisis works!</p>
+<section class="pagina">
+  <div class="migas">
+    <a routerLink="/proyectos">Proyectos</a> ›
+    @if (proyecto(); as p) { <a [routerLink]="['/proyectos', p.id]">{{ p.nombre }}</a> › }
+    Dependencias
+  </div>
+
+  <div>
+    <h1 class="titulo-seccion">Análisis de dependencias</h1>
+    @if (aplicacion(); as a) {
+      <p class="pagina__subtitulo">
+        <strong>{{ a.nombre }}</strong> · <span [class]="'chip ' + a.entorno.toLowerCase()">{{ a.entorno }}</span>
+        · {{ a.framework_nombre }} {{ a.framework_version }} · {{ a.lenguaje }} {{ a.lenguaje_version }}
+      </p>
+    }
+  </div>
+
+  <div class="tarjeta">
+    <p class="ayuda" style="margin:0">
+      Sube el <code>composer.lock</code> (PHP) o el <code>package-lock.json</code> (JavaScript/TypeScript) del proyecto.
+      También vale el <code>package.json</code>, pero el resultado es aproximado: solo tiene rangos de versiones y no incluye las dependencias indirectas.
+      Las vulnerabilidades se consultan en <a href="https://osv.dev" target="_blank" rel="noopener">OSV.dev</a>.
+    </p>
+    <div class="barra-acciones">
+      <input class="control" style="max-width: 420px" type="file" accept=".json,.lock" (change)="elegir($event)">
+      <button type="button" class="nk-primary" [disabled]="!fichero() || analizando()" (click)="analizar()">
+        {{ analizando() ? 'Analizando…' : 'Analizar' }}
+      </button>
+    </div>
+    @if (error(); as e) { <p class="aviso-error">{{ e }}</p> }
+  </div>
+
+  @if (historial().length > 1) {
+    <div class="barra-acciones">
+      <span class="etiqueta">Análisis anteriores:</span>
+      @for (h of historial(); track h.id) {
+        <button type="button" [class]="h.id === actual()?.id ? 'nk-primary peq' : 'nk-outline peq'" (click)="seleccionado.set(h.id)">
+          {{ h.realizado_en | date: 'dd/MM/yy HH:mm' }} · {{ h.total_vulnerables }} vuln.
+        </button>
+      }
+    </div>
+  }
+
+  @if (actual(); as a) {
+    <div class="tarjeta">
+      <div class="tarjeta__cabecera">
+        <h2 class="titulo-seccion" style="font-size: 19px">{{ a.fichero }}</h2>
+        <span class="ayuda">{{ a.realizado_en | date: 'dd/MM/yyyy HH:mm' }} · {{ a.realizado_por }}</span>
+      </div>
+
+      <div class="cifras">
+        <div class="cifra"><div class="cifra__valor">{{ a.total_paquetes }}</div><div class="cifra__texto">Paquetes revisados</div></div>
+        <div class="cifra"><div class="cifra__valor">{{ a.total_vulnerables }}</div><div class="cifra__texto">Paquetes vulnerables</div></div>
+        <div class="cifra"><div class="cifra__valor">{{ a.hallazgos.length }}</div><div class="cifra__texto">Vulnerabilidades</div></div>
+      </div>
+
+      @if (a.hallazgos.length) {
+        <div class="barra-acciones">
+          @for (s of ['CRITICAL', 'HIGH', 'MODERATE', 'MEDIUM', 'LOW', 'DESCONOCIDA']; track s) {
+            @if (resumen()[s]) {
+              <span [class]="'etiqueta-sev sev-' + s.toLowerCase()">{{ s }}: {{ resumen()[s] }}</span>
+            }
+          }
+        </div>
+        @if (tieneAproximados()) {
+          <p class="aviso-info">≈ Versión sacada de un rango del package.json: puede que la versión instalada sea otra.</p>
+        }
+        <div class="envoltorio-tabla">
+          <table class="tabla">
+            <thead>
+              <tr><th>Severidad</th><th>Paquete</th><th>Versión</th><th>Vulnerabilidad</th><th>Resumen</th><th>Corregida en</th></tr>
+            </thead>
+            <tbody>
+              @for (h of a.hallazgos; track $index) {
+                <tr>
+                  <td><span [class]="'etiqueta-sev sev-' + h.severidad.toLowerCase()">{{ h.severidad }}</span></td>
+                  <td><strong>{{ h.paquete }}</strong><br><small>{{ h.ecosistema }}</small></td>
+                  <td>{{ h.version }} @if (h.aproximado) { <span title="Sacada de package.json">≈</span> }</td>
+                  <td>
+                    <a [href]="'https://osv.dev/vulnerability/' + h.vuln_id" target="_blank" rel="noopener">{{ h.vuln_id }}</a>
+                    @if (h.alias) { <br><small>{{ h.alias }}</small> }
+                  </td>
+                  <td>{{ h.resumen }}</td>
+                  <td>{{ h.version_corregida ?? '—' }}</td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      } @else {
+        <p class="aviso-ok">✅ No se han encontrado vulnerabilidades conocidas en estas dependencias.</p>
+      }
+    </div>
+  } @else if (!analizando()) {
+    <p class="aviso-info">Esta aplicación aún no tiene ningún análisis. Sube un fichero para empezar.</p>
+  }
+</section>

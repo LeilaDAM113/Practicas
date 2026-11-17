@@ -44,3 +44,26 @@ class ResultadoBusqueda(AplicacionOut):
     proyecto_nombre:str
     cliente:str
     responsable:str    
+
+class HallazgoOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+    paquete: str
+    version: str
+    ecosistema: str
+    vuln_id: str
+    alias: str | None
+    severidad: str
+    resumen: str
+    version_corregida: str | None
+    aproximado: bool
+
+
+class AnalisisOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+    id: int
+    fichero: str
+    total_paquetes: int
+    total_vulnerables: int
+    realizado_por: str
+    realizado_en: datetime
+    hallazgos: list[HallazgoOut]

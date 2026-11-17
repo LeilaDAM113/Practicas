@@ -1,6 +1,6 @@
 import enum
 from datetime import datetime
-from sqlalchemy import Enum, ForeignKey, String, UniqueConstraint, func
+from sqlalchemy import Enum, ForeignKey, String, Text, UniqueConstraint, func
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from app.db import Base
 
@@ -64,4 +64,41 @@ class Aplicacion(Base):
 
         #Proyecto al que pertenece
         proyecto: Mapped["Proyecto"]=relationship(back_populates="aplicaciones")
+        analisis: Mapped[list["Analisis"]] = relationship(
+        back_populates="aplicacion", cascade="all, delete-orphan"
+    )
+class Analisis(Base):
+    __tablename__ = "analisis"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    aplicacion_id: Mapped[int] = mapped_column(ForeignKey("aplicaciones.id", ondelete="CASCADE"), index=True)
+    fichero: Mapped[str] = mapped_column(String(100))
+    total_paquetes: Mapped[int]
+    total_vulnerables: Mapped[int]
+    realizado_por: Mapped[str] = mapped_column(String(150))
+    realizado_en: Mapped[datetime] = mapped_column(server_default=func.now())
+
+    aplicacion: Mapped[Aplicacion] = relationship(back_populates="analisis")
+    hallazgos: Mapped[list["Hallazgo"]] = relationship(
+        back_populates="analisis", cascade="all, delete-orphan", order_by="Hallazgo.id"
+    )
+
+
+class Hallazgo(Base):
+    __tablename__ = "hallazgos"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    analisis_id: Mapped[int] = mapped_column(ForeignKey("analisis.id", ondelete="CASCADE"), index=True)
+    paquete: Mapped[str] = mapped_column(String(200))
+    version: Mapped[str] = mapped_column(String(100))
+    ecosistema: Mapped[str] = mapped_column(String(30))
+    vuln_id: Mapped[str] = mapped_column(String(100))      # GHSA-xxxx / CVE-xxxx
+    alias: Mapped[str | None] = mapped_column(Text)
+    severidad: Mapped[str] = mapped_column(String(20))
+    resumen: Mapped[str] = mapped_column(Text)
+    version_corregida: Mapped[str | None] = mapped_column(Text)
+    aproximado: Mapped[bool] = mapped_column(default=False)
+
+    analisis: Mapped[Analisis] = relationship(back_populates="hallazgos")
+        
 

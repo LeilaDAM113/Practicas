@@ -10,7 +10,7 @@ import { USUARIOS_PRUEBA, guardarUsuarioPrueba, usuarioPruebaActual } from '../.
   styleUrl: './cabecera.scss',
 })
 export class Cabecera {
-//true en las pantallas internas (enseña menú, usuario y "Cerrar sesión")
+  //true en las pantallas internas (enseña menú, usuario y "Cerrar sesión")
   mostrarUsuario = input(false);
 
   protected sesion = inject(SesionService);
@@ -19,6 +19,7 @@ export class Cabecera {
   protected usuariosPrueba = USUARIOS_PRUEBA;
   protected usuarioPrueba = usuarioPruebaActual();
 
+  //"Carlos Labrador" -> "CL"
   protected iniciales = computed(() =>
     (this.usuario()?.nombre ?? '')
       .split(' ')
