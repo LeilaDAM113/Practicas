@@ -8,8 +8,8 @@ from app.db import get_db
 from app.models import Analisis, Hallazgo
 from app.permisos import obtener_aplicacion
 from app.schemas import AnalisisOut
-from app.vulns.osv import consultar_osv
-from app.vulns.parsers import parsear
+from app.vulnerabilidades.osv import consultar_osv
+from app.vulnerabilidades.parsers import parsear
 
 router = APIRouter(prefix="/api/aplicaciones", tags=["analisis"])
 

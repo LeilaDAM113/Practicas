@@ -5,7 +5,7 @@ from dataclasses import dataclass
 import httpx
 
 from app.config import settings
-from app.vulns.parsers import Paquete
+from app.vulnerabilidades.parsers import Paquete
 
 LOTE = 1000  # máximo de consultas por petición en /querybatch
 

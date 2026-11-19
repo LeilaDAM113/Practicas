@@ -4,7 +4,7 @@ from sqlalchemy import or_, select
 from sqlalchemy.orm import Session
 from app.auth import Usuario, get_current_user
 from app.db import get_db
-from app.models import Aplicacion, Entorno, Exposicion, Proyecto
+from app.models import Aplicacion, Entorno, Exposicion, Proyecto, TipoTecnologia
 from app.permisos import filtrar_visibles
 from app.schemas import AplicacionOut, ResultadoBusqueda
 
@@ -13,8 +13,10 @@ router= APIRouter(prefix="/api/buscar", tags=["buscar"])
 
 """La versión es anterior al limite? Si no se puede comparar, la mostramos para revisarla"""
 def _menor_que(version: str | None, limite: str) -> bool:
+    if version is None:
+        return True
     try:
-        return version is not None and Version(version) < Version(limite)
+        return Version(version) < Version(limite)
     except InvalidVersion:
         return True 
 
@@ -24,6 +26,7 @@ def buscar(
     version_menor_que: str | None = Query(None, description="Ej: 0.115.0"),
     entorno: Entorno | None = None,
     exposicion: Exposicion | None = None,
+    tipo_tecnologia: TipoTecnologia | None = None,
     db: Session = Depends(get_db),
     u: Usuario = Depends(get_current_user),
 ):
@@ -42,6 +45,8 @@ def buscar(
         consulta = consulta.where(Aplicacion.entorno == entorno)
     if exposicion:
         consulta = consulta.where(Aplicacion.exposicion == exposicion)
+    if tipo_tecnologia:
+        consulta = consulta.where(Aplicacion.tipo_tecnologia == tipo_tecnologia)
 
     resultados = []
     for aplicacion, proyecto in db.execute(consulta.order_by(Proyecto.nombre, Aplicacion.nombre)):
